@@ -1,0 +1,4 @@
+# Project-scoped Figma MCP connection. Sign in through the client's OAuth flow.
+[mcp_servers.figma]
+url = "https://mcp.figma.com/mcp"
+enabled = true

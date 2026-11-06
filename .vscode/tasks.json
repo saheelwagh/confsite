@@ -1,0 +1,12 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run Astro production site",
+			"type": "shell",
+			"command": "cd production && pnpm dev --background",
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}

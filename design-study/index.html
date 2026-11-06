@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" data-theme="azulejo" data-motion="off">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An interactive design notebook for ACBLPE Goa 2027. Explore azulejo-inspired palettes, conference layouts, and gentle motion.">
+  <meta name="theme-color" content="#F7F4EA">
+  <title>ACBLPE Goa 2027 — A design notebook</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23F7F4EA'/%3E%3Cpath d='M32 5L59 32 32 59 5 32Z' fill='%23214EA2'/%3E%3Cpath d='M32 16L48 32 32 48 16 32Z' fill='%23F7F4EA'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="art.js" defer></script>
+  <script src="study.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to design explorations</a>
+  <header class="site-header wrap">
+    <a class="brand" href="#top" aria-label="ACBLPE design notebook, top"><span class="brand-mark" aria-hidden="true">✳</span><span>ACBLPE <small>GOA 2027</small></span></a>
+    <nav class="top-nav" aria-label="Design notebook"><a href="#directions">Directions</a><a href="#conference">In context</a><a href="#motion">Motion studies</a></nav>
+    <span class="edition">DESIGN NOTEBOOK <span>№ 01</span></span>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" id="top" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="small-diamond" aria-hidden="true"></span> A CONFERENCE. A PLACE. A VISUAL LANGUAGE.</p>
+        <h1 id="hero-title">Many voices.<br>One <em>beautiful</em><br>conversation.</h1>
+        <p class="hero-description">A design exploration for ACBLPE Goa 2027.<br>Rooted in azulejo. Open to new connections.</p>
+        <div class="hero-actions"><a class="button primary" href="#directions">Explore the palettes <span aria-hidden="true">↘</span></a><button class="text-button" id="replay-hero" type="button">Replay the tiles <span aria-hidden="true">↻</span></button></div>
+        <p class="hero-footnote">A working visual study, ready to inform the Figma design.</p>
+      </div>
+      <figure class="hero-art">
+        <div class="mural-frame"><div id="hero-mural" class="mural" aria-hidden="true"></div><span class="mural-center" aria-hidden="true">a<span>GOA · 2027</span></span></div>
+        <figcaption><span><b id="hero-theme-index">01</b> / <span id="hero-theme-name">Azulejo azul</span></span><span>Pattern, in conversation.</span></figcaption>
+      </figure>
+    </section>
+
+    <div class="running-note"><div class="wrap"><span>CRAFT × LANGUAGE × PLACE</span><span>Four palettes. One conference. A little movement.</span><span aria-hidden="true">✳</span></div></div>
+
+    <section class="section wrap" id="directions" aria-labelledby="directions-title">
+      <div class="section-heading"><div><p class="eyebrow">01 / COLOUR & CHARACTER</p><h2 id="directions-title">Four ways to feel <em>Goa.</em></h2></div><p>Choose a direction. The whole notebook changes with it, so you can feel the difference in context.</p></div>
+      <div class="direction-grid" id="direction-grid">
+        <button class="direction-card" data-palette="azulejo" aria-pressed="true" type="button"><span class="direction-art art-azulejo" data-art="tiles" aria-hidden="true"></span><span class="direction-meta"><span>01 / THE STARTING POINT</span><span class="selected-mark" aria-hidden="true">↗</span></span><strong>Azulejo azul</strong><span class="direction-description">Cobalt ink, ceramic white.<br>Scholarly, crafted, unmistakable.</span><span class="mini-swatches" data-swatches="azulejo" aria-hidden="true"></span><span class="direction-select">Selected direction <span aria-hidden="true">✓</span></span></button>
+        <button class="direction-card" data-palette="fontainhas" aria-pressed="false" type="button"><span class="direction-art art-fontainhas" data-art="facade" aria-hidden="true"></span><span class="direction-meta"><span>02 / THE NEIGHBOURHOOD</span><span aria-hidden="true">↗</span></span><strong>Fontainhas afternoon</strong><span class="direction-description">Terracotta, ochre, soft plaster.<br>Warm, social, full of character.</span><span class="mini-swatches" data-swatches="fontainhas" aria-hidden="true"></span><span class="direction-select">Try this direction <span aria-hidden="true">→</span></span></button>
+        <button class="direction-card" data-palette="monsoon" aria-pressed="false" type="button"><span class="direction-art art-monsoon" data-art="botanical" aria-hidden="true"></span><span class="direction-meta"><span>03 / THE LANDSCAPE</span><span aria-hidden="true">↗</span></span><strong>Monsoon garden</strong><span class="direction-description">Deep leaf, sage, linen.<br>Quiet, fresh, contemplative.</span><span class="mini-swatches" data-swatches="monsoon" aria-hidden="true"></span><span class="direction-select">Try this direction <span aria-hidden="true">→</span></span></button>
+        <button class="direction-card" data-palette="ocean" aria-pressed="false" type="button"><span class="direction-art art-ocean" data-art="chart" aria-hidden="true"></span><span class="direction-meta"><span>04 / THE CONNECTION</span><span aria-hidden="true">↗</span></span><strong>Indian Ocean atlas</strong><span class="direction-description">Ocean teal, parchment, brass.<br>Expansive, connected, editorial.</span><span class="mini-swatches" data-swatches="ocean" aria-hidden="true"></span><span class="direction-select">Try this direction <span aria-hidden="true">→</span></span></button>
+      </div>
+
+      <div class="palette-detail">
+        <div class="palette-story"><p class="eyebrow" id="palette-kicker">THE RECOMMENDED FOUNDATION</p><h3 id="palette-name">Azulejo azul</h3><p id="palette-description">Use a tiled mural as the signature, then let generous ceramic-white space and cobalt typography carry the information. Ornament belongs at the edges, not behind the reading.</p><p class="motif-note"><span>Visual vocabulary</span><span id="palette-vocabulary">Floral geometry · fine borders · glazed surfaces</span></p></div>
+        <div class="palette-tools"><div class="palette-label"><span class="eyebrow">THE PALETTE</span><button id="copy-palette" class="text-button" type="button">Copy CSS <span aria-hidden="true">↗</span></button></div><div class="swatch-row" id="active-swatches"></div><p class="palette-guidance" id="palette-guidance">Paper for the canvas; cobalt for actions; ink for body text. Brass is a decorative accent.</p><p class="copy-status" id="copy-status" role="status"></p></div>
+      </div>
+    </section>
+
+    <section class="context-section" id="conference" aria-labelledby="context-title">
+      <div class="wrap">
+        <div class="section-heading"><div><p class="eyebrow">02 / FROM PALETTE TO PAGE</p><h2 id="context-title">See it <em>in context.</em></h2></div><p>A small, working conference canvas. Switch pages to see how the direction handles the outline’s different kinds of content.</p></div>
+        <div class="browser-frame">
+          <div class="browser-bar"><span class="browser-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>ACBLPE Goa 2027 / design preview</span><span id="preview-theme-label">AZULEJO AZUL</span></div>
+          <div class="conference-header"><div class="conference-brand">ACBLPE<span>GOA 2027</span></div><div class="preview-tabs" role="tablist" aria-label="Conference preview pages"><button role="tab" id="tab-home" aria-controls="preview-panel" aria-selected="true" data-page="home" type="button">Home</button><button role="tab" id="tab-papers" aria-controls="preview-panel" aria-selected="false" tabindex="-1" data-page="papers" type="button">Call for papers</button><button role="tab" id="tab-people" aria-controls="preview-panel" aria-selected="false" tabindex="-1" data-page="people" type="button">People</button><button role="tab" id="tab-venue" aria-controls="preview-panel" aria-selected="false" tabindex="-1" data-page="venue" type="button">Venue</button><button role="tab" id="tab-registration" aria-controls="preview-panel" aria-selected="false" tabindex="-1" data-page="registration" type="button">Registration</button></div></div>
+          <div id="preview-panel" class="preview-panel" role="tabpanel" aria-labelledby="tab-home"><h3>Creoles across the Indian Ocean</h3><p>Conference content previews become available when JavaScript is enabled.</p></div>
+          <div class="preview-footer"><span>Conference copy adapted from the supplied outline.</span><span>Illustrative content · details to be confirmed</span></div>
+        </div>
+        <div class="context-tip"><span aria-hidden="true">↖</span><p><strong>Keep the same content. Change the atmosphere.</strong> Select a different palette above to compare all five page previews.</p><a href="#directions">Change palette ↑</a></div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="motion" aria-labelledby="motion-title">
+      <div class="section-heading"><div><p class="eyebrow">03 / A LITTLE MOVEMENT</p><h2 id="motion-title">Craft has a <em>rhythm.</em></h2></div><p>Small gestures that borrow from assembling, painting, and glazing a tile. Press play to explore; nothing loops endlessly.</p></div>
+      <div class="motion-toolbar"><div class="motion-settings"><label class="switch-label"><input id="motion-toggle" type="checkbox"><span class="switch-track" aria-hidden="true"></span><span>Enable motion</span></label><label class="speed-label" for="motion-speed">Playback <select id="motion-speed"><option value="1">Natural</option><option value="1.8">Slow study</option></select></label></div><button id="play-all" class="button small" type="button">Play all studies <span aria-hidden="true">▷</span></button></div>
+      <p id="motion-status" class="motion-status" role="status">Motion is off. Every study remains visible.</p>
+      <div class="motion-grid">
+        <article class="motion-card" data-demo="assemble"><div class="demo-stage stage-assemble"><div class="mini-mural" id="demo-mural" aria-hidden="true"></div><span class="stage-caption">ASSEMBLE / SETTLE / BELONG</span></div><div class="motion-card-heading"><div><span class="eyebrow">01 / ENTRANCE</span><h3>Tile by tile</h3></div><button class="replay-button" data-replay="assemble" aria-label="Replay Tile by tile" type="button">↻</button></div><p>A diagonal sequence brings separate pieces into one composition. A gentle metaphor for a gathering of voices.</p><div class="motion-spec"><span>550 ms + 45 ms stagger</span><span>Hero entrance, once</span></div></article>
+        <article class="motion-card" data-demo="glaze"><div class="demo-stage stage-glaze"><div class="glaze-tile" id="glaze-tile" aria-hidden="true"></div><span class="stage-caption">A MOMENT OF LIGHT</span></div><div class="motion-card-heading"><div><span class="eyebrow">02 / MATERIAL</span><h3>A ceramic glint</h3></div><button class="replay-button" data-replay="glaze" aria-label="Replay A ceramic glint" type="button">↻</button></div><p>A soft wash of light suggests a glazed surface. Reserve it for an occasional decorative moment.</p><div class="motion-spec"><span>800 ms · ease-in-out</span><span>Decorative accents</span></div></article>
+        <article class="motion-card" data-demo="draw"><div class="demo-stage stage-draw"><svg class="drawn-ornament" viewBox="0 0 300 100" fill="none" aria-hidden="true"><path pathLength="1" d="M12 50H93M207 50H288M100 50C113 21 134 18 150 49C166 18 187 21 200 50C181 78 164 79 150 51C136 79 119 78 100 50ZM150 50C124 30 137 8 150 13C163 8 176 30 150 50ZM150 50C124 70 137 92 150 87C163 92 176 70 150 50Z"/><circle cx="150" cy="50" r="5"/></svg><span class="drawn-title">Linguistic encounters</span><span class="stage-caption">DRAWN IN COLOUR</span></div><div class="motion-card-heading"><div><span class="eyebrow">03 / DETAIL</span><h3>The painted line</h3></div><button class="replay-button" data-replay="draw" aria-label="Replay The painted line" type="button">↻</button></div><p>A floral rule draws itself like a brush finding its way. Keep the surrounding text still and immediately readable.</p><div class="motion-spec"><span>1,100 ms · soft ease</span><span>Section dividers</span></div></article>
+        <article class="motion-card" data-demo="timeline"><div class="demo-stage stage-timeline"><div class="demo-timeline"><div class="timeline-rule" aria-hidden="true"></div><div><i aria-hidden="true"></i><small>01</small><strong>Submit</strong></div><div><i aria-hidden="true"></i><small>02</small><strong>Review</strong></div><div><i aria-hidden="true"></i><small>03</small><strong>Gather</strong></div></div><span class="stage-caption">MILESTONES, CONNECTED</span></div><div class="motion-card-heading"><div><span class="eyebrow">04 / PROGRESSION</span><h3>A shared journey</h3></div><button class="replay-button" data-replay="timeline" aria-label="Replay A shared journey" type="button">↻</button></div><p>A line connects milestones while the labels remain visible. A useful rhythm for important dates.</p><div class="motion-spec"><span>700 ms + marker stagger</span><span>Important dates</span></div></article>
+        <article class="motion-card wide" data-demo="lift"><div class="demo-stage stage-lift"><a class="venue-lift" href="#conference"><span class="venue-art" data-art="facade" aria-hidden="true"></span><span><small>EXPLORE THE CONFERENCE</small><strong>A place to connect</strong></span><span class="lift-arrow" aria-hidden="true">↗</span></a><span class="stage-caption">HOVER, FOCUS, OR PRESS REPLAY</span></div><div class="motion-description"><div class="motion-card-heading"><div><span class="eyebrow">05 / FEEDBACK</span><h3>A quiet welcome</h3></div><button class="replay-button" data-replay="lift" aria-label="Replay A quiet welcome" type="button">↻</button></div><p>A small lift and a moving arrow tell you a card is a link. Keyboard focus gets the same attention as hover.</p><div class="motion-spec"><span>180 ms · ease out</span><span>Linked venue & people cards</span></div></div></article>
+      </div>
+      <div class="motion-recommendation"><span class="recommendation-symbol" aria-hidden="true">✳</span><div><p class="eyebrow">THE EDIT</p><h3>Let the pattern speak. Let the content breathe.</h3><p>My recommendation: the tile entrance once, a quiet timeline reveal, and subtle feedback on links. Keep glaze and line-drawing as optional accents. With motion off, every detail is already in place.</p></div></div>
+    </section>
+
+    <section class="notes-section" id="notes"><div class="wrap"><div class="section-heading"><div><p class="eyebrow">04 / NOTES FOR THE DESIGNER</p><h2>A sense of place,<br><em>not a costume.</em></h2></div><p>The strongest direction is azulejo as a visual grammar: repetition, framing, and relationships. Pair it with a contemporary, readable conference layout.</p></div><div class="design-notes"><article><span>01</span><h3>Pattern as punctuation</h3><p>Concentrate ornament in one hero mural, thin dividers, and small marks. Leave paper guidelines and practical information on quiet backgrounds.</p></article><article><span>02</span><h3>An editorial voice</h3><p>A generous serif for headlines, a straightforward sans serif for details. Let long names and multilingual text shape the spacing.</p></article><article><span>03</span><h3>A living place</h3><p>Use original motifs and locally approved imagery. These illustrations are contemporary studies, not reproductions of historic tiles or buildings.</p></article></div><div class="references"><span class="eyebrow">INSPIRATION & READING</span><a href="https://azulejosgoa.com/blog-azulejo-history-goa.html" target="_blank" rel="noopener noreferrer">AzulejosGoa · the starting reference ↗</a><a href="https://goa-tourism.com/popular-destination/experience-fontainhas/" target="_blank" rel="noopener noreferrer">Goa Tourism · Fontainhas ↗</a><a href="https://whc.unesco.org/en/list/234/" target="_blank" rel="noopener noreferrer">UNESCO · architectural context ↗</a><p>The cobalt/floral direction responds to your reference; the warm façades respond to Fontainhas. Garden and atlas are additional creative interpretations. All palettes and illustrations here are original design proposals.</p></div></div></section>
+  </main>
+  <footer class="site-footer wrap"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">✳</span><span>ACBLPE <small>A DESIGN NOTEBOOK</small></span></a><p>Made for exploration.<br>The next chapter belongs in Figma.</p><a class="text-button" href="#top">Back to the top ↑</a></footer>
+  <div class="sr-only" id="theme-announcement" role="status"></div>
+  <dialog id="copy-dialog"><form method="dialog"><button class="dialog-close text-button" aria-label="Close palette export">Close ×</button><h2>Your palette</h2><p>Clipboard access is unavailable. Select and copy these tokens instead.</p><textarea id="palette-code" readonly aria-label="Palette CSS tokens" rows="9"></textarea><button class="button primary">Done</button></form></dialog>
+  <noscript><div class="noscript-note">Enable JavaScript to switch palettes, browse page previews, and replay animations. This is a local design study; no conference registrations are collected.</div></noscript>
+</body>
+</html>
