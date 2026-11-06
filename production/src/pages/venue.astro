@@ -1,0 +1,41 @@
+---
+import Navigation from '../components/Navigation.astro';
+import LandingFonts from '../components/LandingFonts.astro';
+import MinimalFooter from '../components/MinimalFooter.astro';
+import AboutGoa from '../components/AboutGoa.astro';
+import ThingsToDo from '../components/ThingsToDo.astro';
+import ReachingGoaUniversity from '../components/ReachingGoaUniversity.astro';
+
+const links = [
+  { label: 'Home', href: '/' },
+  { label: 'Call for papers', href: '/call-for-papers' },
+  { label: 'People', href: '/people' },
+  { label: 'Venue', href: '/venue' },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content="Plan your visit to Goa for ACBLPE 2027: local culture, things to do, and travel connections to Goa University." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <LandingFonts />
+    <title>Venue | ACBLPE 2027</title>
+  </head>
+  <body id="top" class="venue-page">
+    <Navigation variant="landing" homeHref="/landing" brandIcon="/call-for-papers/grid.svg" links={links} />
+    <main id="main-content">
+      <AboutGoa />
+      <ThingsToDo />
+      <ReachingGoaUniversity />
+    </main>
+    <MinimalFooter />
+  </body>
+</html>
+
+<style is:global>
+  .venue-page { --landing-sans: 'Landing Inter', Arial, sans-serif; --landing-serif: 'Landing Libre Baskerville', Georgia, serif; margin: 0; background: #faf7f0; color: #152d53; font-family: var(--landing-sans); }
+</style>

@@ -1,0 +1,51 @@
+---
+const connections = [
+  { title: 'Airports', options: [
+    { name: 'Dabolim / Goa International Airport (GOI)', description: 'Located at a distance of 29 km.' },
+    { name: 'Manohar International Airport (GOX)', description: 'Located at a distance of 40 km.' },
+  ] },
+  { title: 'Railway stations', options: [
+    { name: 'Karmali', description: 'Located at a distance of 10 km.' },
+    { name: 'Madgaon (Margao)', description: 'Located at a distance of 35 km.' },
+  ] },
+  { title: 'Bus stand', options: [
+    { name: 'Panaji', description: 'Located 7 km away. With regular, direct connection to Goa University.' },
+  ] },
+];
+---
+
+<section class="reaching-goa" aria-labelledby="travel-title">
+  <div class="content">
+    <h2 id="travel-title">Reaching Goa University</h2>
+    <div class="connections">
+      {connections.map(({ title, options }) => <div class="transport-group">
+        <h3>{title}</h3>
+        <ul>{options.map(({ name, description }) => <li><h4>{name}</h4><p>{description}</p></li>)}</ul>
+      </div>)}
+    </div>
+  </div>
+</section>
+
+<style>
+  .reaching-goa { padding: 80px; background: #214cb5; color: #f7f6f0; }
+  .content { max-width: 1104px; margin-inline: auto; }
+  h2 { margin: 0; font-family: var(--landing-serif); font-size: 44px; font-weight: 400; line-height: 1.25; letter-spacing: -1.4px; }
+  .connections { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; margin-top: 48px; }
+  h3 { margin: 0; color: #d4def3; font-size: 12px; font-weight: 600; line-height: 15px; letter-spacing: 1.8px; text-transform: uppercase; }
+  ul { display: grid; gap: 16px; margin: 24px 0 0; padding: 0; list-style: none; }
+  li { padding: 24px; border-radius: 3px; background: #385fbd; }
+  h4 { margin: 0; font-family: var(--landing-serif); font-size: 18px; font-weight: 400; line-height: 1.4; letter-spacing: -0.35px; }
+  li p { margin: 10px 0 0; font-size: 14px; line-height: 1.6; }
+  @media (max-width: 1199px) {
+    .reaching-goa { padding: 72px 40px; }
+    h2 { font-size: 40px; letter-spacing: -1.2px; }
+    .connections { gap: 24px; margin-top: 32px; }
+  }
+  @media (max-width: 767px) {
+    .connections { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  }
+  @media (max-width: 600px) {
+    .reaching-goa { padding: 56px 24px; }
+    h2 { font-size: 32px; letter-spacing: -1px; }
+  }
+</style>

@@ -10,10 +10,10 @@ import MinimalFooter from '../components/MinimalFooter.astro';
 import LandingFonts from '../components/LandingFonts.astro';
 
 const links = [
-  { label: 'About', href: '#about' },
+  { label: 'Home', href: '/' },
   { label: 'Call for papers', href: '/call-for-papers' },
   { label: 'People', href: '/people' },
-  { label: 'Venue', href: '#venue' },
+  { label: 'Venue', href: '/venue' },
 ];
 const speakers = [
   { name: 'Prof. Hugo C. Cardoso', affiliation: 'FLUL-Lisbon' },
@@ -48,7 +48,7 @@ const milestones = [
       <Hero variant="landing" />
       <AboutACBLPE variant="landing" />
       <Satellite variant="landing" />
-      <ConferenceVenue variant="landing" />
+      <ConferenceVenue variant="landing" venueHref="/venue" />
       <KeynoteIntro variant="directory" speakers={speakers} />
       <Timeline variant="landing" milestones={milestones} />
     </main>

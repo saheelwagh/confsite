@@ -43,18 +43,38 @@ const members = [
 </section>
 
 <style>
-  .scientific-committee { box-sizing: border-box; min-height: 1324px; padding: 96px 80px; background: #faf7f0; color: #142e53; font-family: 'Avenir Next', Avenir, 'Segoe UI', Arial, sans-serif; scroll-margin-top: 24px; }
+  .scientific-committee { box-sizing: border-box; min-height: 1324px; padding: 96px 80px; background: #faf7f0; color: #152d53; font-family: var(--landing-sans, Arial, sans-serif); scroll-margin-top: 24px; }
   .content { max-width: 1280px; margin-inline: auto; }
-  .section-label { display: flex; align-items: center; gap: 16px; margin: 0; color: #0f33c2; font-size: 12px; font-weight: 600; line-height: 20px; letter-spacing: 1.5px; text-transform: uppercase; }
+  .section-label { display: flex; align-items: center; gap: 16px; margin: 0; color: #214cb5; font-size: 12px; font-weight: 600; line-height: 15px; letter-spacing: 1.5px; text-transform: uppercase; }
   .section-label > span:first-child { letter-spacing: 0; font-weight: 400; }
   .label-line { width: 40px; height: 1px; flex-shrink: 0; background: currentColor; }
-  h2 { margin: 24px 0 0; font-family: Georgia, 'Times New Roman', serif; font-size: 64px; font-weight: 400; line-height: 77px; letter-spacing: -1.8px; }
-  .proposal-notice { display: flex; align-items: center; justify-content: space-between; gap: 32px; margin-top: 24px; }
-  .proposal-notice p { margin: 0; color: #566984; font-size: 18px; line-height: 30px; }
-  .proposal-badge { flex-shrink: 0; padding: 8px 14px; border: 1px solid #0f33c2; color: #0f33c2; font-size: 11px; line-height: 16px; letter-spacing: 1px; text-transform: uppercase; }
+  h2 { margin: 28px 0 0; font-family: var(--landing-serif, Georgia, serif); font-size: 52px; font-weight: 400; line-height: 1.22; letter-spacing: -1.7px; }
+  .proposal-notice { display: flex; align-items: center; justify-content: space-between; gap: 32px; margin-top: 38px; }
+  .proposal-notice p { margin: 0; color: #58677a; font-size: 18px; line-height: 1.6; }
+  .proposal-badge { flex-shrink: 0; padding: 10px 16px; border: 1px solid #214cb5; color: #214cb5; font-size: 11px; font-weight: 500; line-height: 14px; letter-spacing: 1.3px; text-transform: uppercase; }
   .members { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(8, minmax(113px, auto)); grid-auto-flow: column; column-gap: 40px; margin: 50px 0 0; padding: 0; list-style: none; }
-  .members li { box-sizing: border-box; padding: 24px 0; border-top: 1px solid #c8cfd5; }
-  .members li:nth-child(8), .members li:nth-child(16), .members li:last-child { border-bottom: 1px solid #c8cfd5; }
-  .members h3 { margin: 0; font-size: 20px; font-weight: 500; line-height: 28px; }
-  .members p { margin: 8px 0 0; color: #566984; font-size: 14px; line-height: 24px; }
+  .members li { box-sizing: border-box; padding: 22px 0; border-top: 1px solid #ccd1d4; }
+  .members li:nth-child(8), .members li:nth-child(16), .members li:last-child { border-bottom: 1px solid #ccd1d4; }
+  .members h3 { margin: 0; font-size: 19px; font-weight: 500; line-height: 1.5; }
+  .members p { margin: 8px 0 0; color: #58677a; font-size: 15px; line-height: 1.6; }
+  @media (max-width: 1199px) {
+    .scientific-committee { min-height: 0; padding: 72px 40px; }
+    .section-label { gap: 10px; }
+    .label-line { width: 24px; }
+    h2 { font-size: 40px; letter-spacing: -1.2px; }
+    .proposal-notice { align-items: flex-start; margin-top: 32px; }
+    .proposal-notice p { font-size: 16px; }
+    .members { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(12, minmax(113px, auto)); column-gap: 32px; margin-top: 40px; }
+    .members li:nth-child(8), .members li:nth-child(16) { border-bottom: 0; }
+    .members li:nth-child(12) { border-bottom: 1px solid #ccd1d4; }
+  }
+  @media (max-width: 600px) {
+    .scientific-committee { padding: 56px 24px; }
+    .section-label { gap: 10px; font-size: 10px; line-height: 1.5; letter-spacing: 1px; }
+    h2 { font-size: 32px; letter-spacing: -1px; }
+    .proposal-notice { flex-direction: column; gap: 20px; }
+    .members { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; grid-auto-flow: row; margin-top: 32px; }
+    .members li { min-height: 113px; }
+    .members li:nth-child(12) { border-bottom: 0; }
+  }
 </style>

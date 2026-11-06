@@ -1,8 +1,16 @@
 ---
 import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
+import MinimalFooter from '../components/MinimalFooter.astro';
+import LandingFonts from '../components/LandingFonts.astro';
 import OrganisationCommittee from '../components/OrganisationCommittee.astro';
 import ScientificCommittee from '../components/ScientificCommittee.astro';
+import KeynoteIntro from '../components/KeynoteIntro.astro';
+const links = [
+  { label: 'Home', href: '/' },
+  { label: 'Call for papers', href: '/call-for-papers' },
+  { label: 'People', href: '/people' },
+  { label: 'Venue', href: '/venue' },
+];
 ---
 
 <html lang="en">
@@ -14,18 +22,19 @@ import ScientificCommittee from '../components/ScientificCommittee.astro';
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content="People at the ACBLPE 2027 conference." />
     <title>People | ACBLPE 2027</title>
+    <LandingFonts />
   </head>
-  <body id="top">
-    <Navigation />
+  <body id="top" class="people-page">
+    <Navigation variant="landing" homeHref="/landing" brandIcon="/call-for-papers/grid.svg" links={links} />
     <main id="main-content">
       <OrganisationCommittee />
+      <KeynoteIntro />
       <ScientificCommittee />
     </main>
-    <Footer />
+    <MinimalFooter />
   </body>
 </html>
 
 <style is:global>
-  :root { background: #f7f4ea; color: #132847; }
-  body { margin: 0; }
+  .people-page { --landing-sans: 'Landing Inter', Arial, sans-serif; --landing-serif: 'Landing Libre Baskerville', Georgia, serif; margin: 0; background: #faf7f0; color: #152d53; font-family: var(--landing-sans); }
 </style>

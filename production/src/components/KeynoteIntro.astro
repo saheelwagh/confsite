@@ -71,6 +71,20 @@ const { variant = 'default', speakers = [
   .directory .asterisk { display: flex; }
   .directory .asterisk img { transform: none; }
   @media (max-width: 1199px) {
+    .keynote-intro:not(.directory) { min-height: 0; padding: 72px 40px; }
+    .keynote-intro:not(.directory) .speaker-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+  @media (max-width: 767px) {
+    .keynote-intro:not(.directory) .speaker-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 600px) {
+    .keynote-intro:not(.directory) { padding: 56px 24px; }
+    .keynote-intro:not(.directory) h2 { font-size: 32px; line-height: 1.25; }
+  }
+  @media (max-width: 480px) {
+    .keynote-intro:not(.directory) .speaker-grid { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 1199px) {
     .directory { min-height: 949px; padding: 72px 40px; }
     .directory h2 { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
     .directory .speaker-grid { margin-top: 32px; }
