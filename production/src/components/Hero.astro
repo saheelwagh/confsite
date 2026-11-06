@@ -1,5 +1,7 @@
 ---
+import SectionLabel from './SectionLabel.astro';
 interface Props {
+  variant?: 'default' | 'landing';
   status?: string;
   location?: string;
   abstractHref?: string;
@@ -7,22 +9,24 @@ interface Props {
 }
 
 const {
+  variant = 'default',
   status = 'Call for abstracts open',
   location = 'Goa University · India',
-  abstractHref = '/#call-for-papers',
+  abstractHref = '/call-for-papers',
   registrationHref = '/#registration',
 } = Astro.props;
 ---
 
 <!-- Figma: Conference hero / Desktop (17:151), 1440 × 600. -->
-<section class="conference-hero" aria-labelledby="conference-title">
+<section class:list={['conference-hero', { landing: variant === 'landing' }]} aria-labelledby="conference-title">
+  {variant === 'landing' && <div class="responsive-label"><SectionLabel number="01" label="Conference hero" /></div>}
   <div class="hero-content">
     <div class="hero-meta">
       <span class="status">{status}</span>
       <span class="location">{location}</span>
     </div>
 
-    <h1 id="conference-title">Creoles <span>across</span> the<br />Indian Ocean</h1>
+    <h1 id="conference-title">Creoles <br class="mobile-break" /><span class="accent">across</span> the<br /><span class="second-line">Indian Ocean</span></h1>
 
     <div class="hero-footer">
       <p class="description">
@@ -30,14 +34,22 @@ const {
         Spanish-lexified Creoles (ACBLPE) comes to South Asia for the first time.
       </p>
       <div class="hero-actions">
-        <a class="button primary" href={abstractHref}>Submit an abstract</a>
-        <a class="button secondary" href={registrationHref}>Registration</a>
+        <a class="button primary" href={abstractHref}>
+          {variant === 'landing' ? 'Explore the call for papers' : 'Submit an abstract'}
+          {variant === 'landing' && <img src="/landing/arrow-down-right-light.svg" width="18" height="18" alt="" />}
+          {variant === 'landing' && <span class="responsive-arrow" aria-hidden="true">↘</span>}
+        </a>
+        <a class="button secondary" href={registrationHref}>Registration
+          {variant === 'landing' && <img src="/landing/arrow-down-right-blue.svg" width="18" height="18" alt="" />}
+          {variant === 'landing' && <span class="responsive-arrow" aria-hidden="true">↘</span>}
+        </a>
       </div>
     </div>
   </div>
 </section>
 
 <style>
+  .responsive-label, .responsive-arrow, .mobile-break { display: none; }
   .conference-hero {
     --hero-paper: #faf7f0;
     --hero-ink: #061238;
@@ -65,7 +77,7 @@ const {
     letter-spacing: -3px;
   }
 
-  h1 span { color: var(--hero-blue); }
+  h1 .accent { color: var(--hero-blue); }
   .hero-footer { display: flex; align-items: center; justify-content: space-between; gap: 40px; margin-top: 48px; }
   .description { margin: 0; color: #40577c; font-size: 18px; line-height: 26px; }
   .hero-actions { display: flex; flex-shrink: 0; align-items: center; gap: 12px; }
@@ -91,4 +103,41 @@ const {
   .primary:hover { background: var(--hero-ink); border-color: var(--hero-ink); }
   .secondary:hover { background: rgb(15 51 194 / 6%); }
   .button:focus-visible { outline: 2px solid var(--hero-blue); outline-offset: 5px; }
+  .landing { --hero-blue: #214cb5; font-family: var(--landing-sans); }
+  .landing .hero-meta { gap: 12px; line-height: 17.4px; }
+  .landing .status { padding-block: 5px; }
+  .landing .location, .landing .description { color: #425475; }
+  .landing h1 { margin-top: 28px; font-family: var(--landing-serif); font-size: 102px; line-height: 1.12; letter-spacing: -5.1px; }
+  .landing .second-line { margin-left: 1.4em; }
+  .landing .hero-footer { margin-top: 34px; gap: 32px; }
+  .landing .description { max-width: 640px; line-height: 1.45; }
+  .landing .hero-actions { gap: 12px; }
+  .landing .button { min-height: 54px; border-radius: 0; gap: 24px; font-size: 14px; font-weight: 600; line-height: 17px; }
+  .landing .primary { width: 267px; }
+  .landing .secondary { width: 173px; }
+  .landing .button img { flex-shrink: 0; }
+  @media (max-width: 1199px) {
+    .landing { position: relative; min-height: 570px; padding: 56px 40px; }
+    .landing .responsive-label { display: block; position: absolute; top: 20px; left: 40px; }
+    .landing h1 { font-size: 66px; letter-spacing: -3.3px; }
+    .landing .second-line { margin-left: 0; }
+    .landing .hero-footer { flex-direction: column; align-items: flex-start; margin-top: 30px; gap: 28px; }
+    .landing .description { max-width: none; font-size: 16px; }
+    .landing .description br { display: none; }
+    .landing .button { min-height: 56px; gap: 16px; }
+    .landing .secondary { width: 161px; }
+    .landing .button img { display: none; }
+    .landing .responsive-arrow { display: inline; }
+  }
+  @media (max-width: 600px) {
+    .landing { min-height: 650px; padding: 40px 24px 56px; }
+    .landing .responsive-label { left: 24px; }
+    .landing .hero-meta { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .landing h1 { margin-top: 27px; font-size: clamp(35px, 11.026vw, 43px); letter-spacing: -2.15px; }
+    .landing .mobile-break { display: initial; }
+    .landing .hero-footer { margin-top: 28px; gap: 29px; }
+    .landing .description { font-size: 15px; }
+    .landing .hero-actions { flex-direction: column; align-items: flex-start; width: 100%; }
+    .landing .button { max-width: 100%; }
+  }
 </style>

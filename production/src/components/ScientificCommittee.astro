@@ -1,0 +1,60 @@
+---
+const members = [
+  { name: 'Alan Baxter', affiliation: 'Universidade Federal da Bahia' },
+  { name: 'Alexandre Cobbinah', affiliation: 'Universidade de São Paulo' },
+  { name: 'Ana Paula Braga Mattos', affiliation: 'Aarhus University' },
+  { name: 'Clancy Clements', affiliation: 'Indiana University' },
+  { name: 'Dominika Swolkien', affiliation: 'Universidade de Cabo Verde' },
+  { name: 'Eduardo Tobar Delgado', affiliation: 'Escola de Idiomas de Vigo' },
+  { name: 'Eeva Sippola', affiliation: 'University of Helsinki' },
+  { name: 'Hugo Cardoso', affiliation: 'Universidade de Lisboa' },
+  { name: 'Jean-Louis Rougé', affiliation: 'Université d’Orléans' },
+  { name: 'Joachim Steffen', affiliation: 'Universität Augsburg' },
+  { name: 'Kofi Yakpo', affiliation: 'The University of Hong Kong' },
+  { name: 'Laura Álvarez López', affiliation: 'University of Stockholm' },
+  { name: 'Liliana Inverno', affiliation: 'Universidade de Coimbra' },
+  { name: 'Marlyse Baptista', affiliation: 'University of Pennsylvania' },
+  { name: 'Miguel Gutiérrez Maté', affiliation: 'Universität Augsburg' },
+  { name: 'Márcia Oliveira', affiliation: 'Universidade de São Paulo' },
+  { name: 'Mauro Fernández', affiliation: 'Universidade da Coruña' },
+  { name: 'Nélia Alexandre', affiliation: 'Universidade de Lisboa' },
+  { name: 'Nicolas Quint', affiliation: 'Centre National de la Recherche Scientifique – Paris' },
+  { name: 'Rita Gonçalves', affiliation: 'Universidade de Lisboa' },
+  { name: 'Sandro Sessarego', affiliation: 'University of Texas at Austin' },
+  { name: 'Susana Castillo Rodríguez', affiliation: 'SUNY – State University of New York College - Geneseo' },
+  { name: 'Tjerk Hagemeijer', affiliation: 'Universidade de Lisboa' },
+];
+---
+
+<section id="scientific-committee" class="scientific-committee" aria-labelledby="scientific-title">
+  <div class="content">
+    <p class="section-label"><span>10</span><span class="label-line" aria-hidden="true"></span>Scientific committee · Proposal</p>
+    <h2 id="scientific-title">Conference scientific committee</h2>
+    <div class="proposal-notice">
+      <p>The following composition is a proposal and is not yet confirmed.</p>
+      <span class="proposal-badge">Proposal · Not confirmed</span>
+    </div>
+    <ul class="members">
+      {members.map(({ name, affiliation }) => (
+        <li><h3>{name}</h3><p>{affiliation}</p></li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .scientific-committee { box-sizing: border-box; min-height: 1324px; padding: 96px 80px; background: #faf7f0; color: #142e53; font-family: 'Avenir Next', Avenir, 'Segoe UI', Arial, sans-serif; scroll-margin-top: 24px; }
+  .content { max-width: 1280px; margin-inline: auto; }
+  .section-label { display: flex; align-items: center; gap: 16px; margin: 0; color: #0f33c2; font-size: 12px; font-weight: 600; line-height: 20px; letter-spacing: 1.5px; text-transform: uppercase; }
+  .section-label > span:first-child { letter-spacing: 0; font-weight: 400; }
+  .label-line { width: 40px; height: 1px; flex-shrink: 0; background: currentColor; }
+  h2 { margin: 24px 0 0; font-family: Georgia, 'Times New Roman', serif; font-size: 64px; font-weight: 400; line-height: 77px; letter-spacing: -1.8px; }
+  .proposal-notice { display: flex; align-items: center; justify-content: space-between; gap: 32px; margin-top: 24px; }
+  .proposal-notice p { margin: 0; color: #566984; font-size: 18px; line-height: 30px; }
+  .proposal-badge { flex-shrink: 0; padding: 8px 14px; border: 1px solid #0f33c2; color: #0f33c2; font-size: 11px; line-height: 16px; letter-spacing: 1px; text-transform: uppercase; }
+  .members { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(8, minmax(113px, auto)); grid-auto-flow: column; column-gap: 40px; margin: 50px 0 0; padding: 0; list-style: none; }
+  .members li { box-sizing: border-box; padding: 24px 0; border-top: 1px solid #c8cfd5; }
+  .members li:nth-child(8), .members li:nth-child(16), .members li:last-child { border-bottom: 1px solid #c8cfd5; }
+  .members h3 { margin: 0; font-size: 20px; font-weight: 500; line-height: 28px; }
+  .members p { margin: 8px 0 0; color: #566984; font-size: 14px; line-height: 24px; }
+</style>

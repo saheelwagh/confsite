@@ -1,0 +1,39 @@
+---
+import SectionLabel from './SectionLabel.astro';
+---
+<footer class="minimal-footer">
+  <div class="responsive-footer-label"><SectionLabel number="07" label="Footer" light /></div>
+  <div class="footer-content">
+    <div class="conference">
+      <p class="conference-name">25th ACBLPE Conference</p>
+      <p class="conference-date"><time datetime="2027-09-01">1</time>–<time datetime="2027-09-03">3 September 2027</time></p>
+    </div>
+    <div class="organisers">
+      <p class="organiser-label">Organised by</p>
+      <p class="organiser-names">Goa University in associations with ACBLPE &amp; Camões I.P.</p>
+    </div>
+    <span class="footer-indicator" aria-hidden="true"></span>
+  </div>
+</footer>
+<style>
+  .responsive-footer-label { display: none; }
+  .minimal-footer { box-sizing: border-box; padding: 32px 80px 24px; background: #051752; color: white; font-family: 'Landing Roboto', Arial, sans-serif; }
+  .footer-content { position: relative; display: grid; grid-template-columns: 360px minmax(0, 420px); gap: 80px; box-sizing: border-box; min-height: 195px; max-width: 1280px; margin-inline: auto; padding-top: 48px; }
+  p { margin: 0; }
+  .conference-name { font-size: 28px; font-weight: 700; line-height: 36px; }
+  .conference-date { margin-top: 8px; color: #b0b2bc; font-size: 16px; line-height: 24px; }
+  .organiser-label { color: #dc932e; font-size: 14px; font-weight: 700; line-height: 18px; letter-spacing: 2.5px; text-transform: uppercase; }
+  .organiser-names { margin-top: 10px; color: #b0b2bc; font-size: 16px; line-height: 26px; }
+  .footer-indicator { position: absolute; left: 842px; bottom: 12px; box-sizing: border-box; width: 60px; height: 11px; border: 1px solid #8a92a4; border-radius: 6px; background: #020b29; }
+  @media (max-width: 1199px) {
+    .minimal-footer { position: relative; min-height: 357px; padding: 80px 40px 28px; }
+    .responsive-footer-label { display: block; position: absolute; top: 24px; left: 40px; }
+    .footer-content { grid-template-columns: minmax(0, 1fr); gap: 32px; min-height: 0; padding-top: 0; }
+    .organiser-names { max-width: 430px; }
+    .footer-indicator { position: static; justify-self: center; }
+  }
+  @media (max-width: 600px) {
+    .minimal-footer { min-height: 331px; padding-inline: 24px; }
+    .responsive-footer-label { left: 24px; }
+  }
+</style>

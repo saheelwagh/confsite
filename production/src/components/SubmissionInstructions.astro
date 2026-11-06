@@ -1,0 +1,138 @@
+---
+const instructions = [
+  {
+    title: 'Title',
+    description: 'Choose a title that clearly indicates the topic of the paper and is no more than one line long.',
+  },
+  {
+    title: 'Topic',
+    description: 'In the abstract, state the topic clearly.',
+  },
+  {
+    title: 'Prior work',
+    description: 'Make reference to prior work on the topic.',
+  },
+  {
+    title: 'Linguistic data',
+    description: 'When essential to the clarity of the argumentation, present linguistic data (with glosses).',
+  },
+  {
+    title: 'Abbreviations',
+    description: 'Explain abbreviations at their first occurrence.',
+  },
+  {
+    title: 'Experimental results',
+    description: 'If the paper presents the results of experiments but the collection of results is not yet complete, present the provisional results in detail. Also indicate the nature of the experimental design and the specific hypothesis tested.',
+  },
+  {
+    title: 'Hypothesis and analysis',
+    description: 'State the relevance of your hypothesis to past work. Describe the analysis in as much detail as possible. Avoid vague or unsubstantiated statements.',
+  },
+  {
+    title: 'Contribution',
+    description: 'State the contribution to linguistic research made by the analysis.',
+  },
+  {
+    title: 'Citations',
+    description: 'Citation of the relevant literature is essential within the abstract; however, the inclusion of a list of references at the end of the abstract is not obligatory.',
+  },
+];
+---
+
+<section id="submission-instructions" class="submission-instructions" aria-labelledby="instructions-title">
+  <div class="instructions-content">
+    <p class="section-label"><span>04</span><span class="label-line" aria-hidden="true"></span>Submission instructions</p>
+    <div class="instructions-layout">
+      <div class="instructions-introduction">
+        <h2 id="instructions-title">Organisation<br />of the Abstract</h2>
+        <aside class="checklist-note" aria-labelledby="checklist-note-title">
+          <h3 id="checklist-note-title">Before you submit</h3>
+          <p>Use these nine points as a checklist for a clear, well-supported abstract.</p>
+        </aside>
+        <p class="introduction">Many abstracts are rejected because they omit crucial information rather than because of errors in what they include. A suggested outline for abstracts follows:</p>
+      </div>
+
+      <ol class="instruction-list">
+        {instructions.map(({ title, description }, index) => (
+          <li class="instruction">
+            <span class="number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+            <div>
+              <h3>{title}</h3>
+              <p>{description}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+</section>
+
+<style>
+  .submission-instructions {
+    box-sizing: border-box;
+    padding: 96px 80px;
+    background: #fffdf8;
+    color: #152d53;
+    font-family: var(--landing-sans, Arial, sans-serif);
+    scroll-margin-top: 24px;
+  }
+  .instructions-content { max-width: 1280px; margin-inline: auto; }
+  .section-label { display: flex; align-items: center; gap: 16px; margin: 0 0 44px; color: #214cb5; font-size: 12px; font-weight: 600; line-height: 15px; letter-spacing: 1.5px; text-transform: uppercase; }
+  .section-label > span:first-child { letter-spacing: 0; font-weight: 400; }
+  .label-line { width: 40px; height: 1px; background: currentColor; }
+  .instructions-layout { display: grid; grid-template-columns: 360px minmax(0, 1fr); align-items: start; gap: 80px; }
+  /* Keep the introduction in view only while its instruction list is passing. */
+  .instructions-introduction { position: sticky; top: 32px; align-self: start; }
+  h2 { margin: 0; font-family: var(--landing-serif, Georgia, serif); font-size: 46px; font-weight: 400; line-height: 1.25; letter-spacing: -1.5px; }
+  .introduction { margin: 30px 0 0; color: #58677a; font-size: 18px; line-height: 1.7; }
+  .checklist-note { position: relative; margin-top: 30px; padding: 24px; background: #eaf0f7; }
+  .checklist-note::after {
+    content: '';
+    position: absolute;
+    top: calc(50% - 9px);
+    right: -14px;
+    border-block: 9px solid transparent;
+    border-left: 14px solid #214cb5;
+  }
+  .checklist-note h3 { margin: 0; color: #214cb5; font-size: 12px; font-weight: 600; line-height: 16px; letter-spacing: 1.2px; text-transform: uppercase; }
+  .checklist-note p { margin: 12px 0 0; font-size: 15px; line-height: 1.7; }
+  .instruction-list { margin: 0; padding: 0; list-style: none; border-top: 1px solid #ccd1d4; }
+  .instruction { display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 28px; padding: 25px 0; border-bottom: 1px solid #ccd1d4; }
+  .number { color: #214cb5; font-size: 13px; line-height: 20px; }
+  .instruction h3 { margin: 0; font-size: 16px; font-weight: 600; line-height: 20px; }
+  .instruction p { margin: 8px 0 0; color: #58677a; font-size: 18px; line-height: 1.7; }
+
+  /* A stacked, normally scrolling layout leaves room to read on smaller screens. */
+  @media (max-width: 1199px) {
+    .submission-instructions { padding: 72px 40px; }
+    .instructions-layout { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 32px; }
+    h2 { font-size: 32px; letter-spacing: -1px; }
+    .introduction, .instruction p { font-size: 16px; }
+    .section-label { gap: 10px; margin-bottom: 32px; }
+    .label-line { width: 24px; flex-shrink: 0; }
+  }
+  @media (max-width: 1000px) {
+    .instructions-layout { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+    .instructions-introduction { position: static; }
+    .checklist-note::after {
+      top: auto;
+      right: 24px;
+      bottom: -14px;
+      border-inline: 9px solid transparent;
+      border-top: 14px solid #214cb5;
+      border-bottom: 0;
+    }
+  }
+  @media (max-width: 600px) {
+    .submission-instructions { padding: 56px 24px; }
+    .section-label { gap: 12px; font-size: 10px; letter-spacing: 1px; }
+    .label-line { width: 24px; flex-shrink: 0; }
+    h2 { font-size: 30px; line-height: 1.25; }
+    .introduction, .instruction p { font-size: 16px; line-height: 27px; }
+    .instruction { grid-template-columns: 28px minmax(0, 1fr); gap: 12px; }
+  }
+  /* Avoid pinning a column taller than a short desktop viewport. */
+  @media (max-height: 600px) {
+    .instructions-introduction { position: static; }
+  }
+</style>

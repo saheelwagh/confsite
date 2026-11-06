@@ -1,0 +1,89 @@
+---
+import SectionLabel from './SectionLabel.astro';
+interface Speaker {
+  name: string;
+  affiliation: string;
+}
+
+interface Props {
+  variant?: 'default' | 'directory';
+  speakers?: Speaker[];
+}
+
+const { variant = 'default', speakers = [
+  { name: 'Hugo C. Cardoso', affiliation: 'FLUL – Lisbon' },
+  { name: 'J. Clancy Clements', affiliation: 'Indiana University' },
+  { name: 'Eeva Sippola', affiliation: 'University of Helsinki' },
+  { name: 'Sonal Kulkarni-Joshi', affiliation: 'Deccan College' },
+  { name: 'Anvita Abbi', affiliation: 'JNU' },
+] } = Astro.props;
+---
+
+<section id="speakers" class:list={['keynote-intro', { directory: variant === 'directory' }]} aria-labelledby="keynote-title">
+  <div class="keynote-content">
+    {variant === 'directory' ? <SectionLabel number="05" label="Keynote speakers" light /> : <p class="eyebrow">Keynote speakers (proposed)</p>}
+    <h2 id="keynote-title">{variant === 'directory' ? 'Keynote Speakers' : 'Voices of the field'}</h2>
+    <ul class="speaker-grid">
+      {speakers.map((speaker) => (
+        <li class="speaker-card">
+          {variant === 'directory' ? <picture class="asterisk"><source media="(max-width: 1199px)" srcset="/landing/asterisk-small.svg" width="18" height="18" /><img src="/landing/asterisk.svg" width="24" height="24" alt="" /></picture> : <div class="tile-header" aria-hidden="true">
+            <img src="/keynote-azulejo.svg" width="200" height="200" alt="" loading="lazy" decoding="async" />
+          </div>}
+          <h3>{speaker.name}</h3>
+          <p class="affiliation">{speaker.affiliation}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .keynote-intro {
+    box-sizing: border-box;
+    min-height: 565px;
+    padding: 80px;
+    background: #faf7f0;
+    color: #061238;
+    font-family: 'Avenir Next', Avenir, 'Segoe UI', Arial, sans-serif;
+    scroll-margin-top: 24px;
+  }
+  .keynote-content { max-width: 1104px; margin-inline: auto; }
+  .eyebrow { margin: 0 0 12px; color: #0f33c2; font-size: 11px; font-weight: 600; line-height: 16px; letter-spacing: 1.5px; text-transform: uppercase; }
+  h2, h3 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-weight: 400; }
+  h2 { font-size: 48px; line-height: 62px; letter-spacing: -1.2px; }
+  .speaker-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); margin: 24px 0 0; padding: 0; list-style: none; border-left: 1px solid #c6cee8; }
+  .speaker-card { min-height: 291px; box-sizing: border-box; padding: 19px; border: 1px solid #c6cee8; border-left: 0; background: #fffcf8; }
+  .tile-header { aspect-ratio: 1; overflow: hidden; background: #e5e4d3; }
+  .tile-header img { display: block; width: 120%; height: 120%; max-width: none; object-fit: cover; }
+  .speaker-card:nth-child(2) img { transform: translate(-12%, -5%) rotate(90deg); }
+  .speaker-card:nth-child(3) img { transform: translate(-6%, -14%); }
+  .speaker-card:nth-child(4) img { transform: translate(-14%, -8%) rotate(180deg); }
+  .speaker-card:nth-child(5) img { transform: translate(-4%, -12%) rotate(270deg); }
+  h3 { margin-top: 20px; font-size: 20px; line-height: 26px; letter-spacing: -0.3px; }
+  .affiliation { margin: 4px 0 0; color: #566984; font-size: 12px; line-height: 18px; }
+  .directory { min-height: 852px; padding: 96px 80px; background: #214cb5; color: #f7f6f0; font-family: var(--landing-sans); }
+  .directory .keynote-content { max-width: 1280px; }
+  .directory h2 { margin-top: 28px; font-family: var(--landing-serif); font-size: 52px; line-height: 1.22; letter-spacing: -1.7px; }
+  .directory .speaker-grid { display: block; margin-top: 40px; border-left: 0; border-bottom: 1px solid #5274c3; }
+  .directory .speaker-card { display: grid; grid-template-columns: 24px 720px minmax(0, 1fr); align-items: center; gap: 48px; min-height: 103px; padding: 30px 0; border: 0; border-top: 1px solid #5274c3; background: transparent; }
+  .directory h3 { margin: 0; font-family: var(--landing-serif); font-size: 34px; line-height: 42px; letter-spacing: -1px; }
+  .directory .affiliation { margin: 0; color: #d4def3; font-size: 17px; line-height: 1.5; }
+  .directory .asterisk { display: flex; }
+  .directory .asterisk img { transform: none; }
+  @media (max-width: 1199px) {
+    .directory { min-height: 949px; padding: 72px 40px; }
+    .directory h2 { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+    .directory .speaker-grid { margin-top: 32px; }
+    .directory .speaker-card { grid-template-columns: 18px minmax(0, 1fr); align-items: start; column-gap: 24px; row-gap: 12px; min-height: 135px; padding: 28px 0; }
+    .directory .asterisk { grid-column: 1; grid-row: 1 / 3; padding-top: 12px; }
+    .directory .asterisk img { width: 18px; height: 18px; }
+    .directory h3 { grid-column: 2; font-size: 30px; line-height: 1.4; letter-spacing: -0.7px; }
+    .directory .affiliation { grid-column: 2; font-size: 16px; }
+  }
+  @media (max-width: 600px) {
+    .directory { min-height: 864px; padding: 56px 24px; }
+    .directory .speaker-card { column-gap: 16px; min-height: 0; }
+    .directory .asterisk { padding-top: 8px; }
+    .directory h3 { font-size: 24px; }
+  }
+</style>

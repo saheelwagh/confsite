@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <radialGradient id="glaze"><stop stop-color="#eef0dc"/><stop offset="1" stop-color="#dddcc9"/></radialGradient>
+    <linearGradient id="blue" x2="1" y2="1"><stop stop-color="#426bb7"/><stop offset=".55" stop-color="#183b85"/><stop offset="1" stop-color="#5a7fbc"/></linearGradient>
+    <path id="petal" d="M50 48C35 40 40 28 47 32C50 34 50 40 50 45C50 40 50 34 53 32C60 28 65 40 50 48Z" fill="url(#blue)" stroke="#123477" stroke-width=".65"/>
+    <g id="sprig" stroke="#1d438d" stroke-width="1.2">
+      <path d="M1 1C5 7 18 5 18 16C18 22 10 22 11 16C12 12 16 13 15 17M2 2C13 3 25 4 25 15C25 23 19 28 16 33"/>
+      <path d="M5 4C8 17 1 21 1 25C10 24 16 20 13 13C21 16 24 8 21 3C16 8 11 6 5 4Z" fill="url(#blue)"/>
+      <path d="M2 9C6 14 6 19 3 22M15 7C20 10 19 13 17 14" stroke="#aabdd4" stroke-width=".8"/>
+    </g>
+    <g id="tile">
+      <path fill="url(#glaze)" d="M0 0h100v100H0z"/>
+      <path d="M50 0C50 12 66 14 77 23S87 47 100 50C87 53 85 67 77 77S50 88 50 100C50 88 34 86 23 77S13 53 0 50C13 47 15 33 23 23S50 12 50 0Z" stroke="#183a86" stroke-width="3"/>
+      <path d="M50 6C54 17 67 20 73 27S83 46 94 50C83 54 80 67 73 73S54 83 50 94C46 83 33 80 27 73S17 54 6 50C17 46 20 33 27 27S46 17 50 6Z" stroke="#6889bc" stroke-width="1"/>
+      <use href="#sprig"/><use href="#sprig" transform="rotate(90 50 50)"/><use href="#sprig" transform="rotate(180 50 50)"/><use href="#sprig" transform="rotate(270 50 50)"/>
+      <path d="M50 15C44 22 47 24 50 28C53 24 56 22 50 15ZM85 50C78 44 76 47 72 50C76 53 78 56 85 50ZM50 85C56 78 53 76 50 72C47 76 44 78 50 85ZM15 50C22 56 24 53 28 50C24 47 22 44 15 50Z" fill="#24519a"/>
+      <use href="#petal"/><use href="#petal" transform="rotate(45 50 50)"/><use href="#petal" transform="rotate(90 50 50)"/><use href="#petal" transform="rotate(135 50 50)"/><use href="#petal" transform="rotate(180 50 50)"/><use href="#petal" transform="rotate(225 50 50)"/><use href="#petal" transform="rotate(270 50 50)"/><use href="#petal" transform="rotate(315 50 50)"/>
+      <circle cx="50" cy="50" r="5.5" fill="#16377e" stroke="#b6c8df" stroke-width="1"/>
+      <circle cx="50" cy="50" r="2" fill="#426eb7"/>
+      <path d="M0 0h100v100H0z" stroke="#a5afbb" stroke-width=".5"/>
+    </g>
+    <pattern id="tiles" width="100" height="100" patternUnits="userSpaceOnUse"><use href="#tile"/></pattern>
+  </defs>
+  <path fill="url(#tiles)" d="M0 0h200v200H0z"/>
+</svg>

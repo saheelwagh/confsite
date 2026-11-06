@@ -1,0 +1,61 @@
+---
+import Navigation from '../components/Navigation.astro';
+import Hero from '../components/Hero.astro';
+import AboutACBLPE from '../components/AboutACBLPE.astro';
+import Satellite from '../components/Satellite.astro';
+import ConferenceVenue from '../components/ConferenceVenue.astro';
+import KeynoteIntro from '../components/KeynoteIntro.astro';
+import Timeline from '../components/Timeline.astro';
+import MinimalFooter from '../components/MinimalFooter.astro';
+import LandingFonts from '../components/LandingFonts.astro';
+
+const links = [
+  { label: 'About', href: '#about' },
+  { label: 'Call for papers', href: '/call-for-papers' },
+  { label: 'People', href: '/people' },
+  { label: 'Venue', href: '#venue' },
+];
+const speakers = [
+  { name: 'Prof. Hugo C. Cardoso', affiliation: 'FLUL-Lisbon' },
+  { name: 'Prof. J. Clancy Clements', affiliation: 'Indiana University' },
+  { name: 'Eeva Sippola', affiliation: 'Universidade de Helsinki' },
+  { name: 'Sonal Kulkarni-Joshi', affiliation: 'Deccan College' },
+  { name: 'Anvita Abbi', affiliation: 'Jawaharlal Nehru University' },
+];
+const milestones = [
+  { title: 'Submissions open', start: '2026-10-30', startLabel: '30 October 2026' },
+  { title: 'Submissions close', start: '2027-01-15', startLabel: '15 January 2027' },
+  { title: 'Review Completed', start: '2027-01-16', end: '2027-02-15', startLabel: '15 February 2027' },
+  { title: 'Satellite Conference', start: '2027-08-31', startLabel: '31 August 2027' },
+  { title: 'Main Conference', start: '2027-09-01', end: '2027-09-03', startLabel: '1', endLabel: '3 September 2027' },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content="The 25th ACBLPE Conference at Goa University: Creoles across the Indian Ocean, 1–3 September 2027." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <LandingFonts />
+    <title>ACBLPE 2027 | Creoles across the Indian Ocean</title>
+  </head>
+  <body id="top" class="landing-page">
+    <Navigation variant="landing" homeHref="/landing" links={links} />
+    <main id="main-content">
+      <Hero variant="landing" />
+      <AboutACBLPE variant="landing" />
+      <Satellite variant="landing" />
+      <ConferenceVenue variant="landing" />
+      <KeynoteIntro variant="directory" speakers={speakers} />
+      <Timeline variant="landing" milestones={milestones} />
+    </main>
+    <MinimalFooter />
+  </body>
+</html>
+
+<style is:global>
+  .landing-page { --landing-sans: 'Landing Inter', Arial, sans-serif; --landing-serif: 'Landing Libre Baskerville', Georgia, serif; margin: 0; background: #faf7f0; color: #152d53; font-family: var(--landing-sans); }
+</style>

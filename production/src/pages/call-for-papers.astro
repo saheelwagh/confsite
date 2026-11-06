@@ -1,0 +1,42 @@
+---
+import Navigation from '../components/Navigation.astro';
+import MinimalFooter from '../components/MinimalFooter.astro';
+import LandingFonts from '../components/LandingFonts.astro';
+import CallForPapersHero from '../components/CallForPapersHero.astro';
+import SubmissionInstructions from '../components/SubmissionInstructions.astro';
+import ReviewPresentationGuidance from '../components/ReviewPresentationGuidance.astro';
+
+const links = [
+  { label: 'About', href: '/landing#about' },
+  { label: 'Call for papers', href: '/call-for-papers' },
+  { label: 'People', href: '/people' },
+  { label: 'Venue', href: '/landing#venue' },
+  { label: 'Committees', href: '/people#committees' },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content="Call for papers for the ACBLPE 2027 conference." />
+    <title>Call for Papers | ACBLPE 2027</title>
+    <LandingFonts />
+  </head>
+  <body id="top" class="papers-page">
+    <Navigation variant="landing" homeHref="/landing" brandIcon="/call-for-papers/grid.svg" links={links} />
+    <main id="main-content">
+      <CallForPapersHero />
+      <SubmissionInstructions />
+      <ReviewPresentationGuidance />
+    </main>
+    <MinimalFooter />
+  </body>
+</html>
+
+<style is:global>
+  .papers-page { --landing-sans: 'Landing Inter', Arial, sans-serif; --landing-serif: 'Landing Libre Baskerville', Georgia, serif; margin: 0; background: #f8f6f0; color: #152d53; font-family: var(--landing-sans); }
+</style>

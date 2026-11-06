@@ -1,8 +1,14 @@
-<section id="about" class="about-acblpe" aria-labelledby="about-title">
+---
+import SectionLabel from './SectionLabel.astro';
+interface Props { variant?: 'default' | 'landing'; }
+const { variant = 'default' } = Astro.props;
+---
+<section id="about" class:list={['about-acblpe', { landing: variant === 'landing' }]} aria-labelledby="about-title">
+  {variant === 'landing' && <div class="landing-label"><SectionLabel number="02" label="About ACBLPE" light /></div>}
   <div class="about-layout">
     <div class="about-heading">
-      <p class="eyebrow">About ACBLPE</p>
-      <h2 id="about-title">Two decades of Iberian-<br />lexified creole<br />scholarship</h2>
+      {variant !== 'landing' && <p class="eyebrow">About ACBLPE</p>}
+      <h2 id="about-title">Two decades of Iberian-<br />lexified creole<br /> scholarship</h2>
     </div>
 
     <div class="about-copy">
@@ -66,4 +72,24 @@
   .about-copy { color: #566984; font-size: 16px; line-height: 24px; }
   .about-copy p { margin: 0; }
   .about-copy p + p { margin-top: 24px; }
+  .landing { min-height: 515px; padding: 96px 80px; background: #214cb5; color: #faf7f0; font-family: var(--landing-sans); }
+  .landing-label { max-width: 1280px; margin: 0 auto 28px; }
+  .landing .about-layout { max-width: 1280px; gap: 64px; }
+  .landing h2 { font-family: var(--landing-serif); font-size: 44px; line-height: 1.2; letter-spacing: -1px; }
+  .landing .about-copy { color: #faf7f0; font-size: 18px; line-height: 1.45; }
+  @media (max-width: 1199px) {
+    .landing { position: relative; min-height: 520px; padding: 64px 40px 72px; background: #193bb5; }
+    .landing-label { position: absolute; top: 64px; left: 40px; margin: 0; }
+    .landing .about-layout { gap: 32px; }
+    .landing .about-heading { padding-top: 30px; }
+    .landing h2 { font-size: 32px; }
+    .landing h2 br { display: none; }
+    .landing .about-copy { font-size: 16px; line-height: 24px; }
+  }
+  @media (max-width: 600px) {
+    .landing { min-height: 666px; padding: 56px 24px; }
+    .landing-label { top: 56px; left: 24px; }
+    .landing .about-layout { grid-template-columns: minmax(0, 1fr); }
+    .landing h2 { font-size: 30px; }
+  }
 </style>

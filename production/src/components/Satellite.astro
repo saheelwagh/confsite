@@ -1,5 +1,19 @@
-<section id="satellite" class="satellite" aria-labelledby="satellite-title">
+---
+import SectionLabel from './SectionLabel.astro';
+import SatelliteDatePanel from './SatelliteDatePanel.astro';
+interface Props { variant?: 'default' | 'landing'; }
+const { variant = 'default' } = Astro.props;
+---
+<section id="satellite" class:list={['satellite', { landing: variant === 'landing' }]} aria-labelledby="satellite-title">
+  {variant === 'landing' && <div class="landing-label"><SectionLabel number="03" label="Satellite conference" light /></div>}
   <div class="satellite-layout">
+    {variant === 'landing' ? <>
+      <div class="satellite-introduction">
+        <h2 id="satellite-title">Linguistic Encounters<br /> in South Asia.</h2>
+        <p class="description">The Satellite Conference will showcase research in contact linguistics involving the languages of South Asia and provide a platform for discussing diverse linguistic contact situations in the region. It aims to bring together renowned scholars and researchers in linguistics and to encourage dialogue on the processes, outcomes, and dynamics of language contact in South Asia.</p>
+      </div>
+      <SatelliteDatePanel />
+    </> : <>
     <div>
       <p class="eyebrow">Satellite conference · <time datetime="2027-08-31">31 August 2027</time></p>
       <h2 id="satellite-title">Linguistic<br />Encounters in<br />South Asia</h2>
@@ -9,6 +23,7 @@
       platform to discuss the processes, outcomes and dynamics of the region’s diverse language
       contact situations.
     </p>
+    </>}
   </div>
 </section>
 
@@ -52,4 +67,25 @@
   }
 
   .description { margin: 0; color: #d8e0ff; font-size: 18px; line-height: 28px; }
+  .landing { min-height: 569px; padding: 88px 80px; background: #152d53; color: #f7f6f0; font-family: var(--landing-sans); }
+  .landing-label { max-width: 1280px; margin: 0 auto 48px; }
+  .landing .satellite-layout { max-width: 1280px; grid-template-columns: 700px minmax(0, 1fr); align-items: start; }
+  .landing h2 { font-family: var(--landing-serif); font-size: 58px; line-height: 1.24; letter-spacing: -1.8px; }
+  .landing .description { max-width: 670px; margin-top: 28px; color: #d4def3; line-height: 1.75; }
+  @media (max-width: 1199px) {
+    .landing { min-height: 532px; padding: 72px 40px; }
+    .landing-label { margin-bottom: 32px; }
+    .landing .satellite-layout { grid-template-columns: minmax(0, 1fr) 274px; gap: 32px; }
+    .landing .satellite-introduction { display: contents; }
+    .landing h2 { grid-column: 1 / -1; font-size: 42px; line-height: 1.25; letter-spacing: -1.3px; }
+    .landing h2 br { display: none; }
+    .landing .description { margin: 0; font-size: 16px; line-height: 1.7; }
+  }
+  @media (max-width: 767px) {
+    .landing .satellite-layout { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .landing { min-height: 763px; padding: 56px 24px; }
+    .landing h2 { font-size: 32px; letter-spacing: -0.9px; }
+  }
 </style>

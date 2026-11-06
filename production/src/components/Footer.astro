@@ -1,0 +1,104 @@
+---
+const fees = [
+  { category: 'International researchers', amount: '€60' },
+  { category: 'International student researchers', amount: '€30' },
+  { category: 'Indian researchers', amount: '₹2,500' },
+  { category: 'Indian students', amount: '₹1,000' },
+];
+---
+
+<section id="registration" class="registration-section" aria-labelledby="registration-title">
+  <div class="content">
+    <p class="section-label"><span>11</span><span class="label-line" aria-hidden="true"></span>Registration</p>
+    <h2 id="registration-title">Join the conversation in Goa.</h2>
+    <div class="registration-layout">
+      <div class="registration-copy">
+        <p class="introduction">Four days of research, exchange and scholarly community.</p>
+        <p class="inclusions">Fees include the conference kit, tea/coffee breaks and working lunch on all four days: <time datetime="2027-08-31">31 August</time>–<time datetime="2027-09-03">3 September 2027</time>.</p>
+        <p class="accommodation">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="7.5" stroke="currentColor" stroke-width="1.3" />
+            <path d="M9 8v4M9 5.2v.6" stroke="currentColor" stroke-width="1.5" />
+          </svg>
+          Accommodation is not included.
+        </p>
+        <aside class="registration-notice" aria-labelledby="registration-notice-title">
+          <h3 id="registration-notice-title">Registration information</h3>
+          <p>A registration link and registration dates have not yet been provided. The fees shown are for information; online registration and payment are not available here.</p>
+        </aside>
+      </div>
+
+      <table class="fee-table" aria-label="Conference registration fees">
+        <thead><tr><th scope="col">Participant category</th><th scope="col">Fee</th></tr></thead>
+        <tbody>
+          {fees.map(({ category, amount }) => (
+            <tr><th scope="row">{category}</th><td>{amount}</td></tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="content">
+    <div class="footer-heading">
+      <div>
+        <p class="conference-label">Association of Portuguese and Spanish-Lexified Creoles</p>
+        <p class="footer-title">September 2027</p>
+      </div>
+      <a class="papers-button" href="/call-for-papers">
+        Call For Papers
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="m4 12 8-8M4 4h8v8" stroke="currentColor" stroke-width="1.3" />
+        </svg>
+      </a>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="association-details">
+        <p class="address">Goa University</p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .registration-section, .site-footer { box-sizing: border-box; font-family: 'Avenir Next', Avenir, 'Segoe UI', Arial, sans-serif; }
+  .content { max-width: 1280px; margin-inline: auto; }
+  .registration-section { min-height: 810px; padding: 96px 80px; background: #e8eff7; color: #142e53; scroll-margin-top: 24px; }
+  .section-label { display: flex; align-items: center; gap: 16px; margin: 0; color: #0f33c2; font-size: 12px; font-weight: 600; line-height: 20px; letter-spacing: 1.5px; text-transform: uppercase; }
+  .section-label > span:first-child { letter-spacing: 0; font-weight: 400; }
+  .label-line { width: 40px; height: 1px; background: currentColor; }
+  h2 { margin: 24px 0 0; font-family: Georgia, 'Times New Roman', serif; font-size: 64px; font-weight: 400; line-height: 77px; letter-spacing: -1.8px; }
+  .registration-layout { display: grid; grid-template-columns: 440px minmax(0, 1fr); align-items: start; gap: 80px; margin-top: 32px; }
+  .introduction { margin: 0; font-size: 20px; line-height: 34px; }
+  .inclusions { margin: 32px 0 0; color: #566984; font-size: 18px; line-height: 31px; }
+  .accommodation { display: flex; align-items: center; gap: 12px; margin: 32px 0 0; font-size: 14px; line-height: 20px; }
+  .accommodation svg { flex-shrink: 0; color: #0f33c2; }
+  .registration-notice { margin-top: 32px; padding: 24px 23px; border: 1px solid #c8cfd5; }
+  .registration-notice h3 { margin: 0; color: #0f33c2; font-size: 12px; font-weight: 600; line-height: 18px; letter-spacing: 1px; text-transform: uppercase; }
+  .registration-notice p { margin: 12px 0 0; color: #566984; font-size: 14px; line-height: 26px; }
+  .fee-table { width: 100%; border-collapse: collapse; }
+  .fee-table thead th { padding: 0 0 18px; border-bottom: 1px solid #c8cfd5; color: #0f33c2; font-size: 12px; font-weight: 400; line-height: 18px; letter-spacing: 1.2px; text-align: left; text-transform: uppercase; }
+  .fee-table thead th:last-child { text-align: right; }
+  .fee-table tbody th, .fee-table td { height: 107px; box-sizing: border-box; padding: 24px 0; border-bottom: 1px solid #c8cfd5; }
+  .fee-table tbody th { font-size: 20px; font-weight: 400; line-height: 28px; text-align: left; }
+  .fee-table td { color: #214ea2; font-family: Georgia, 'Times New Roman', serif; font-size: 48px; font-weight: 400; line-height: 58px; text-align: right; white-space: nowrap; }
+  .site-footer { min-height: 383px; padding: 64px 80px 36px; background: #142e53; color: #faf7f0; }
+  .footer-heading { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+  .conference-label { margin: 0; color: #ced9ec; font-size: 12px; line-height: 18px; letter-spacing: 1.5px; text-transform: uppercase; }
+  .footer-title { margin: 16px 0 0; font-family: Georgia, 'Times New Roman', serif; font-size: 88px; line-height: 106px; letter-spacing: -3.5px; }
+  .papers-button { display: inline-flex; align-items: center; justify-content: space-between; gap: 28px; box-sizing: border-box; min-width: 192px; min-height: 54px; padding: 16px 24px; border: 1px solid #d3dce9; background: #faf7f0; color: #0f33c2; font-size: 14px; font-weight: 600; line-height: 20px; text-decoration: none; }
+  .papers-button:hover { background: #e8eff7; }
+  .footer-bottom { display: flex; align-items: end; justify-content: space-between; gap: 32px; margin-top: 36px; padding-top: 48px; border-top: 1px solid #547cc5; }
+  .association-details p { margin: 0; font-size: 14px; line-height: 20px; }
+  .association-details .address { color: #ced9ec; font-size: 13px; }
+  nav { display: flex; align-items: center; gap: 28px; }
+  nav a { color: #ced9ec; font-size: 13px; line-height: 20px; text-decoration: none; white-space: nowrap; }
+  nav a:hover { color: #faf7f0; text-decoration: underline; text-underline-offset: 4px; }
+  a:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
+</style>

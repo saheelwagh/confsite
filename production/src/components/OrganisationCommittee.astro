@@ -1,0 +1,58 @@
+---
+const organisations = [
+  'Goa University',
+  'ACBLPE',
+  'Directorate, Visiting Research Professor Programme',
+  'Joaquim Heliodoro da Cunha Rivara Chair',
+  'Camões I.P.',
+  'CLP-Camões, Goa',
+];
+const committee = [
+  { name: 'Prof. Anuradha Wagle', role: 'Dean, SGSLL' },
+  { name: 'Dr. Prakash Parinekar', role: 'Director, VRPP' },
+  { name: 'Delfim Correia da Silva', role: 'CLP-Camões, Goa' },
+  { name: 'Loraine Alberto', role: 'P.D.M.A. Portuguese' },
+  { name: 'Dhruv Usgaonkar', role: '' },
+  { name: 'Jeanette Barbosa Noronha', role: '' },
+];
+---
+
+<section id="committees" class="organisation-section" aria-labelledby="organisation-title">
+  <div class="content">
+    <p class="section-label"><span>09</span><span class="label-line" aria-hidden="true"></span>Organisation</p>
+    <h1 id="organisation-title">A shared scholarly undertaking.</h1>
+    <div class="organisation-layout">
+      <div>
+        <h2>Organisation</h2>
+        <ul class="organisations">
+          {organisations.map((organisation) => <li>{organisation}</li>)}
+        </ul>
+      </div>
+      <div>
+        <h2>Organising committee</h2>
+        <ul class="organising-committee">
+          {committee.map(({ name, role }) => (
+            <li><span class="member-name">{name}</span>{role && <span class="member-role">{role}</span>}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .organisation-section { box-sizing: border-box; min-height: 941px; padding: 96px 80px; background: #e8eff7; color: #142e53; font-family: 'Avenir Next', Avenir, 'Segoe UI', Arial, sans-serif; scroll-margin-top: 24px; }
+  .content { max-width: 1280px; margin-inline: auto; }
+  .section-label { display: flex; align-items: center; gap: 16px; margin: 0; color: #0f33c2; font-size: 12px; font-weight: 600; line-height: 20px; letter-spacing: 1.5px; text-transform: uppercase; }
+  .section-label > span:first-child { letter-spacing: 0; font-weight: 400; }
+  .label-line { width: 40px; height: 1px; flex-shrink: 0; background: currentColor; }
+  h1 { margin: 24px 0 0; font-family: Georgia, 'Times New Roman', serif; font-size: 64px; font-weight: 400; line-height: 77px; letter-spacing: -1.8px; }
+  .organisation-layout { display: grid; grid-template-columns: 500px minmax(0, 1fr); gap: 80px; margin-top: 32px; }
+  h2 { margin: 0; color: #0f33c2; font-size: 12px; font-weight: 600; line-height: 18px; letter-spacing: 1.5px; text-transform: uppercase; }
+  ul { margin: 28px 0 0; padding: 0; list-style: none; }
+  li { box-sizing: border-box; min-height: 79px; padding: 20px 0; border-top: 1px solid #c8cfd5; }
+  .organisations li { font-family: Georgia, 'Times New Roman', serif; font-size: 30px; line-height: 38px; letter-spacing: -0.6px; }
+  .organising-committee li { display: grid; grid-template-columns: 360px minmax(0, 1fr); align-items: center; gap: 24px; }
+  .member-name { font-size: 20px; line-height: 28px; }
+  .member-role { color: #566984; font-size: 16px; line-height: 24px; }
+</style>

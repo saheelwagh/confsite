@@ -1,0 +1,109 @@
+---
+import SectionLabel from './SectionLabel.astro';
+interface Props {
+  variant?: 'default' | 'landing';
+  venueHref?: string;
+  directionsHref?: string;
+}
+
+const destination = encodeURIComponent('Conference Hall, Admin Block, Goa University, Goa, India');
+const {
+  variant = 'default',
+  venueHref = `https://www.google.com/maps/search/?api=1&query=${destination}`,
+  directionsHref = `https://www.google.com/maps/dir/?api=1&destination=${destination}`,
+} = Astro.props;
+---
+
+<section id="venue" class:list={['conference-venue', { landing: variant === 'landing' }]} aria-labelledby="venue-title">
+  <div class="venue-content">
+    {variant === 'landing' ? <div class="landing-label"><SectionLabel number="04" label="The venue" /></div> : <p class="section-label"><span>07</span><span class="label-line" aria-hidden="true"></span>The venue</p>}
+
+    <div class="venue-layout">
+      <div class="location-card">
+        <div class="location-meta">
+          <span>South Asia · India</span>
+          {variant === 'landing' ? <picture><source media="(max-width: 1199px)" srcset="/landing/compass-responsive.svg" /><img src="/landing/compass.svg" width="28" height="28" alt="" /></picture> : <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="11.5" stroke="currentColor" />
+            <path d="m16.5 7.5-2.2 6.8-6.8 2.2 2.2-6.8 6.8-2.2Z" stroke="currentColor" stroke-linejoin="round" />
+          </svg>}
+        </div>
+        <p class="place-name">Goa</p>
+        <a class="explore-link" href={venueHref}>
+          Explore the venue
+          {variant === 'landing' ? <picture><source media="(max-width: 1199px)" srcset="/landing/arrow-right-responsive.svg" /><img src="/landing/arrow-right.svg" width="16" height="16" alt="" /></picture> : <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <path d="M3 9h11M9 4l5 5-5 5" stroke="currentColor" stroke-width="1.5" />
+          </svg>}
+        </a>
+      </div>
+
+      <div class="venue-details">
+        <h2 id="venue-title">Conference Hall, Admin Block,<br /> Goa University</h2>
+        <a class="directions-link" href={directionsHref}>
+          {variant === 'landing' ? <picture><source media="(max-width: 1199px)" srcset="/landing/map-pin-responsive.svg" /><img src="/landing/map-pin.svg" width="16" height="16" alt="" /></picture> : <svg width="16" height="18" viewBox="0 0 16 18" fill="none" aria-hidden="true">
+            <path d="M13.5 6.5c0 4-5.5 9.5-5.5 9.5S2.5 10.5 2.5 6.5a5.5 5.5 0 1 1 11 0Z" stroke="currentColor" stroke-width="1.3" />
+            <circle cx="8" cy="6.5" r="2" stroke="currentColor" stroke-width="1.3" />
+          </svg>}
+          Directions
+        </a>
+        {variant !== 'landing' && <p class="conference-dates"><time datetime="2027-09-01">1</time>–<time datetime="2027-09-03">3 September 2027</time></p>}
+        <p class="description">The conference brings Iberian-lexified creole studies into dialogue with the linguistic and historical contexts of the Indian Ocean.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .conference-venue {
+    box-sizing: border-box;
+    min-height: 626px;
+    padding: 96px 80px;
+    background: #faf7f0;
+    color: #061238;
+    font-family: 'Avenir Next', Avenir, 'Segoe UI', Arial, sans-serif;
+    scroll-margin-top: 24px;
+  }
+  .venue-content { max-width: 1280px; margin-inline: auto; }
+  .section-label { display: flex; align-items: center; gap: 16px; margin: 0 0 39px; color: #214ea2; font-size: 12px; font-weight: 600; line-height: 20px; letter-spacing: 1.5px; text-transform: uppercase; }
+  .section-label > span:first-child { letter-spacing: 0; font-weight: 400; }
+  .label-line { width: 40px; height: 1px; background: currentColor; }
+  .venue-layout { display: grid; grid-template-columns: 540px minmax(0, 1fr); gap: 80px; align-items: center; }
+  .location-card { box-sizing: border-box; min-height: 375px; padding: 36px; background: #e8eff7; color: #214ea2; }
+  .location-meta { display: flex; align-items: center; justify-content: space-between; gap: 16px; font-size: 11px; line-height: 20px; letter-spacing: 1.5px; text-transform: uppercase; }
+  .place-name { margin: 24px 0 28px; font-family: Georgia, 'Times New Roman', serif; font-size: 180px; font-weight: 400; line-height: 180px; letter-spacing: -8px; }
+  .explore-link { display: flex; align-items: center; gap: 8px; padding-top: 28px; border-top: 1px solid #c2cddc; color: inherit; font-size: 14px; font-weight: 600; line-height: 20px; text-underline-offset: 3px; }
+  h2 { margin: 0; font-size: 30px; font-weight: 600; line-height: 39px; letter-spacing: -0.6px; }
+  .directions-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; color: #566984; font-size: 14px; font-weight: 600; line-height: 20px; text-underline-offset: 3px; }
+  .conference-dates { margin: 24px 0 0; color: #214ea2; font-size: 18px; line-height: 28px; }
+  .description { margin: 28px 0 0; color: #566984; font-size: 18px; line-height: 30px; }
+  a:hover { color: #0f33c2; }
+  a:focus-visible { outline: 2px solid #0f33c2; outline-offset: 5px; }
+  .landing { min-height: 623px; font-family: var(--landing-sans); }
+  .landing-label { margin-bottom: 44px; }
+  .landing .location-card { min-height: 374px; background: #eaf0f7; color: #214cb5; }
+  .landing .location-meta { font-size: 12px; line-height: 15px; }
+  .landing .place-name { margin: 28px 0; font-family: var(--landing-serif); font-size: 156px; line-height: 1.1; }
+  .landing .explore-link { border-color: #ccd1d4; line-height: 17px; letter-spacing: 0.4px; }
+  .landing h2 { color: #33363b; font-size: 28px; line-height: 1.4; letter-spacing: 0; }
+  .landing .directions-link { color: #58677a; line-height: 17px; letter-spacing: 0.4px; }
+  .landing .description { color: #58677a; line-height: 1.7; }
+  .landing picture { display: flex; flex-shrink: 0; }
+  @media (max-width: 1199px) {
+    .landing { min-height: 477px; padding: 72px 40px; }
+    .landing-label { margin-bottom: 32px; }
+    .landing .venue-layout { grid-template-columns: 320px minmax(0, 1fr); gap: 32px; }
+    .landing .location-card { min-height: 0; padding: 24px; }
+    .landing .location-meta { font-size: 10px; letter-spacing: 1px; }
+    .landing .place-name { margin-block: 24px; font-size: 108px; letter-spacing: -6px; }
+    .landing .explore-link { padding-top: 24px; }
+    .landing h2 { font-size: 26px; }
+    .landing h2 br { display: none; }
+    .landing .description { margin-top: 24px; font-size: 16px; }
+  }
+  @media (max-width: 767px) {
+    .landing .venue-layout { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .landing { min-height: 675px; padding: 56px 24px; }
+    .landing h2 { font-size: 24px; }
+  }
+</style>

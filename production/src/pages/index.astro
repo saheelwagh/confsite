@@ -4,6 +4,9 @@ import Hero from '../components/Hero.astro';
 import AboutACBLPE from '../components/AboutACBLPE.astro';
 import Satellite from '../components/Satellite.astro';
 import Timeline from '../components/Timeline.astro';
+import KeynoteIntro from '../components/KeynoteIntro.astro';
+import ConferenceVenue from '../components/ConferenceVenue.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <html lang="en">
@@ -16,14 +19,17 @@ import Timeline from '../components/Timeline.astro';
 		<meta name="description" content="ACBLPE 2027 conference website." />
 		<title>ACBLPE 2027</title>
 	</head>
-	<body>
+	<body id="top">
 		<Navigation />
 		<main id="main-content">
 			<Hero />
 			<AboutACBLPE />
 			<Satellite />
 			<Timeline />
+			<KeynoteIntro />
+			<ConferenceVenue />
 		</main>
+		<Footer />
 	</body>
 </html>
 
