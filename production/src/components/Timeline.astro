@@ -1,0 +1,162 @@
+---
+interface Milestone {
+  title: string;
+  start: string;
+  end?: string;
+  startLabel: string;
+  endLabel?: string;
+}
+
+interface Props {
+  milestones?: Milestone[];
+}
+
+const { milestones = [
+  { title: 'Submissions open', start: '2026-10-30', startLabel: '30 October 2026' },
+  { title: 'Submissions close', start: '2027-01-15', startLabel: '15 January 2027' },
+  { title: 'Review Completed', start: '2027-01-16', end: '2027-02-15', startLabel: '15 February 2027' },
+  { title: 'Satellite Conference', start: '2027-08-31', startLabel: '31 August 2027' },
+  { title: 'Main Conference', start: '2027-08-31', end: '2027-09-03', startLabel: '31 August', endLabel: '3 September 2027' },
+] } = Astro.props;
+---
+
+<section id="timeline" class="timeline" aria-labelledby="timeline-title">
+  <div class="timeline-content">
+    <p class="eyebrow">Timeline</p>
+    <h2 id="timeline-title">Important Dates</h2>
+    <ol class="milestones">
+      {milestones.map((milestone, index) => (
+        <li class="milestone" data-start={milestone.start} data-end={milestone.end}>
+          <span class="number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+          <h3>{milestone.title}<span class="upcoming-label" hidden>Upcoming</span></h3>
+          <span class="date">
+            <time datetime={milestone.endLabel ? milestone.start : (milestone.end ?? milestone.start)}>{milestone.startLabel}</time>
+            {milestone.end && milestone.endLabel && <> – <time datetime={milestone.end}>{milestone.endLabel}</time></>}
+          </span>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<script>
+  import { activePhaseIndexes, conferenceDay } from '../lib/timeline';
+
+  document.querySelectorAll<HTMLElement>('.timeline').forEach((timeline) => {
+    const rows = [...timeline.querySelectorAll<HTMLElement>('.milestone')];
+    const phases = rows.map((row) => ({ start: row.dataset.start!, end: row.dataset.end }));
+    let midnightTimer: ReturnType<typeof setTimeout>;
+
+    const updatePhase = () => {
+      const now = new Date();
+      const today = conferenceDay(now);
+      const active = activePhaseIndexes(phases, today);
+      const lastActive = active.length ? Math.max(...active) : -1;
+      const upcoming = phases.findIndex((phase, index) => index > lastActive && phase.start > today);
+      rows.forEach((row, index) => {
+        const isActive = active.includes(index);
+        row.classList.toggle('is-active', isActive);
+        row.classList.toggle('is-upcoming', index === upcoming);
+        row.querySelector<HTMLElement>('.upcoming-label')!.hidden = index !== upcoming;
+        if (isActive) row.setAttribute('aria-current', 'step');
+        else row.removeAttribute('aria-current');
+      });
+
+      // This runs in the browser so a static build doesn't freeze the active phase.
+      clearTimeout(midnightTimer);
+      const nextMidnight = Date.parse(`${today}T00:00:00+05:30`) + 86_400_000;
+      midnightTimer = setTimeout(updatePhase, Math.max(1, nextMidnight - now.getTime()));
+    };
+
+    updatePhase();
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) updatePhase();
+    });
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          timeline.classList.add('is-revealed');
+          observer.disconnect();
+        }
+      }, { threshold: 0.1 });
+      observer.observe(timeline.querySelector('.milestones')!);
+    } else {
+      timeline.classList.add('is-revealed');
+    }
+  });
+</script>
+
+<style>
+  .timeline {
+    box-sizing: border-box;
+    min-height: 739px;
+    padding: 80px 80px 108px;
+    background: #faf7f0;
+    color: #061238;
+    font-family: 'Avenir Next', Avenir, 'Segoe UI', Arial, sans-serif;
+    scroll-margin-top: 24px;
+  }
+
+  .timeline-content { max-width: 1104px; margin-inline: auto; }
+  .eyebrow { margin: 0 0 16px; color: #0f33c2; font-size: 11px; font-weight: 600; line-height: 16px; letter-spacing: 2px; text-transform: uppercase; }
+  h2, h3 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-weight: 400; }
+  h2 { font-size: 52px; line-height: 62px; letter-spacing: -1.3px; }
+  .milestones { margin: 32px 0 0; padding: 0; list-style: none; border-top: 1px solid #d3dce9; }
+  .milestone { display: grid; grid-template-columns: 56px minmax(0, 1fr) auto; align-items: center; gap: 24px; min-height: 85px; box-sizing: border-box; border-bottom: 1px solid #d3dce9; }
+  .number { color: #0f33c2; font-size: 14px; line-height: 20px; }
+  h3 { font-size: 32px; line-height: 40px; letter-spacing: -0.6px; }
+  .date { color: #566984; font-size: 14px; line-height: 20px; text-align: right; white-space: nowrap; }
+
+  .milestone { position: relative; }
+  .upcoming-label {
+    display: inline-block;
+    margin-left: 16px;
+    color: #566984;
+    font-family: 'Avenir Next', Avenir, 'Segoe UI', Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    vertical-align: middle;
+  }
+  .upcoming-label[hidden] { display: none; }
+  .milestone::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: calc(50% - 4px);
+    width: 0;
+    height: 0;
+    border-block: 4px solid transparent;
+    border-left: 6px solid #0f33c2;
+    opacity: 0;
+  }
+  .is-revealed .milestone.is-active::before {
+    opacity: 1;
+    animation: phase-pointer 2.2s ease-in-out 2;
+  }
+  @keyframes phase-pointer {
+    0%, 100% { transform: translateX(0); opacity: 1; }
+    50% { transform: translateX(4px); opacity: 0.5; }
+  }
+  .is-revealed .milestone.is-upcoming .date {
+    border-radius: 2px;
+    /* Wait until the pointer's two cycles (4.4s) have finished. */
+    animation: upcoming-date 1.8s ease 5s forwards;
+  }
+  @keyframes upcoming-date {
+    from { color: #566984; background-color: transparent; box-shadow: 0 0 0 6px transparent; }
+    to { color: #0f33c2; background-color: rgb(15 51 194 / 6%); box-shadow: 0 0 0 6px rgb(15 51 194 / 6%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .is-revealed .milestone.is-active::before { animation: none; }
+    .is-revealed .milestone.is-upcoming .date {
+      animation: none;
+      color: #0f33c2;
+      background-color: rgb(15 51 194 / 6%);
+      box-shadow: 0 0 0 6px rgb(15 51 194 / 6%);
+    }
+  }
+</style>

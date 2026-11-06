@@ -1,0 +1,94 @@
+---
+interface Props {
+  status?: string;
+  location?: string;
+  abstractHref?: string;
+  registrationHref?: string;
+}
+
+const {
+  status = 'Call for abstracts open',
+  location = 'Goa University · India',
+  abstractHref = '/#call-for-papers',
+  registrationHref = '/#registration',
+} = Astro.props;
+---
+
+<!-- Figma: Conference hero / Desktop (17:151), 1440 × 600. -->
+<section class="conference-hero" aria-labelledby="conference-title">
+  <div class="hero-content">
+    <div class="hero-meta">
+      <span class="status">{status}</span>
+      <span class="location">{location}</span>
+    </div>
+
+    <h1 id="conference-title">Creoles <span>across</span> the<br />Indian Ocean</h1>
+
+    <div class="hero-footer">
+      <p class="description">
+        The 25th Annual Conference of the Association of Portuguese and<br />
+        Spanish-lexified Creoles (ACBLPE) comes to South Asia for the first time.
+      </p>
+      <div class="hero-actions">
+        <a class="button primary" href={abstractHref}>Submit an abstract</a>
+        <a class="button secondary" href={registrationHref}>Registration</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .conference-hero {
+    --hero-paper: #faf7f0;
+    --hero-ink: #061238;
+    --hero-blue: #0f33c2;
+    --hero-gold: #f5b23b;
+    min-height: 600px;
+    box-sizing: border-box;
+    padding: 64px 80px;
+    background: var(--hero-paper);
+    color: var(--hero-ink);
+    font-family: 'Avenir Next', Avenir, 'Segoe UI', Arial, sans-serif;
+  }
+
+  .hero-content { max-width: 1280px; margin-inline: auto; }
+  .hero-meta { display: flex; align-items: center; gap: 16px; font-size: 12px; line-height: 18px; }
+  .status { padding: 4px 12px; border-radius: 999px; background: var(--hero-gold); }
+  .location { color: #40577c; }
+
+  h1 {
+    margin: 24px 0 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 112px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -3px;
+  }
+
+  h1 span { color: var(--hero-blue); }
+  .hero-footer { display: flex; align-items: center; justify-content: space-between; gap: 40px; margin-top: 48px; }
+  .description { margin: 0; color: #40577c; font-size: 18px; line-height: 26px; }
+  .hero-actions { display: flex; flex-shrink: 0; align-items: center; gap: 12px; }
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 56px;
+    padding: 0 24px;
+    box-sizing: border-box;
+    border: 1px solid var(--hero-blue);
+    border-radius: 999px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .primary { background: var(--hero-blue); color: var(--hero-paper); }
+  .secondary { color: var(--hero-blue); }
+  .primary:hover { background: var(--hero-ink); border-color: var(--hero-ink); }
+  .secondary:hover { background: rgb(15 51 194 / 6%); }
+  .button:focus-visible { outline: 2px solid var(--hero-blue); outline-offset: 5px; }
+</style>
