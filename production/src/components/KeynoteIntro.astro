@@ -21,7 +21,7 @@ const { variant = 'default', speakers = [
 
 <section id="speakers" class:list={['keynote-intro', { directory: variant === 'directory' }]} aria-labelledby="keynote-title">
   <div class="keynote-content">
-    {variant === 'directory' ? <SectionLabel number="05" label="Keynote speakers" light /> : <p class="eyebrow">Keynote speakers (proposed)</p>}
+    <div class:list={{ 'section-helper': variant !== 'directory' }}><SectionLabel number={variant === 'directory' ? '05' : undefined} label={variant === 'directory' ? 'Keynote speakers' : 'Keynote speakers (proposed)'} light={variant === 'directory'} /></div>
     <h2 id="keynote-title">{variant === 'directory' ? 'Keynote Speakers' : 'Voices of the field'}</h2>
     <ul class="speaker-grid">
       {speakers.map((speaker) => (
@@ -48,7 +48,7 @@ const { variant = 'default', speakers = [
     scroll-margin-top: 24px;
   }
   .keynote-content { max-width: 1104px; margin-inline: auto; }
-  .eyebrow { margin: 0 0 12px; color: #0f33c2; font-size: 11px; font-weight: 600; line-height: 16px; letter-spacing: 1.5px; text-transform: uppercase; }
+  .section-helper { margin-bottom: 12px; }
   h2, h3 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-weight: 400; }
   h2 { font-size: 48px; line-height: 62px; letter-spacing: -1.2px; }
   .speaker-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); margin: 24px 0 0; padding: 0; list-style: none; border-left: 1px solid #c6cee8; }

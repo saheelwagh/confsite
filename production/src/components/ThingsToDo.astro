@@ -1,4 +1,5 @@
 ---
+import SectionLabel from './SectionLabel.astro';
 const activities = [
   { title: 'Heritage walk through Fontainhas', description: 'Panjim’s Latin Quarter, five minutes from the university — colour-washed Portuguese houses, chapels and bakeries.' },
   { title: 'Old Goa monuments', description: 'Bom Jesus Basilica, Se Cathedral and St. Augustine ruins, a UNESCO World Heritage ensemble about 30 km away.' },
@@ -15,7 +16,7 @@ const activities = [
 
 <section class="things-to-do" aria-labelledby="activities-title">
   <div class="content">
-    <p class="eyebrow">Around the conference dates</p>
+    <SectionLabel label="Around the conference dates" />
     <h2 id="activities-title">Things to do</h2>
     <ol class="activities">
       {activities.map(({ title, description }, index) => <li>

@@ -25,7 +25,7 @@ const { variant = 'default', milestones = [
 <!-- Animation restoration reference: ../../../docs/timeline-animation.md -->
 <section id="timeline" class:list={['timeline', { landing: variant === 'landing' }]} aria-labelledby="timeline-title">
   <div class="timeline-content">
-    {variant === 'landing' ? <SectionLabel number="06" label="Important dates" /> : <p class="eyebrow">Timeline</p>}
+    <div class:list={{ 'section-helper': variant !== 'landing' }}><SectionLabel number={variant === 'landing' ? '06' : undefined} label={variant === 'landing' ? 'Important dates' : 'Timeline'} /></div>
     <h2 id="timeline-title">{variant === 'landing' ? 'Timeline' : 'Important Dates'}</h2>
     <ol class="milestones">
       {milestones.map((milestone, index) => (
@@ -102,7 +102,7 @@ const { variant = 'default', milestones = [
   }
 
   .timeline-content { max-width: 1104px; margin-inline: auto; }
-  .eyebrow { margin: 0 0 16px; color: #0f33c2; font-size: 11px; font-weight: 600; line-height: 16px; letter-spacing: 2px; text-transform: uppercase; }
+  .section-helper { margin-bottom: 16px; }
   h2, h3 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-weight: 400; }
   h2 { font-size: 52px; line-height: 62px; letter-spacing: -1.3px; }
   .milestones { margin: 32px 0 0; padding: 0; list-style: none; border-top: 1px solid #d3dce9; }

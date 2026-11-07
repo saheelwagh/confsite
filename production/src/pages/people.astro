@@ -4,10 +4,9 @@ import MinimalFooter from '../components/MinimalFooter.astro';
 import LandingFonts from '../components/LandingFonts.astro';
 import OrganisationCommittee from '../components/OrganisationCommittee.astro';
 import ScientificCommittee from '../components/ScientificCommittee.astro';
-import KeynoteIntro from '../components/KeynoteIntro.astro';
 const links = [
   { label: 'Home', href: '/' },
-  { label: 'Call for papers', href: '/call-for-papers' },
+  { label: 'Registration', href: '/registration' },
   { label: 'People', href: '/people' },
   { label: 'Venue', href: '/venue' },
 ];
@@ -25,10 +24,9 @@ const links = [
     <LandingFonts />
   </head>
   <body id="top" class="people-page">
-    <Navigation variant="landing" homeHref="/landing" brandIcon="/call-for-papers/grid.svg" links={links} />
+    <Navigation variant="landing" homeHref="/landing" links={links} />
     <main id="main-content">
       <OrganisationCommittee />
-      <KeynoteIntro />
       <ScientificCommittee />
     </main>
     <MinimalFooter />

@@ -1,4 +1,5 @@
 ---
+import SectionLabel from './SectionLabel.astro';
 const members = [
   { name: 'Alan Baxter', affiliation: 'Universidade Federal da Bahia' },
   { name: 'Alexandre Cobbinah', affiliation: 'Universidade de São Paulo' },
@@ -28,7 +29,7 @@ const members = [
 
 <section id="scientific-committee" class="scientific-committee" aria-labelledby="scientific-title">
   <div class="content">
-    <p class="section-label"><span>10</span><span class="label-line" aria-hidden="true"></span>Scientific committee · Proposal</p>
+    <SectionLabel number="02" label="Scientific committee · Proposal" />
     <h2 id="scientific-title">Conference scientific committee</h2>
     <div class="proposal-notice">
       <p>The following composition is a proposal and is not yet confirmed.</p>

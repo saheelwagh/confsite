@@ -1,4 +1,5 @@
 ---
+import SectionLabel from './SectionLabel.astro';
 const organisations = [
   'Goa University',
   'ACBLPE',
@@ -9,7 +10,7 @@ const organisations = [
 ];
 const committee = [
   { name: 'Prof. Anuradha Wagle', role: 'Dean, SGSLL' },
-  { name: 'Dr. Prakash Parinekar', role: 'Director, VRPP' },
+  { name: 'Dr. Prakash Parienkar', role: 'Director, VRPP' },
   { name: 'Delfim Correia da Silva', role: 'CLP-Camões, Goa' },
   { name: 'Loraine Alberto', role: 'P.D.M.A. Portuguese' },
   { name: 'Dhruv Usgaonkar', role: '' },
@@ -19,7 +20,7 @@ const committee = [
 
 <section id="committees" class="organisation-section" aria-labelledby="organisation-title">
   <div class="content">
-    <p class="section-label"><span>09</span><span class="label-line" aria-hidden="true"></span>Organisation</p>
+    <SectionLabel number="01" label="Organisation" />
     <h1 id="organisation-title">A shared scholarly undertaking.</h1>
     <div class="organisation-layout">
       <div>

@@ -9,7 +9,7 @@ interface Props {
   brand?: string;
   homeHref?: string;
   links?: NavigationLink[];
-  registrationHref?: string;
+  callForPapersHref?: string;
   brandIcon?: string;
 }
 
@@ -19,11 +19,11 @@ const {
   homeHref = '/landing',
   links = [
     { label: 'Home', href: '/' },
-    { label: 'Call for papers', href: '/call-for-papers' },
+    { label: 'Registration', href: '/registration' },
     { label: 'People', href: '/people' },
     { label: 'Venue', href: '/venue' },
   ],
-  registrationHref = '/#registration',
+  callForPapersHref = '/call-for-papers',
   brandIcon,
 } = Astro.props;
 ---
@@ -38,8 +38,8 @@ const {
     <ul id="navigation-links" class="navigation-links">
       {links.map(({ label, href }) => <li><a href={href} aria-current={Astro.url.pathname === href ? 'page' : undefined}>{label}</a></li>)}
       <li>
-        <a class="registration" href={registrationHref}>
-          Registration
+        <a class="call-for-papers" href={callForPapersHref} aria-current={Astro.url.pathname === '/call-for-papers' ? 'page' : undefined}>
+          Call for papers
           {variant === 'landing' ? <span aria-hidden="true">↗</span> : <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
             <path d="M3 9 9 3M3 3h6v6" stroke="currentColor" stroke-width="1.2" />
           </svg>}
@@ -76,13 +76,13 @@ const {
   .navigation-links { display: flex; align-items: center; gap: 28px; margin: 0; padding: 0; list-style: none; }
   .navigation-links a { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; white-space: nowrap; }
   .navigation-links a:hover { color: var(--nav-blue); text-decoration: underline; text-underline-offset: 5px; }
-  .navigation-links .registration { min-height: 42px; padding-inline: 17px; gap: 6px; border: 1px solid var(--nav-blue); color: var(--nav-blue); box-sizing: border-box; }
-  .registration:hover { background: rgb(33 78 162 / 6%); }
+  .navigation-links .call-for-papers { min-height: 42px; padding-inline: 17px; gap: 6px; border: 1px solid var(--nav-blue); color: var(--nav-blue); box-sizing: border-box; }
+  .call-for-papers:hover { background: rgb(33 78 162 / 6%); }
   .landing { --nav-ink: #152d53; --nav-blue: #214cb5; border-color: #ccd1d4; font-family: var(--landing-sans); }
   .landing nav { padding-inline: 80px; }
   .landing .brand { font-weight: 600; letter-spacing: -0.5px; }
   .landing .navigation-links a { min-height: 41px; }
-  .landing .navigation-links .registration { padding-inline: 18px; font-weight: 500; }
+  .landing .navigation-links .call-for-papers { padding-inline: 18px; font-weight: 500; }
   .landing .brand { gap: 12px; }
   .landing a[aria-current='page'] { color: var(--nav-blue); text-decoration: underline; text-underline-offset: 3px; }
   @media (max-width: 1199px) {
@@ -92,13 +92,13 @@ const {
     /* Expand touch targets while keeping the link text at its existing vertical position. */
     .landing .navigation-links a { min-height: 44px; line-height: 17px; }
     .landing .navigation-links li:last-child { position: absolute; top: 20px; right: 40px; }
-    .landing .navigation-links .registration { min-height: 44px; }
+    .landing .navigation-links .call-for-papers { min-height: 44px; }
   }
   @media (max-width: 600px) {
     .landing nav { padding-inline: 24px; }
     .landing .navigation-links { width: 100%; justify-content: space-between; gap: 8px; }
     .landing .navigation-links li:last-child { right: 24px; }
-    .landing .navigation-links .registration { padding-inline: 12px; }
+    .landing .navigation-links .call-for-papers { padding-inline: 10px; font-size: 13px; }
     .with-brand-icon .custom-brand-icon { display: none; }
     .with-brand-icon .navigation-links { flex-wrap: wrap; row-gap: 18px; }
   }

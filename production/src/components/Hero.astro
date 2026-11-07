@@ -13,24 +13,24 @@ const {
   status = 'Call for abstracts open',
   location = 'Goa University · India',
   abstractHref = '/call-for-papers',
-  registrationHref = '/#registration',
+  registrationHref = '/registration',
 } = Astro.props;
 ---
 
 <!-- Figma: Conference hero / Desktop (17:151), 1440 × 600. -->
 <section class:list={['conference-hero', { landing: variant === 'landing' }]} aria-labelledby="conference-title">
-  {variant === 'landing' && <div class="responsive-label"><SectionLabel number="01" label="Conference hero" /></div>}
+  {variant === 'landing' && <div class="responsive-label"><SectionLabel number="01" label="Introduction" /></div>}
   <div class="hero-content">
     <div class="hero-meta">
       <span class="status">{status}</span>
       <span class="location">{location}</span>
     </div>
 
-    <h1 id="conference-title">Creoles <br class="mobile-break" /><span class="accent">across</span> the<br /><span class="second-line">Indian Ocean</span></h1>
+    <h1 id="conference-title">Iberian-Lexified Creoles:<br /><span class="accent">A Global Conversation</span> in Goa</h1>
 
     <div class="hero-footer">
       <p class="description">
-        The 25th Annual Conference of the Association of Portuguese and<br />
+        The 25ᵗʰ Annual Conference of the Association of Portuguese and<br />
         Spanish-lexified Creoles (ACBLPE) comes to South Asia for the first time.
       </p>
       <div class="hero-actions">
@@ -103,7 +103,8 @@ const {
   .primary:hover { background: var(--hero-ink); border-color: var(--hero-ink); }
   .secondary:hover { background: rgb(15 51 194 / 6%); }
   .button:focus-visible { outline: 2px solid var(--hero-blue); outline-offset: 5px; }
-  .landing { --hero-blue: #214cb5; font-family: var(--landing-sans); }
+  .landing { --hero-blue: #214cb5; position: relative; font-family: var(--landing-sans); }
+  .landing .responsive-label { display: block; position: absolute; top: 24px; left: max(80px, calc((100% - 1280px) / 2)); }
   .landing .hero-meta { gap: 12px; line-height: 17.4px; }
   .landing .status { padding-block: 5px; }
   .landing .location, .landing .description { color: #425475; }

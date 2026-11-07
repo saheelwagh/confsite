@@ -1,4 +1,5 @@
 ---
+import SectionLabel from './SectionLabel.astro';
 const facts = [
   { title: 'Language', description: 'Konkani is Goa’s official language; Marathi, Hindi and English are widely spoken, and Portuguese survives in older families and place names.' },
   { title: 'Climate', description: 'The conference falls at the tail of the monsoon. Expect warm, humid days around 28–30°C, occasional showers and a countryside at its greenest.' },
@@ -9,7 +10,7 @@ const facts = [
 
 <section class="about-goa" aria-labelledby="goa-title">
   <div class="content">
-    <p class="eyebrow">About Goa</p>
+    <SectionLabel label="About Goa" />
     <h1 id="goa-title">A small state with a proud history</h1>
     <div class="facts">
       {facts.map(({ title, description }) => <article class="fact"><h2>{title}</h2><p>{description}</p></article>)}

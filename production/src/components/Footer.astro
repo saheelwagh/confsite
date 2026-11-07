@@ -1,4 +1,5 @@
 ---
+import SectionLabel from './SectionLabel.astro';
 const fees = [
   { category: 'International researchers', amount: '€60' },
   { category: 'International student researchers', amount: '€30' },
@@ -9,7 +10,7 @@ const fees = [
 
 <section id="registration" class="registration-section" aria-labelledby="registration-title">
   <div class="content">
-    <p class="section-label"><span>11</span><span class="label-line" aria-hidden="true"></span>Registration</p>
+    <SectionLabel number="11" label="Registration" />
     <h2 id="registration-title">Join the conversation in Goa.</h2>
     <div class="registration-layout">
       <div class="registration-copy">

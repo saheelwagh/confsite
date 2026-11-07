@@ -16,7 +16,7 @@ const {
 
 <section id="venue" class:list={['conference-venue', { landing: variant === 'landing' }]} aria-labelledby="venue-title">
   <div class="venue-content">
-    {variant === 'landing' ? <div class="landing-label"><SectionLabel number="04" label="The venue" /></div> : <p class="section-label"><span>07</span><span class="label-line" aria-hidden="true"></span>The venue</p>}
+    <div class:list={['section-helper', { 'landing-label': variant === 'landing' }]}><SectionLabel number={variant === 'landing' ? '04' : '07'} label="The venue" /></div>
 
     <div class="venue-layout">
       <div class="location-card">
@@ -78,6 +78,7 @@ const {
   a:hover { color: #0f33c2; }
   a:focus-visible { outline: 2px solid #0f33c2; outline-offset: 5px; }
   .landing { min-height: 623px; font-family: var(--landing-sans); }
+  .section-helper { margin-bottom: 39px; }
   .landing-label { margin-bottom: 44px; }
   .landing .location-card { min-height: 374px; background: #eaf0f7; color: #214cb5; }
   .landing .location-meta { font-size: 12px; line-height: 15px; }
