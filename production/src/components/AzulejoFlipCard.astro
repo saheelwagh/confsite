@@ -1,0 +1,148 @@
+---
+import AzulejoTileArtwork from './AzulejoTileArtwork.astro';
+
+interface Props {
+  tone?: 'light' | 'dark';
+  enabled?: boolean;
+}
+
+const { tone = 'light', enabled = true } = Astro.props;
+---
+
+{enabled ? (
+  <azulejo-flip-card class:list={['azulejo-card', tone]}>
+    <div class="tile-turn">
+      <div class="tile-face tile-ornament" aria-hidden="true">
+        <AzulejoTileArtwork face="ornament" tone={tone} />
+      </div>
+      <div class="tile-face tile-content">
+        <div class="tile-border" aria-hidden="true"><AzulejoTileArtwork face="content" tone={tone} /></div>
+        <div class="tile-writing"><slot /></div>
+      </div>
+    </div>
+  </azulejo-flip-card>
+) : <slot />}
+
+<script>
+  class AzulejoFlipCard extends HTMLElement {
+    private observer?: IntersectionObserver;
+    private revealTimer?: number;
+    private motionPreference?: MediaQueryList;
+    private isInView = false;
+
+    connectedCallback() {
+      this.motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+      this.addEventListener('focusin', this.showImmediately);
+      this.addEventListener('focusout', this.onFocusOut);
+      this.motionPreference.addEventListener('change', this.onMotionChange);
+      this.observeVisibility();
+    }
+
+    private observeVisibility() {
+      window.clearTimeout(this.revealTimer);
+      this.observer?.disconnect();
+      this.isInView = false;
+      // Content is the default face, including when scripts or observers are unavailable.
+      if (this.motionPreference?.matches || !('IntersectionObserver' in window)) {
+        this.showImmediately();
+        return;
+      }
+
+      // Only initial placement is instant; subsequent entries and exits both rotate.
+      this.dataset.instant = '';
+      this.dataset.state = this.matches(':focus-within') ? 'revealed' : 'waiting';
+      this.observer = new IntersectionObserver((entries) => {
+        const entry = entries[entries.length - 1];
+        const wasInView = this.isInView;
+        // Separate boundaries avoid flickering when scrolling slowly near the edge.
+        if (!entry.isIntersecting || entry.intersectionRatio <= 0.1) this.isInView = false;
+        else if (entry.intersectionRatio >= 0.2) this.isInView = true;
+        if (wasInView === this.isInView) return;
+
+        window.clearTimeout(this.revealTimer);
+        if (this.matches(':focus-within')) {
+          this.showImmediately();
+        } else if (this.isInView) {
+          // Give the ornamental face a short moment in view on every entry.
+          this.revealTimer = window.setTimeout(() => {
+            if (!this.isInView || this.motionPreference?.matches) return;
+            delete this.dataset.instant;
+            this.dataset.state = 'revealed';
+          }, 450);
+        } else {
+          this.showOrnament();
+        }
+      }, { threshold: [0, 0.1, 0.2] });
+      this.observer.observe(this);
+    }
+
+    private showImmediately = () => {
+      window.clearTimeout(this.revealTimer);
+      this.dataset.instant = '';
+      this.dataset.state = 'revealed';
+    };
+
+    private showOrnament() {
+      window.clearTimeout(this.revealTimer);
+      delete this.dataset.instant;
+      this.dataset.state = 'waiting';
+    }
+
+    private onFocusOut = (event: FocusEvent) => {
+      if (event.relatedTarget instanceof Node && this.contains(event.relatedTarget)) return;
+      if (this.motionPreference?.matches || !('IntersectionObserver' in window)) return;
+      delete this.dataset.instant;
+      if (!this.isInView) this.showOrnament();
+    };
+
+    private onMotionChange = () => this.observeVisibility();
+
+    disconnectedCallback() {
+      window.clearTimeout(this.revealTimer);
+      this.observer?.disconnect();
+      this.removeEventListener('focusin', this.showImmediately);
+      this.removeEventListener('focusout', this.onFocusOut);
+      this.motionPreference?.removeEventListener('change', this.onMotionChange);
+    }
+  }
+
+  if (!customElements.get('azulejo-flip-card')) {
+    customElements.define('azulejo-flip-card', AzulejoFlipCard);
+  }
+</script>
+
+<style>
+  .azulejo-card {
+    --tile-ink: #174486;
+    --tile-muted: #425b7b;
+    --tile-rule: #a4b4c7;
+    display: block;
+    min-width: 0;
+    color: var(--tile-ink);
+    perspective: 1400px;
+  }
+  .dark { --tile-ink: #fff9ed; --tile-muted: #e0e9f7; --tile-rule: #8ba5cd; }
+  .tile-turn { position: relative; transform-style: preserve-3d; transform: rotateY(0deg); }
+  .tile-face { border-radius: 3px; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+  .tile-ornament { position: absolute; inset: 0; transform: rotateY(180deg); pointer-events: none; }
+  .tile-content { position: relative; box-sizing: border-box; padding: 40px; transform: rotateY(0deg); }
+  .tile-border { position: absolute; inset: 0; pointer-events: none; }
+  .tile-writing { position: relative; }
+  .tile-face :global(svg.azulejo-tile-artwork) { display: block; width: 100%; height: 100%; }
+  .azulejo-card[data-state] .tile-turn { transition: transform 1050ms cubic-bezier(.22, .65, .25, 1); }
+  .azulejo-card[data-state='waiting'] .tile-turn { transform: rotateY(-180deg); }
+  .azulejo-card[data-state='waiting'] .tile-content { pointer-events: none; }
+  .azulejo-card[data-instant] .tile-turn { transition: none; }
+  .azulejo-card:focus-within .tile-turn { transform: none; transition: none; }
+  .azulejo-card:focus-within .tile-content { pointer-events: auto; }
+  @media (max-width: 1199px) {
+    .tile-content { padding: 32px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .azulejo-card[data-state] .tile-turn { transform: none; transition: none; }
+    .azulejo-card[data-state='waiting'] .tile-content { pointer-events: auto; }
+  }
+  @media print {
+    .azulejo-card[data-state] .tile-turn { transform: none; transition: none; }
+  }
+</style>

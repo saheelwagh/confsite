@@ -3,6 +3,7 @@ import Navigation from '../components/Navigation.astro';
 import LandingFonts from '../components/LandingFonts.astro';
 import SectionTracker from '../components/SectionTracker.astro';
 import MinimalFooter from '../components/MinimalFooter.astro';
+import AzulejoArtwork from '../components/AzulejoArtwork.astro';
 import AboutGoa from '../components/AboutGoa.astro';
 import ThingsToDo from '../components/ThingsToDo.astro';
 import ReachingGoaUniversity from '../components/ReachingGoaUniversity.astro';
@@ -27,12 +28,13 @@ const links = [
     <title>Venue | ACBLPE 2027</title>
   </head>
   <body id="top" class="venue-page">
-    <Navigation variant="landing" homeHref="/landing" links={links} />
+    <Navigation variant="landing" links={links} />
     <main id="main-content">
       <SectionTracker />
       <AboutGoa />
       <ThingsToDo />
       <ReachingGoaUniversity />
+      <AzulejoArtwork />
     </main>
     <MinimalFooter />
   </body>

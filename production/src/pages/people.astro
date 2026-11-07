@@ -1,6 +1,7 @@
 ---
 import Navigation from '../components/Navigation.astro';
 import MinimalFooter from '../components/MinimalFooter.astro';
+import AzulejoArtwork from '../components/AzulejoArtwork.astro';
 import LandingFonts from '../components/LandingFonts.astro';
 import SectionTracker from '../components/SectionTracker.astro';
 import OrganisationCommittee from '../components/OrganisationCommittee.astro';
@@ -25,11 +26,12 @@ const links = [
     <LandingFonts />
   </head>
   <body id="top" class="people-page">
-    <Navigation variant="landing" homeHref="/landing" links={links} />
+    <Navigation variant="landing" links={links} />
     <main id="main-content">
       <SectionTracker />
       <OrganisationCommittee />
       <ScientificCommittee />
+      <AzulejoArtwork />
     </main>
     <MinimalFooter />
   </body>

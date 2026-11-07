@@ -69,7 +69,7 @@ const { variant = 'default' } = Astro.props;
   .description { margin: 0; color: #d8e0ff; font-size: 18px; line-height: 28px; }
   .landing { min-height: 569px; padding: 88px 80px; background: #152d53; color: #f7f6f0; font-family: var(--landing-sans); }
   .landing-label { max-width: 1280px; margin: 0 auto 48px; }
-  .landing .satellite-layout { max-width: 1280px; grid-template-columns: 700px minmax(0, 1fr); align-items: start; }
+  .landing .satellite-layout { max-width: 1280px; grid-template-columns: minmax(0, 1.5fr) minmax(300px, 1fr); gap: 64px; align-items: start; }
   .landing h2 { font-family: var(--landing-serif); font-size: 58px; line-height: 1.24; letter-spacing: -1.8px; }
   .landing .description { max-width: 670px; margin-top: 28px; color: #d4def3; line-height: 1.75; }
   @media (max-width: 1199px) {

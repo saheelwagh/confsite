@@ -34,29 +34,28 @@ import { registrationCategories } from '../data/registration';
 </section>
 
 <style>
-  .registration-fees { box-sizing: border-box; padding: 96px 80px; background: #e8eff7; color: #152d53; font-family: var(--landing-sans, Arial, sans-serif); }
+  .registration-fees { box-sizing: border-box; padding: 96px 80px; background: #f7f3e9; color: #152d53; font-family: var(--landing-sans, Arial, sans-serif); }
   .content { max-width: 1280px; margin-inline: auto; }
   h1 { margin: 28px 0 44px; font-family: var(--landing-serif, Georgia, serif); font-size: clamp(42px, 4.45vw, 64px); font-weight: 400; line-height: 1.2; letter-spacing: -2px; }
   .fees-layout { display: grid; grid-template-columns: minmax(0, 440px) minmax(0, 1fr); align-items: start; gap: 80px; }
-  .introduction { margin: 0; max-width: 430px; font-size: 20px; line-height: 1.7; }
+  .introduction { margin: 0; max-width: 430px; font-size: 24px; line-height: 1.5; }
   .inclusions { margin: 32px 0 0; max-width: 430px; color: #586a81; font-size: 18px; line-height: 1.7; }
   .accommodation { display: flex; align-items: center; gap: 12px; margin: 30px 0 0; font-size: 14px; line-height: 20px; }
   .accommodation svg { flex: none; color: #214cb5; }
   .fee-table { width: 100%; border-collapse: collapse; }
-  .fee-table thead th { padding: 0 0 18px; border-bottom: 1px solid #cbd2d8; color: #214cb5; font-size: 12px; font-weight: 400; line-height: 18px; letter-spacing: 1.2px; text-align: left; text-transform: uppercase; }
+  .fee-table thead th { padding: 0 0 18px; border-bottom: 1px solid #d8d0bf; color: #214cb5; font-size: 12px; font-weight: 400; line-height: 18px; letter-spacing: 1.2px; text-align: left; text-transform: uppercase; }
   .fee-table thead th:last-child { text-align: right; }
-  .fee-table tbody th, .fee-table td { box-sizing: border-box; height: 107px; padding: 24px 0; border-bottom: 1px solid #cbd2d8; }
-  .fee-table tbody th { font-size: 20px; font-weight: 400; line-height: 1.4; text-align: left; }
-  .fee-table td { color: #214cb5; font-family: var(--landing-serif, Georgia, serif); font-size: 42px; font-weight: 400; line-height: 1.35; text-align: right; white-space: nowrap; }
+  .fee-table tbody th, .fee-table td { box-sizing: border-box; height: 107px; padding: 24px 0; border-bottom: 1px solid #d8d0bf; font-size: 20px; font-weight: 400; line-height: 1.4; }
+  .fee-table tbody th { text-align: left; }
+  .fee-table td { color: #214cb5; font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
 
   @media (max-width: 1199px) {
     .registration-fees { padding: 72px 40px; }
     .fees-layout { grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: 40px; }
     h1 { margin-bottom: 36px; letter-spacing: -1.5px; }
-    .introduction { font-size: 18px; }
+    .introduction { font-size: 20px; }
     .inclusions { font-size: 16px; }
-    .fee-table tbody th { font-size: 17px; }
-    .fee-table td { font-size: 34px; }
+    .fee-table tbody th, .fee-table td { font-size: 17px; }
   }
   @media (max-width: 850px) {
     .fees-layout { grid-template-columns: minmax(0, 1fr); gap: 48px; }
@@ -66,12 +65,11 @@ import { registrationCategories } from '../data/registration';
     .registration-fees { padding: 56px 24px; }
     h1 { margin: 26px 0 32px; font-size: clamp(31px, 9vw, 40px); line-height: 1.25; letter-spacing: -1px; }
     .fees-layout { gap: 40px; }
-    .introduction { font-size: 18px; line-height: 1.6; }
+    .introduction { font-size: 20px; line-height: 1.5; }
     .inclusions { margin-top: 22px; font-size: 16px; line-height: 1.65; }
     .accommodation { margin-top: 22px; }
     .fee-table thead th { font-size: 10px; letter-spacing: 1px; }
-    .fee-table tbody th, .fee-table td { height: 86px; padding: 18px 0; }
-    .fee-table tbody th { padding-right: 12px; font-size: 16px; line-height: 1.4; }
-    .fee-table td { font-size: clamp(25px, 7vw, 34px); }
+    .fee-table tbody th, .fee-table td { height: 86px; padding: 18px 0; font-size: 16px; }
+    .fee-table tbody th { padding-right: 12px; }
   }
 </style>

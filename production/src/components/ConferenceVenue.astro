@@ -1,5 +1,6 @@
 ---
 import SectionLabel from './SectionLabel.astro';
+import AzulejoFlipCard from './AzulejoFlipCard.astro';
 interface Props {
   variant?: 'default' | 'landing';
   venueHref?: string;
@@ -19,26 +20,28 @@ const {
     <div class:list={['section-helper', { 'landing-label': variant === 'landing' }]}><SectionLabel number={variant === 'landing' ? '04' : '07'} label="The venue" /></div>
 
     <div class="venue-layout">
+      <AzulejoFlipCard tone="dark" enabled={variant === 'landing'}>
       <div class="location-card">
         <div class="location-meta">
           <span>South Asia · India</span>
-          {variant === 'landing' ? <picture><source media="(max-width: 1199px)" srcset="/landing/compass-responsive.svg" /><img src="/landing/compass.svg" width="28" height="28" alt="" /></picture> : <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <svg class="compass" width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <circle cx="12" cy="12" r="11.5" stroke="currentColor" />
             <path d="m16.5 7.5-2.2 6.8-6.8 2.2 2.2-6.8 6.8-2.2Z" stroke="currentColor" stroke-linejoin="round" />
-          </svg>}
+          </svg>
         </div>
         <p class="place-name">Goa</p>
         <a class="explore-link" href={venueHref}>
           Explore the venue
-          {variant === 'landing' ? <picture><source media="(max-width: 1199px)" srcset="/landing/arrow-right-responsive.svg" /><img src="/landing/arrow-right.svg" width="16" height="16" alt="" /></picture> : <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
             <path d="M3 9h11M9 4l5 5-5 5" stroke="currentColor" stroke-width="1.5" />
-          </svg>}
+          </svg>
         </a>
       </div>
+      </AzulejoFlipCard>
 
       <div class="venue-details">
         <h2 id="venue-title">Conference Hall, Admin Block,<br /> Goa University</h2>
-        <a class="directions-link" href={directionsHref}>
+        <a class="directions-link" href={directionsHref} target="_blank" rel="noopener noreferrer" aria-label="Directions (opens in a new tab)">
           {variant === 'landing' ? <picture><source media="(max-width: 1199px)" srcset="/landing/map-pin-responsive.svg" /><img src="/landing/map-pin.svg" width="16" height="16" alt="" /></picture> : <svg width="16" height="18" viewBox="0 0 16 18" fill="none" aria-hidden="true">
             <path d="M13.5 6.5c0 4-5.5 9.5-5.5 9.5S2.5 10.5 2.5 6.5a5.5 5.5 0 1 1 11 0Z" stroke="currentColor" stroke-width="1.3" />
             <circle cx="8" cy="6.5" r="2" stroke="currentColor" stroke-width="1.3" />
@@ -77,10 +80,13 @@ const {
   .landing { min-height: 623px; font-family: var(--landing-sans); }
   .section-helper { margin-bottom: 39px; }
   .landing-label { margin-bottom: 44px; }
-  .landing .location-card { min-height: 374px; background: #eaf0f7; color: #214cb5; }
+  .landing .location-card { min-height: 0; padding: 0; background: transparent; color: var(--tile-ink); }
   .landing .location-meta { font-size: 12px; line-height: 15px; }
   .landing .place-name { margin: 28px 0; font-family: var(--landing-serif); font-size: 156px; line-height: 1.1; }
-  .landing .explore-link { border-color: #ccd1d4; line-height: 17px; letter-spacing: 0.4px; }
+  .landing .explore-link { min-height: 44px; box-sizing: border-box; border-color: var(--tile-rule); line-height: 20px; letter-spacing: 0.4px; }
+  .landing .explore-link:hover { color: #f3d49a; }
+  .landing .explore-link:focus-visible { outline-color: #f3d49a; }
+  .location-meta svg, .explore-link svg { flex-shrink: 0; }
   .landing h2 { color: #33363b; font-size: 28px; line-height: 1.4; letter-spacing: 0; }
   .landing .directions-link { color: #58677a; line-height: 17px; letter-spacing: 0.4px; }
   .landing .description { color: #58677a; line-height: 1.7; }
@@ -89,8 +95,7 @@ const {
     .landing { min-height: 477px; padding: 72px 40px; }
     .landing-label { margin-bottom: 32px; }
     .landing .venue-layout { grid-template-columns: 320px minmax(0, 1fr); gap: 32px; }
-    .landing .location-card { min-height: 0; padding: 24px; }
-    .landing .location-meta { font-size: 10px; letter-spacing: 1px; }
+    .landing .location-meta { font-size: 12px; letter-spacing: 1px; }
     .landing .place-name { margin-block: 24px; font-size: 108px; letter-spacing: -6px; }
     .landing .explore-link { padding-top: 24px; }
     .landing h2 { font-size: 26px; }
@@ -102,6 +107,7 @@ const {
   }
   @media (max-width: 600px) {
     .landing { min-height: 675px; padding: 56px 24px; }
+    .landing .place-name { font-size: clamp(80px, 26vw, 108px); letter-spacing: -4px; }
     .landing h2 { font-size: 24px; }
   }
 </style>

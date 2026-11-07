@@ -1,0 +1,85 @@
+---
+interface Props {
+  face?: 'ornament' | 'content';
+  tone?: 'light' | 'dark';
+}
+
+const { face = 'ornament', tone = 'light' } = Astro.props;
+const palette = tone === 'dark'
+  ? { glaze: '#214486', ink: '#f7f1e5', wash: '#a9c3e3', highlight: '#dae6f4', line: '#7899c8', gold: '#dcba7b' }
+  : { glaze: '#f7f1e5', ink: '#174486', wash: '#6086b4', highlight: '#afc4d8', line: '#9baec7', gold: '#ac803c' };
+const corners = [0, 90, 180, 270];
+---
+
+<svg
+  class="azulejo-tile-artwork"
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 400 400"
+  preserveAspectRatio="none"
+  fill="none"
+  aria-hidden="true"
+  focusable="false"
+>
+  <rect width="400" height="400" fill={palette.glaze} />
+  <path d="M2 2h396v396H2Z" stroke={palette.line} stroke-width="4" />
+  <path d="M7 7h386v386H7Z" stroke={palette.highlight} stroke-opacity=".55" />
+  <path d="M14 14h372v372H14Z" stroke={palette.ink} stroke-width="1.5" stroke-opacity={face === 'ornament' ? '.75' : '.38'} />
+
+  {face === 'ornament' ? (
+    <>
+      {corners.map((angle) => (
+        <g transform={`rotate(${angle} 200 200)`} stroke-linecap="round" stroke-linejoin="round">
+          <path d="M30 119c4-38 23-63 50-61 23 1 34 21 24 37-7 11-22 12-29 3-5-7-2-15 4-18" stroke={palette.ink} stroke-width="6" />
+          <path d="M34 118c5-35 22-57 45-56 20 0 28 15 22 28-4 8-15 12-22 6" stroke={palette.highlight} stroke-width="1.4" />
+          <path d="M45 87C27 72 24 49 31 30c21 9 32 29 25 49-3-15-3-27 3-39 19 13 24 30 14 44" fill={palette.wash} stroke={palette.ink} stroke-width="2" />
+          <path d="M34 38c8 9 13 20 16 32m10-23c6 9 8 19 7 29" stroke={palette.highlight} stroke-width="1.6" />
+          <path d="M98 55c15-20 32-26 52-22-4 22-22 36-45 34 16-10 31-11 44-5-11 20-31 24-48 13" fill={palette.ink} stroke={palette.ink} stroke-width="1.8" />
+          <path d="M139 38c-13 2-24 10-32 20m33 8c-11 4-21 5-30 3" stroke={palette.highlight} stroke-width="1.7" />
+          <path d="M45 119c21-8 41-5 54 9 17 17 29 16 38 6 9-11 4-24-6-25-7-1-12 3-12 9" stroke={palette.ink} stroke-width="4.5" />
+          <path d="M52 120c17-4 31 0 42 9m17 11c8 4 18 2 22-4" stroke={palette.highlight} stroke-width="1.3" />
+          <path d="M60 142c4 18 0 34-13 47-11-17-10-35 3-49m12 7c17 3 28 14 31 30-18-1-30-11-31-30Z" fill={palette.wash} stroke={palette.ink} stroke-width="1.8" />
+          <path d="m51 151-4 25m20-25 16 17" stroke={palette.highlight} stroke-width="1.5" />
+          <path d="M162 29c14 8 25 11 38 11s24-3 38-11" stroke={palette.ink} stroke-width="2" />
+          <path d="m194 28 6-7 6 7-6 7Z" fill={palette.gold} />
+        </g>
+      ))}
+
+      <g transform="translate(200 200)" stroke-linecap="round" stroke-linejoin="round">
+        {corners.map((angle) => (
+          <g transform={`rotate(${angle})`}>
+            <path d="M-10-33c-23-23-26-50-12-75 13 10 21 22 22 37 1-15 9-27 22-37 14 25 11 52-12 75" fill={palette.ink} stroke={palette.ink} stroke-width="2" />
+            <path d="M-18-97c-4 19-1 35 10 49m26-49c4 19 1 35-10 49" stroke={palette.highlight} stroke-width="2" />
+            <path d="M-38-41c-20-3-34-18-35-37 20-1 35 11 38 30-4-14 1-28 14-36 9 17 7 30-6 43" fill={palette.wash} stroke={palette.ink} stroke-width="2" />
+            <path d="m-63-70 20 21m20-25c1 9-1 16-6 23" stroke={palette.highlight} stroke-width="1.6" />
+            <path d="M-71-108c-16-7-32 0-32 14 0 9 7 14 14 10" stroke={palette.ink} stroke-width="3" />
+          </g>
+        ))}
+        <path d="M0-38c10 0 14 12 22 16S38-11 38 0s-12 14-16 22S11 38 0 38s-14-12-22-16S-38 11-38 0s12-14 16-22S-11-38 0-38Z" fill={palette.glaze} stroke={palette.ink} stroke-width="3" />
+        <circle r="23" fill={palette.wash} stroke={palette.ink} stroke-width="2" />
+        <path d="M0-17c-7 7-7 12 0 17 7-5 7-10 0-17Zm17 17C10-7 5-7 0 0c5 7 10 7 17 0ZM0 17c7-7 7-12 0-17-7 5-7 10 0 17ZM-17 0c7 7 12 7 17 0-5-7-10-7-17 0Z" fill={palette.glaze} />
+        <circle r="4" fill={palette.gold} />
+      </g>
+    </>
+  ) : (
+    <>
+      {corners.map((angle) => (
+        <g transform={`rotate(${angle} 200 200)`} stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 60V20h40" stroke={palette.ink} stroke-width="2" stroke-opacity=".65" />
+          <path d="M23 40c9 0 16-7 17-17-10 1-17 8-17 17Z" fill={palette.wash} fill-opacity=".65" />
+          <path d="m25 25 10 10" stroke={palette.highlight} stroke-width="1.3" />
+          <path d="M20 68c4-6 6-11 6-17m42-31c-6 4-11 6-17 6" stroke={palette.ink} stroke-width="1.4" stroke-opacity=".5" />
+          <path d="m196 14 4-4 4 4-4 4Z" fill={palette.gold} fill-opacity=".85" />
+        </g>
+      ))}
+    </>
+  )}
+</svg>
+
+<style>
+  .azulejo-tile-artwork {
+    display: block;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+</style>

@@ -24,30 +24,30 @@ import SectionLabel from './SectionLabel.astro';
     box-sizing: border-box;
     min-height: 520px;
     padding: 110px 100px 90px;
-    background-color: #284c98;
-    background-image: linear-gradient(rgb(6 18 56 / 25%), rgb(6 18 56 / 25%)), url('/keynote-azulejo.svg');
-    background-size: auto, 220px 220px;
-    background-repeat: repeat;
-    background-blend-mode: normal, multiply;
+    background-color: #102b5b;
+    background-image: linear-gradient(90deg, #102b5b 0%, #102b5b 52%, rgb(16 43 91 / 92%) 62%, transparent 76%), url('/keynote-azulejo.svg');
+    background-size: 100% 100%, 440px 440px;
+    background-position: center, right center;
+    background-repeat: no-repeat, repeat;
     color: #faf7f0;
     font-family: var(--landing-sans, Arial, sans-serif);
   }
 
   .hero-content { max-width: 1240px; margin-inline: auto; }
   h1 { margin: 20px 0 0; font-family: var(--landing-serif, Georgia, serif); font-size: 64px; font-weight: 400; line-height: 1.2; letter-spacing: -2px; }
-  .description { max-width: 680px; margin: 20px 0 0; color: #dbe0ed; font-size: 18px; line-height: 28px; }
+  .description { max-width: 600px; margin: 20px 0 0; color: #f0ede5; font-size: 18px; line-height: 28px; }
   .submission-link { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-top: 10px; color: #faf7f0; font-size: 16px; font-weight: 600; line-height: 24px; text-underline-offset: 3px; }
   .submission-link img { flex-shrink: 0; }
   .submission-link:hover { color: #f5b23b; }
   .submission-link:focus-visible { outline: 2px solid #f5b23b; outline-offset: 5px; }
   .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
   @media (max-width: 1199px) {
-    .papers-hero { padding: 72px 40px; }
+    .papers-hero { padding: 72px 40px; background-image: linear-gradient(90deg, #102b5b 0%, rgb(16 43 91 / 97%) 58%, rgb(16 43 91 / 35%) 100%), url('/keynote-azulejo.svg'); }
     h1 { font-size: 52px; line-height: 1.2; }
     .description { font-size: 16px; line-height: 1.7; }
   }
   @media (max-width: 600px) {
-    .papers-hero { padding: 56px 24px; }
+    .papers-hero { min-height: 0; padding: 56px 24px 150px; background-image: linear-gradient(180deg, #102b5b 0%, #102b5b 65%, rgb(16 43 91 / 25%) 100%), url('/keynote-azulejo.svg'); background-size: 100% 100%, 300px 300px; background-position: center, right bottom; }
     h1 { font-size: 38px; letter-spacing: -1px; }
   }
 </style>

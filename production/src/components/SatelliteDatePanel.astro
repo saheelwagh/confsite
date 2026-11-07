@@ -1,22 +1,24 @@
+---
+import AzulejoFlipCard from './AzulejoFlipCard.astro';
+---
+<AzulejoFlipCard tone="light">
 <div class="satellite-date">
   <time datetime="2027-08-31"><span class="day">31</span><span class="month">August 2027</span></time>
   <span class="date-rule" aria-hidden="true"></span>
   <p>A dedicated satellite conference within the 31 August–3 September gathering.</p>
 </div>
+</AzulejoFlipCard>
 <style>
-  .satellite-date { box-sizing: border-box; padding: 10px 0 10px 48px; border-left: 1px solid #5274c3; color: #f7f6f0; }
-  time { display: flex; flex-direction: column; gap: 22px; font-family: var(--landing-serif); }
-  .day { font-size: 132px; line-height: 1; letter-spacing: -6px; }
+  .satellite-date { color: var(--tile-ink); }
+  time { display: flex; flex-direction: column; gap: 12px; font-family: var(--landing-serif); }
+  .day { font-size: 112px; line-height: 1; letter-spacing: -5px; }
   .month { font-size: 29px; line-height: 36px; }
-  .date-rule { display: block; width: 64px; height: 1px; margin-block: 22px; background: #5274c3; }
-  p { margin: 0; color: #d4def3; font-family: var(--landing-sans); font-size: 15px; line-height: 24px; }
+  .date-rule { display: block; width: 64px; height: 1px; margin-block: 22px; background: var(--tile-rule); }
+  p { margin: 0; color: var(--tile-muted); font-family: var(--landing-sans); font-size: 16px; line-height: 1.6; }
   @media (max-width: 1199px) {
-    .satellite-date { padding: 24px 0 0; border-left: 0; border-top: 1px solid #5274c3; }
-    time { gap: 16px; }
     .day { font-size: 88px; letter-spacing: -4px; }
     .month { font-size: 24px; line-height: 30px; }
-    .date-rule { display: none; }
-    p { margin-top: 16px; font-size: 16px; line-height: 1.7; }
+    .date-rule { margin-block: 20px; }
   }
   @media (max-width: 600px) { .day { font-size: 76px; } }
 </style>
