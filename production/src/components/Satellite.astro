@@ -10,6 +10,7 @@ const { variant = 'default' } = Astro.props;
     {variant === 'landing' ? <>
       <div class="satellite-introduction">
         <h2 id="satellite-title">Linguistic Encounters<br /> in South Asia.</h2>
+        <h3 class="satellite-keynote">Keynote Speaker: Anvita Abbi</h3>
         <p class="description">The Satellite Conference will showcase research in contact linguistics involving the languages of South Asia and provide a platform for discussing diverse linguistic contact situations in the region. It aims to bring together renowned scholars and researchers in linguistics and to encourage dialogue on the processes, outcomes, and dynamics of language contact in South Asia.</p>
       </div>
       <SatelliteDatePanel />
@@ -71,14 +72,16 @@ const { variant = 'default' } = Astro.props;
   .landing-label { max-width: 1280px; margin: 0 auto 48px; }
   .landing .satellite-layout { max-width: 1280px; grid-template-columns: minmax(0, 1.5fr) minmax(300px, 1fr); gap: 64px; align-items: start; }
   .landing h2 { font-family: var(--landing-serif); font-size: 58px; line-height: 1.24; letter-spacing: -1.8px; }
-  .landing .description { max-width: 670px; margin-top: 28px; color: #d4def3; line-height: 1.75; }
+  .landing .satellite-keynote { margin: 22px 0 0; color: #f5b23b; font-family: var(--landing-serif); font-size: 26px; font-weight: 400; line-height: 1.35; letter-spacing: -0.5px; }
+  .landing .description { max-width: 670px; margin-top: 24px; color: #d4def3; line-height: 1.75; }
   @media (max-width: 1199px) {
     .landing { min-height: 532px; padding: 72px 40px; }
     .landing-label { margin-bottom: 32px; }
-    .landing .satellite-layout { grid-template-columns: minmax(0, 1fr) 274px; gap: 32px; }
+    .landing .satellite-layout { grid-template-columns: minmax(0, 1fr) 274px; gap: 24px 32px; }
     .landing .satellite-introduction { display: contents; }
     .landing h2 { grid-column: 1 / -1; font-size: 42px; line-height: 1.25; letter-spacing: -1.3px; }
     .landing h2 br { display: none; }
+    .landing .satellite-keynote { grid-column: 1 / -1; margin: 0; font-size: 24px; }
     .landing .description { margin: 0; font-size: 16px; line-height: 1.7; }
   }
   @media (max-width: 767px) {
@@ -87,5 +90,6 @@ const { variant = 'default' } = Astro.props;
   @media (max-width: 600px) {
     .landing { min-height: 763px; padding: 56px 24px; }
     .landing h2 { font-size: 32px; letter-spacing: -0.9px; }
+    .landing .satellite-keynote { font-size: 22px; }
   }
 </style>

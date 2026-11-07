@@ -1,0 +1,698 @@
+[
+  {
+    "page": "Landing",
+    "device": "Desktop",
+    "component": "Hero",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/landing-desktop-01-Hero-part-1.png"
+  },
+  {
+    "page": "Landing",
+    "device": "Desktop",
+    "component": "AboutACBLPE",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/landing-desktop-02-AboutACBLPE-part-1.png"
+  },
+  {
+    "page": "Landing",
+    "device": "Desktop",
+    "component": "Satellite",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/landing-desktop-03-Satellite-part-1.png"
+  },
+  {
+    "page": "Landing",
+    "device": "Desktop",
+    "component": "ConferenceVenue",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/landing-desktop-04-ConferenceVenue-part-1.png"
+  },
+  {
+    "page": "Landing",
+    "device": "Desktop",
+    "component": "KeynoteIntro",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/landing-desktop-05-KeynoteIntro-part-1.png"
+  },
+  {
+    "page": "Landing",
+    "device": "Desktop",
+    "component": "Timeline",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/landing-desktop-06-Timeline-part-1.png"
+  },
+  {
+    "page": "Landing",
+    "device": "Desktop",
+    "component": "AzulejoArtwork",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/landing-desktop-07-AzulejoArtwork-part-1.png"
+  },
+  {
+    "page": "Landing",
+    "device": "Tablet",
+    "component": "Hero",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/landing-tablet-01-Hero-part-1.png"
+  },
+  {
+    "page": "Landing",
+    "device": "Tablet",
+    "component": "AboutACBLPE",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/landing-tablet-02-AboutACBLPE-part-1.png"
+  },
+  {
+    "page": "Landing",
+    "device": "Tablet",
+    "component": "Satellite",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/landing-tablet-03-Satellite-part-1.png"
+  },
+  {
+    "page": "Landing",
+    "device": "Tablet",
+    "component": "ConferenceVenue",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/landing-tablet-04-ConferenceVenue-part-1.png"
+  },
+  {
+    "page": "Landing",
+    "device": "Tablet",
+    "component": "KeynoteIntro",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/landing-tablet-05-KeynoteIntro-part-1.png"
+  },
+  {
+    "page": "Landing",
+    "device": "Tablet",
+    "component": "Timeline",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/landing-tablet-06-Timeline-part-1.png"
+  },
+  {
+    "page": "Landing",
+    "device": "Tablet",
+    "component": "AzulejoArtwork",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/landing-tablet-07-AzulejoArtwork-part-1.png"
+  },
+  {
+    "page": "Landing",
+    "device": "Mobile",
+    "component": "Hero",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/landing-mobile-01-Hero-part-1.png"
+  },
+  {
+    "page": "Landing",
+    "device": "Mobile",
+    "component": "AboutACBLPE",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/landing-mobile-02-AboutACBLPE-part-1.png"
+  },
+  {
+    "page": "Landing",
+    "device": "Mobile",
+    "component": "Satellite",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/landing-mobile-03-Satellite-part-1.png"
+  },
+  {
+    "page": "Landing",
+    "device": "Mobile",
+    "component": "ConferenceVenue",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/landing-mobile-04-ConferenceVenue-part-1.png"
+  },
+  {
+    "page": "Landing",
+    "device": "Mobile",
+    "component": "KeynoteIntro",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/landing-mobile-05-KeynoteIntro-part-1.png"
+  },
+  {
+    "page": "Landing",
+    "device": "Mobile",
+    "component": "Timeline",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/landing-mobile-06-Timeline-part-1.png"
+  },
+  {
+    "page": "Landing",
+    "device": "Mobile",
+    "component": "AzulejoArtwork",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/landing-mobile-07-AzulejoArtwork-part-1.png"
+  },
+  {
+    "page": "Registration",
+    "device": "Desktop",
+    "component": "RegistrationFees",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/registration-desktop-01-RegistrationFees-part-1.png"
+  },
+  {
+    "page": "Registration",
+    "device": "Desktop",
+    "component": "RegistrationNotice",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/registration-desktop-02-RegistrationNotice-part-1.png"
+  },
+  {
+    "page": "Registration",
+    "device": "Desktop",
+    "component": "AzulejoArtwork",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/registration-desktop-03-AzulejoArtwork-part-1.png"
+  },
+  {
+    "page": "Registration",
+    "device": "Tablet",
+    "component": "RegistrationFees",
+    "part": 1,
+    "parts": 2,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/registration-tablet-01-RegistrationFees-part-1.png"
+  },
+  {
+    "page": "Registration",
+    "device": "Tablet",
+    "component": "RegistrationFees",
+    "part": 2,
+    "parts": 2,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/registration-tablet-01-RegistrationFees-part-2.png"
+  },
+  {
+    "page": "Registration",
+    "device": "Tablet",
+    "component": "RegistrationNotice",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/registration-tablet-02-RegistrationNotice-part-1.png"
+  },
+  {
+    "page": "Registration",
+    "device": "Tablet",
+    "component": "AzulejoArtwork",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/registration-tablet-03-AzulejoArtwork-part-1.png"
+  },
+  {
+    "page": "Registration",
+    "device": "Mobile",
+    "component": "RegistrationFees",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/registration-mobile-01-RegistrationFees-part-1.png"
+  },
+  {
+    "page": "Registration",
+    "device": "Mobile",
+    "component": "RegistrationNotice",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/registration-mobile-02-RegistrationNotice-part-1.png"
+  },
+  {
+    "page": "Registration",
+    "device": "Mobile",
+    "component": "AzulejoArtwork",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/registration-mobile-03-AzulejoArtwork-part-1.png"
+  },
+  {
+    "page": "People",
+    "device": "Desktop",
+    "component": "OrganisationCommittee",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/people-desktop-01-OrganisationCommittee-part-1.png"
+  },
+  {
+    "page": "People",
+    "device": "Desktop",
+    "component": "ScientificCommittee",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/people-desktop-02-ScientificCommittee-part-1.png"
+  },
+  {
+    "page": "People",
+    "device": "Desktop",
+    "component": "AzulejoArtwork",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/people-desktop-03-AzulejoArtwork-part-1.png"
+  },
+  {
+    "page": "People",
+    "device": "Tablet",
+    "component": "OrganisationCommittee",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/people-tablet-01-OrganisationCommittee-part-1.png"
+  },
+  {
+    "page": "People",
+    "device": "Tablet",
+    "component": "ScientificCommittee",
+    "part": 1,
+    "parts": 3,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/people-tablet-02-ScientificCommittee-part-1.png"
+  },
+  {
+    "page": "People",
+    "device": "Tablet",
+    "component": "ScientificCommittee",
+    "part": 2,
+    "parts": 3,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/people-tablet-02-ScientificCommittee-part-2.png"
+  },
+  {
+    "page": "People",
+    "device": "Tablet",
+    "component": "ScientificCommittee",
+    "part": 3,
+    "parts": 3,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/people-tablet-02-ScientificCommittee-part-3.png"
+  },
+  {
+    "page": "People",
+    "device": "Tablet",
+    "component": "AzulejoArtwork",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/people-tablet-03-AzulejoArtwork-part-1.png"
+  },
+  {
+    "page": "People",
+    "device": "Mobile",
+    "component": "OrganisationCommittee",
+    "part": 1,
+    "parts": 2,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/people-mobile-01-OrganisationCommittee-part-1.png"
+  },
+  {
+    "page": "People",
+    "device": "Mobile",
+    "component": "OrganisationCommittee",
+    "part": 2,
+    "parts": 2,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/people-mobile-01-OrganisationCommittee-part-2.png"
+  },
+  {
+    "page": "People",
+    "device": "Mobile",
+    "component": "ScientificCommittee",
+    "part": 1,
+    "parts": 4,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/people-mobile-02-ScientificCommittee-part-1.png"
+  },
+  {
+    "page": "People",
+    "device": "Mobile",
+    "component": "ScientificCommittee",
+    "part": 2,
+    "parts": 4,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/people-mobile-02-ScientificCommittee-part-2.png"
+  },
+  {
+    "page": "People",
+    "device": "Mobile",
+    "component": "ScientificCommittee",
+    "part": 3,
+    "parts": 4,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/people-mobile-02-ScientificCommittee-part-3.png"
+  },
+  {
+    "page": "People",
+    "device": "Mobile",
+    "component": "ScientificCommittee",
+    "part": 4,
+    "parts": 4,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/people-mobile-02-ScientificCommittee-part-4.png"
+  },
+  {
+    "page": "People",
+    "device": "Mobile",
+    "component": "AzulejoArtwork",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/people-mobile-03-AzulejoArtwork-part-1.png"
+  },
+  {
+    "page": "Venue",
+    "device": "Desktop",
+    "component": "AboutGoa",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/venue-desktop-01-AboutGoa-part-1.png"
+  },
+  {
+    "page": "Venue",
+    "device": "Desktop",
+    "component": "ThingsToDo",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/venue-desktop-02-ThingsToDo-part-1.png"
+  },
+  {
+    "page": "Venue",
+    "device": "Desktop",
+    "component": "ReachingGoaUniversity",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/venue-desktop-03-ReachingGoaUniversity-part-1.png"
+  },
+  {
+    "page": "Venue",
+    "device": "Desktop",
+    "component": "AzulejoArtwork",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/venue-desktop-04-AzulejoArtwork-part-1.png"
+  },
+  {
+    "page": "Venue",
+    "device": "Tablet",
+    "component": "AboutGoa",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/venue-tablet-01-AboutGoa-part-1.png"
+  },
+  {
+    "page": "Venue",
+    "device": "Tablet",
+    "component": "ThingsToDo",
+    "part": 1,
+    "parts": 2,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/venue-tablet-02-ThingsToDo-part-1.png"
+  },
+  {
+    "page": "Venue",
+    "device": "Tablet",
+    "component": "ThingsToDo",
+    "part": 2,
+    "parts": 2,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/venue-tablet-02-ThingsToDo-part-2.png"
+  },
+  {
+    "page": "Venue",
+    "device": "Tablet",
+    "component": "ReachingGoaUniversity",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/venue-tablet-03-ReachingGoaUniversity-part-1.png"
+  },
+  {
+    "page": "Venue",
+    "device": "Tablet",
+    "component": "AzulejoArtwork",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/venue-tablet-04-AzulejoArtwork-part-1.png"
+  },
+  {
+    "page": "Venue",
+    "device": "Mobile",
+    "component": "AboutGoa",
+    "part": 1,
+    "parts": 2,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/venue-mobile-01-AboutGoa-part-1.png"
+  },
+  {
+    "page": "Venue",
+    "device": "Mobile",
+    "component": "AboutGoa",
+    "part": 2,
+    "parts": 2,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/venue-mobile-01-AboutGoa-part-2.png"
+  },
+  {
+    "page": "Venue",
+    "device": "Mobile",
+    "component": "ThingsToDo",
+    "part": 1,
+    "parts": 3,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/venue-mobile-02-ThingsToDo-part-1.png"
+  },
+  {
+    "page": "Venue",
+    "device": "Mobile",
+    "component": "ThingsToDo",
+    "part": 2,
+    "parts": 3,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/venue-mobile-02-ThingsToDo-part-2.png"
+  },
+  {
+    "page": "Venue",
+    "device": "Mobile",
+    "component": "ThingsToDo",
+    "part": 3,
+    "parts": 3,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/venue-mobile-02-ThingsToDo-part-3.png"
+  },
+  {
+    "page": "Venue",
+    "device": "Mobile",
+    "component": "ReachingGoaUniversity",
+    "part": 1,
+    "parts": 2,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/venue-mobile-03-ReachingGoaUniversity-part-1.png"
+  },
+  {
+    "page": "Venue",
+    "device": "Mobile",
+    "component": "ReachingGoaUniversity",
+    "part": 2,
+    "parts": 2,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/venue-mobile-03-ReachingGoaUniversity-part-2.png"
+  },
+  {
+    "page": "Venue",
+    "device": "Mobile",
+    "component": "AzulejoArtwork",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/venue-mobile-04-AzulejoArtwork-part-1.png"
+  },
+  {
+    "page": "Call for Papers",
+    "device": "Desktop",
+    "component": "CallForPapersHero",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/call-for-papers-desktop-01-CallForPapersHero-part-1.png"
+  },
+  {
+    "page": "Call for Papers",
+    "device": "Desktop",
+    "component": "SubmissionInstructions",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/call-for-papers-desktop-02-SubmissionInstructions-part-1.png"
+  },
+  {
+    "page": "Call for Papers",
+    "device": "Desktop",
+    "component": "ReviewPresentationGuidance",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/call-for-papers-desktop-03-ReviewPresentationGuidance-part-1.png"
+  },
+  {
+    "page": "Call for Papers",
+    "device": "Desktop",
+    "component": "AzulejoArtwork",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/call-for-papers-desktop-04-AzulejoArtwork-part-1.png"
+  },
+  {
+    "page": "Call for Papers",
+    "device": "Tablet",
+    "component": "CallForPapersHero",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/call-for-papers-tablet-01-CallForPapersHero-part-1.png"
+  },
+  {
+    "page": "Call for Papers",
+    "device": "Tablet",
+    "component": "SubmissionInstructions",
+    "part": 1,
+    "parts": 3,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/call-for-papers-tablet-02-SubmissionInstructions-part-1.png"
+  },
+  {
+    "page": "Call for Papers",
+    "device": "Tablet",
+    "component": "SubmissionInstructions",
+    "part": 2,
+    "parts": 3,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/call-for-papers-tablet-02-SubmissionInstructions-part-2.png"
+  },
+  {
+    "page": "Call for Papers",
+    "device": "Tablet",
+    "component": "SubmissionInstructions",
+    "part": 3,
+    "parts": 3,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/call-for-papers-tablet-02-SubmissionInstructions-part-3.png"
+  },
+  {
+    "page": "Call for Papers",
+    "device": "Tablet",
+    "component": "ReviewPresentationGuidance",
+    "part": 1,
+    "parts": 2,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/call-for-papers-tablet-03-ReviewPresentationGuidance-part-1.png"
+  },
+  {
+    "page": "Call for Papers",
+    "device": "Tablet",
+    "component": "ReviewPresentationGuidance",
+    "part": 2,
+    "parts": 2,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/call-for-papers-tablet-03-ReviewPresentationGuidance-part-2.png"
+  },
+  {
+    "page": "Call for Papers",
+    "device": "Tablet",
+    "component": "AzulejoArtwork",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/call-for-papers-tablet-04-AzulejoArtwork-part-1.png"
+  },
+  {
+    "page": "Call for Papers",
+    "device": "Mobile",
+    "component": "CallForPapersHero",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/call-for-papers-mobile-01-CallForPapersHero-part-1.png"
+  },
+  {
+    "page": "Call for Papers",
+    "device": "Mobile",
+    "component": "SubmissionInstructions",
+    "part": 1,
+    "parts": 3,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/call-for-papers-mobile-02-SubmissionInstructions-part-1.png"
+  },
+  {
+    "page": "Call for Papers",
+    "device": "Mobile",
+    "component": "SubmissionInstructions",
+    "part": 2,
+    "parts": 3,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/call-for-papers-mobile-02-SubmissionInstructions-part-2.png"
+  },
+  {
+    "page": "Call for Papers",
+    "device": "Mobile",
+    "component": "SubmissionInstructions",
+    "part": 3,
+    "parts": 3,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/call-for-papers-mobile-02-SubmissionInstructions-part-3.png"
+  },
+  {
+    "page": "Call for Papers",
+    "device": "Mobile",
+    "component": "ReviewPresentationGuidance",
+    "part": 1,
+    "parts": 2,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/call-for-papers-mobile-03-ReviewPresentationGuidance-part-1.png"
+  },
+  {
+    "page": "Call for Papers",
+    "device": "Mobile",
+    "component": "ReviewPresentationGuidance",
+    "part": 2,
+    "parts": 2,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/call-for-papers-mobile-03-ReviewPresentationGuidance-part-2.png"
+  },
+  {
+    "page": "Call for Papers",
+    "device": "Mobile",
+    "component": "AzulejoArtwork",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/slices/call-for-papers-mobile-04-AzulejoArtwork-part-1.png"
+  },
+  {
+    "page": "Common",
+    "device": "Desktop",
+    "component": "Navigation",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/screenshots/landing-desktop-08-Navigation.png"
+  },
+  {
+    "page": "Common",
+    "device": "Desktop",
+    "component": "MinimalFooter",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/screenshots/landing-desktop-09-MinimalFooter.png"
+  },
+  {
+    "page": "Common",
+    "device": "Tablet",
+    "component": "Navigation",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/screenshots/landing-tablet-08-Navigation.png"
+  },
+  {
+    "page": "Common",
+    "device": "Tablet",
+    "component": "MinimalFooter",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/screenshots/landing-tablet-09-MinimalFooter.png"
+  },
+  {
+    "page": "Common",
+    "device": "Mobile",
+    "component": "Navigation",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/screenshots/landing-mobile-08-Navigation.png"
+  },
+  {
+    "page": "Common",
+    "device": "Mobile",
+    "component": "MinimalFooter",
+    "part": 1,
+    "parts": 1,
+    "file": "/Users/saheelwagh/coding/hackathon/confsite/docs/content-map-tools/screenshots/landing-mobile-09-MinimalFooter.png"
+  }
+]

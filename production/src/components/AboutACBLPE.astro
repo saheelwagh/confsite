@@ -13,7 +13,7 @@ const { variant = 'default' } = Astro.props;
 
     <div class="about-copy">
       <p>
-        ACBLPE is a scientific association dedicated to the study of Iberian-lexified
+        <a href="https://www.acblpe.com/en" target="_blank" rel="noopener noreferrer" aria-label="ACBLPE (opens in a new tab)">ACBLPE</a> is a scientific association dedicated to the study of Iberian-lexified
         creole languages and their communities, and more generally linguistic
         contact involving Portuguese or Spanish.
       </p>
@@ -72,6 +72,8 @@ const { variant = 'default' } = Astro.props;
   .about-copy { color: #566984; font-size: 16px; line-height: 24px; }
   .about-copy p { margin: 0; }
   .about-copy p + p { margin-top: 24px; }
+  .about-copy a { color: inherit; text-decoration: underline; text-underline-offset: .14em; }
+  .about-copy a:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
   .landing { min-height: 515px; padding: 96px 80px; background: #214cb5; color: #faf7f0; font-family: var(--landing-sans); }
   .landing-label { max-width: 1280px; margin: 0 auto 28px; }
   .landing .about-layout { max-width: 1280px; gap: 64px; }

@@ -1,0 +1,30 @@
+---
+import SectionLabel from './SectionLabel.astro';
+---
+
+<section id="registration-notice" class="registration-notice" aria-labelledby="registration-notice-title">
+  <div class="content">
+    <SectionLabel number="02" label="Registration update" />
+    <h2 id="registration-notice-title">Registration to the conference will open soon.</h2>
+    <p>Kindly check the paper submission guidlines <a href="/call-for-papers">here</a></p>
+  </div>
+</section>
+
+<style>
+  .registration-notice { box-sizing: border-box; padding: 96px 80px 112px; background: #fffdf8; color: #152d53; font-family: var(--landing-sans, Arial, sans-serif); }
+  .content { max-width: 1280px; margin-inline: auto; }
+  h2 { max-width: 790px; margin: 28px 0 0; font-family: var(--landing-serif, Georgia, serif); font-size: clamp(36px, 4vw, 52px); font-weight: 400; line-height: 1.25; letter-spacing: -1.5px; }
+  p { max-width: 790px; margin: 28px 0 0; color: #586a81; font-size: 19px; line-height: 1.7; }
+  a { color: #214cb5; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+  a:hover { color: #152d53; }
+  a:focus-visible { outline: 2px solid #214cb5; outline-offset: 4px; }
+  @media (max-width: 1199px) {
+    .registration-notice { padding: 72px 40px 88px; }
+    p { font-size: 17px; }
+  }
+  @media (max-width: 600px) {
+    .registration-notice { padding: 56px 24px 72px; }
+    h2 { margin-top: 26px; font-size: 32px; letter-spacing: -1px; }
+    p { margin-top: 22px; font-size: 16px; }
+  }
+</style>

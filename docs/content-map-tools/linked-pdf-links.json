@@ -1,0 +1,802 @@
+[
+  {
+    "page": 2,
+    "target": 61,
+    "label": "view screenshot (mobile)"
+  },
+  {
+    "page": 2,
+    "target": 54,
+    "label": "view screenshot (tablet)"
+  },
+  {
+    "page": 2,
+    "target": 47,
+    "label": "view screenshot (desktop)"
+  },
+  {
+    "page": 4,
+    "target": 62,
+    "label": "view screenshot (mobile)"
+  },
+  {
+    "page": 4,
+    "target": 55,
+    "label": "view screenshot (tablet)"
+  },
+  {
+    "page": 4,
+    "target": 48,
+    "label": "view screenshot (desktop)"
+  },
+  {
+    "page": 5,
+    "target": 63,
+    "label": "view screenshot (mobile)"
+  },
+  {
+    "page": 5,
+    "target": 56,
+    "label": "view screenshot (tablet)"
+  },
+  {
+    "page": 5,
+    "target": 49,
+    "label": "view screenshot (desktop)"
+  },
+  {
+    "page": 6,
+    "target": 64,
+    "label": "view screenshot (mobile)"
+  },
+  {
+    "page": 6,
+    "target": 57,
+    "label": "view screenshot (tablet)"
+  },
+  {
+    "page": 6,
+    "target": 50,
+    "label": "view screenshot (desktop)"
+  },
+  {
+    "page": 8,
+    "target": 65,
+    "label": "view screenshot (mobile)"
+  },
+  {
+    "page": 8,
+    "target": 58,
+    "label": "view screenshot (tablet)"
+  },
+  {
+    "page": 8,
+    "target": 51,
+    "label": "view screenshot (desktop)"
+  },
+  {
+    "page": 10,
+    "target": 66,
+    "label": "view screenshot (mobile)"
+  },
+  {
+    "page": 10,
+    "target": 59,
+    "label": "view screenshot (tablet)"
+  },
+  {
+    "page": 10,
+    "target": 52,
+    "label": "view screenshot (desktop)"
+  },
+  {
+    "page": 12,
+    "target": 67,
+    "label": "view screenshot (mobile)"
+  },
+  {
+    "page": 12,
+    "target": 60,
+    "label": "view screenshot (tablet)"
+  },
+  {
+    "page": 12,
+    "target": 53,
+    "label": "view screenshot (desktop)"
+  },
+  {
+    "page": 13,
+    "target": 75,
+    "label": "view screenshot (mobile)"
+  },
+  {
+    "page": 13,
+    "target": 71,
+    "label": "view screenshot (tablet)"
+  },
+  {
+    "page": 13,
+    "target": 68,
+    "label": "view screenshot (desktop)"
+  },
+  {
+    "page": 15,
+    "target": 76,
+    "label": "view screenshot (mobile)"
+  },
+  {
+    "page": 15,
+    "target": 73,
+    "label": "view screenshot (tablet)"
+  },
+  {
+    "page": 15,
+    "target": 69,
+    "label": "view screenshot (desktop)"
+  },
+  {
+    "page": 16,
+    "target": 77,
+    "label": "view screenshot (mobile)"
+  },
+  {
+    "page": 16,
+    "target": 74,
+    "label": "view screenshot (tablet)"
+  },
+  {
+    "page": 16,
+    "target": 70,
+    "label": "view screenshot (desktop)"
+  },
+  {
+    "page": 17,
+    "target": 86,
+    "label": "(mobile)"
+  },
+  {
+    "page": 17,
+    "target": 86,
+    "label": "view screenshot"
+  },
+  {
+    "page": 17,
+    "target": 81,
+    "label": "view screenshot (tablet)"
+  },
+  {
+    "page": 17,
+    "target": 78,
+    "label": "view screenshot (desktop)"
+  },
+  {
+    "page": 20,
+    "target": 88,
+    "label": "view screenshot (mobile)"
+  },
+  {
+    "page": 20,
+    "target": 82,
+    "label": "view screenshot (tablet)"
+  },
+  {
+    "page": 20,
+    "target": 79,
+    "label": "view screenshot (desktop)"
+  },
+  {
+    "page": 25,
+    "target": 92,
+    "label": "view screenshot (mobile)"
+  },
+  {
+    "page": 25,
+    "target": 85,
+    "label": "view screenshot (tablet)"
+  },
+  {
+    "page": 25,
+    "target": 80,
+    "label": "view screenshot (desktop)"
+  },
+  {
+    "page": 26,
+    "target": 102,
+    "label": "view screenshot (mobile)"
+  },
+  {
+    "page": 26,
+    "target": 97,
+    "label": "view screenshot (tablet)"
+  },
+  {
+    "page": 26,
+    "target": 93,
+    "label": "view screenshot (desktop)"
+  },
+  {
+    "page": 27,
+    "target": 104,
+    "label": "view screenshot (mobile)"
+  },
+  {
+    "page": 27,
+    "target": 98,
+    "label": "view screenshot (tablet)"
+  },
+  {
+    "page": 27,
+    "target": 94,
+    "label": "view screenshot (desktop)"
+  },
+  {
+    "page": 31,
+    "target": 107,
+    "label": "(mobile)"
+  },
+  {
+    "page": 31,
+    "target": 107,
+    "label": "view screenshot"
+  },
+  {
+    "page": 31,
+    "target": 100,
+    "label": "view screenshot (tablet)"
+  },
+  {
+    "page": 31,
+    "target": 95,
+    "label": "view screenshot (desktop)"
+  },
+  {
+    "page": 33,
+    "target": 109,
+    "label": "view screenshot (mobile)"
+  },
+  {
+    "page": 33,
+    "target": 101,
+    "label": "view screenshot (tablet)"
+  },
+  {
+    "page": 33,
+    "target": 96,
+    "label": "view screenshot (desktop)"
+  },
+  {
+    "page": 34,
+    "target": 121,
+    "label": "view screenshot (mobile)"
+  },
+  {
+    "page": 34,
+    "target": 114,
+    "label": "view screenshot (tablet)"
+  },
+  {
+    "page": 34,
+    "target": 110,
+    "label": "view screenshot (desktop)"
+  },
+  {
+    "page": 35,
+    "target": 122,
+    "label": "(mobile)"
+  },
+  {
+    "page": 35,
+    "target": 122,
+    "label": "view screenshot"
+  },
+  {
+    "page": 35,
+    "target": 115,
+    "label": "view screenshot (tablet)"
+  },
+  {
+    "page": 35,
+    "target": 111,
+    "label": "view screenshot (desktop)"
+  },
+  {
+    "page": 39,
+    "target": 125,
+    "label": "screenshot (mobile)"
+  },
+  {
+    "page": 39,
+    "target": 125,
+    "label": "view"
+  },
+  {
+    "page": 39,
+    "target": 118,
+    "label": "view screenshot (tablet)"
+  },
+  {
+    "page": 39,
+    "target": 112,
+    "label": "view screenshot (desktop)"
+  },
+  {
+    "page": 42,
+    "target": 127,
+    "label": "view screenshot (mobile)"
+  },
+  {
+    "page": 42,
+    "target": 120,
+    "label": "view screenshot (tablet)"
+  },
+  {
+    "page": 42,
+    "target": 113,
+    "label": "view screenshot (desktop)"
+  },
+  {
+    "page": 43,
+    "target": 132,
+    "label": "view screenshot (mobile)"
+  },
+  {
+    "page": 43,
+    "target": 130,
+    "label": "view screenshot (tablet)"
+  },
+  {
+    "page": 43,
+    "target": 128,
+    "label": "view screenshot (desktop)"
+  },
+  {
+    "page": 44,
+    "target": 133,
+    "label": "view screenshot (mobile)"
+  },
+  {
+    "page": 44,
+    "target": 131,
+    "label": "view screenshot (tablet)"
+  },
+  {
+    "page": 44,
+    "target": 129,
+    "label": "view screenshot (desktop)"
+  },
+  {
+    "page": 47,
+    "target": 2,
+    "label": "edit text"
+  },
+  {
+    "page": 48,
+    "target": 4,
+    "label": "edit text"
+  },
+  {
+    "page": 49,
+    "target": 5,
+    "label": "edit text"
+  },
+  {
+    "page": 50,
+    "target": 6,
+    "label": "edit text"
+  },
+  {
+    "page": 51,
+    "target": 8,
+    "label": "edit text"
+  },
+  {
+    "page": 52,
+    "target": 10,
+    "label": "edit text"
+  },
+  {
+    "page": 53,
+    "target": 12,
+    "label": "edit text"
+  },
+  {
+    "page": 54,
+    "target": 2,
+    "label": "edit text"
+  },
+  {
+    "page": 55,
+    "target": 4,
+    "label": "edit text"
+  },
+  {
+    "page": 56,
+    "target": 5,
+    "label": "edit text"
+  },
+  {
+    "page": 57,
+    "target": 6,
+    "label": "edit text"
+  },
+  {
+    "page": 58,
+    "target": 8,
+    "label": "edit text"
+  },
+  {
+    "page": 59,
+    "target": 10,
+    "label": "edit text"
+  },
+  {
+    "page": 60,
+    "target": 12,
+    "label": "edit text"
+  },
+  {
+    "page": 61,
+    "target": 2,
+    "label": "edit text"
+  },
+  {
+    "page": 62,
+    "target": 4,
+    "label": "edit text"
+  },
+  {
+    "page": 63,
+    "target": 5,
+    "label": "edit text"
+  },
+  {
+    "page": 64,
+    "target": 6,
+    "label": "edit text"
+  },
+  {
+    "page": 65,
+    "target": 8,
+    "label": "edit text"
+  },
+  {
+    "page": 66,
+    "target": 10,
+    "label": "edit text"
+  },
+  {
+    "page": 67,
+    "target": 12,
+    "label": "edit text"
+  },
+  {
+    "page": 68,
+    "target": 13,
+    "label": "edit text"
+  },
+  {
+    "page": 69,
+    "target": 15,
+    "label": "edit text"
+  },
+  {
+    "page": 70,
+    "target": 16,
+    "label": "edit text"
+  },
+  {
+    "page": 71,
+    "target": 13,
+    "label": "edit text"
+  },
+  {
+    "page": 72,
+    "target": 13,
+    "label": "edit text"
+  },
+  {
+    "page": 73,
+    "target": 15,
+    "label": "edit text"
+  },
+  {
+    "page": 74,
+    "target": 16,
+    "label": "edit text"
+  },
+  {
+    "page": 75,
+    "target": 13,
+    "label": "edit text"
+  },
+  {
+    "page": 76,
+    "target": 15,
+    "label": "edit text"
+  },
+  {
+    "page": 77,
+    "target": 16,
+    "label": "edit text"
+  },
+  {
+    "page": 78,
+    "target": 17,
+    "label": "edit text"
+  },
+  {
+    "page": 79,
+    "target": 20,
+    "label": "edit text"
+  },
+  {
+    "page": 80,
+    "target": 25,
+    "label": "edit text"
+  },
+  {
+    "page": 81,
+    "target": 17,
+    "label": "edit text"
+  },
+  {
+    "page": 82,
+    "target": 20,
+    "label": "edit text"
+  },
+  {
+    "page": 83,
+    "target": 20,
+    "label": "edit text"
+  },
+  {
+    "page": 84,
+    "target": 20,
+    "label": "edit text"
+  },
+  {
+    "page": 85,
+    "target": 25,
+    "label": "edit text"
+  },
+  {
+    "page": 86,
+    "target": 17,
+    "label": "edit text"
+  },
+  {
+    "page": 87,
+    "target": 17,
+    "label": "edit text"
+  },
+  {
+    "page": 88,
+    "target": 20,
+    "label": "edit text"
+  },
+  {
+    "page": 89,
+    "target": 20,
+    "label": "edit text"
+  },
+  {
+    "page": 90,
+    "target": 20,
+    "label": "edit text"
+  },
+  {
+    "page": 91,
+    "target": 20,
+    "label": "edit text"
+  },
+  {
+    "page": 92,
+    "target": 25,
+    "label": "edit text"
+  },
+  {
+    "page": 93,
+    "target": 26,
+    "label": "edit text"
+  },
+  {
+    "page": 94,
+    "target": 27,
+    "label": "edit text"
+  },
+  {
+    "page": 95,
+    "target": 31,
+    "label": "edit text"
+  },
+  {
+    "page": 96,
+    "target": 33,
+    "label": "edit text"
+  },
+  {
+    "page": 97,
+    "target": 26,
+    "label": "edit text"
+  },
+  {
+    "page": 98,
+    "target": 27,
+    "label": "edit text"
+  },
+  {
+    "page": 99,
+    "target": 27,
+    "label": "edit text"
+  },
+  {
+    "page": 100,
+    "target": 31,
+    "label": "edit text"
+  },
+  {
+    "page": 101,
+    "target": 33,
+    "label": "edit text"
+  },
+  {
+    "page": 102,
+    "target": 26,
+    "label": "edit text"
+  },
+  {
+    "page": 103,
+    "target": 26,
+    "label": "edit text"
+  },
+  {
+    "page": 104,
+    "target": 27,
+    "label": "edit text"
+  },
+  {
+    "page": 105,
+    "target": 27,
+    "label": "edit text"
+  },
+  {
+    "page": 106,
+    "target": 27,
+    "label": "edit text"
+  },
+  {
+    "page": 107,
+    "target": 31,
+    "label": "edit text"
+  },
+  {
+    "page": 108,
+    "target": 31,
+    "label": "edit text"
+  },
+  {
+    "page": 109,
+    "target": 33,
+    "label": "edit text"
+  },
+  {
+    "page": 110,
+    "target": 34,
+    "label": "edit text"
+  },
+  {
+    "page": 111,
+    "target": 35,
+    "label": "edit text"
+  },
+  {
+    "page": 112,
+    "target": 39,
+    "label": "edit text"
+  },
+  {
+    "page": 113,
+    "target": 42,
+    "label": "edit text"
+  },
+  {
+    "page": 114,
+    "target": 34,
+    "label": "edit text"
+  },
+  {
+    "page": 115,
+    "target": 35,
+    "label": "edit text"
+  },
+  {
+    "page": 116,
+    "target": 35,
+    "label": "edit text"
+  },
+  {
+    "page": 117,
+    "target": 35,
+    "label": "edit text"
+  },
+  {
+    "page": 118,
+    "target": 39,
+    "label": "edit text"
+  },
+  {
+    "page": 119,
+    "target": 39,
+    "label": "edit text"
+  },
+  {
+    "page": 120,
+    "target": 42,
+    "label": "edit text"
+  },
+  {
+    "page": 121,
+    "target": 34,
+    "label": "edit text"
+  },
+  {
+    "page": 122,
+    "target": 35,
+    "label": "edit text"
+  },
+  {
+    "page": 123,
+    "target": 35,
+    "label": "edit text"
+  },
+  {
+    "page": 124,
+    "target": 35,
+    "label": "edit text"
+  },
+  {
+    "page": 125,
+    "target": 39,
+    "label": "edit text"
+  },
+  {
+    "page": 126,
+    "target": 39,
+    "label": "edit text"
+  },
+  {
+    "page": 127,
+    "target": 42,
+    "label": "edit text"
+  },
+  {
+    "page": 128,
+    "target": 43,
+    "label": "edit text"
+  },
+  {
+    "page": 129,
+    "target": 44,
+    "label": "edit text"
+  },
+  {
+    "page": 130,
+    "target": 43,
+    "label": "edit text"
+  },
+  {
+    "page": 131,
+    "target": 44,
+    "label": "edit text"
+  },
+  {
+    "page": 132,
+    "target": 43,
+    "label": "edit text"
+  },
+  {
+    "page": 133,
+    "target": 44,
+    "label": "edit text"
+  }
+]

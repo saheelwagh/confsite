@@ -26,12 +26,15 @@ const {
       <span class="location">{location}</span>
     </div>
 
-    <h1 id="conference-title">Iberian-Lexified Creoles:<br /><span class="accent">A Global Conversation</span> in Goa</h1>
+    {variant === 'landing' ? (
+      <h1 id="conference-title"><span class="accent">25th Annual Conference</span> of the Association of Portuguese and Spanish-Lexified Creoles (ACBLPE)</h1>
+    ) : (
+      <h1 id="conference-title">Iberian-Lexified Creoles:<br /><span class="accent">A Global Conversation</span> in Goa</h1>
+    )}
 
     <div class="hero-footer">
       <p class="description">
-        The 25ᵗʰ Annual Conference of the Association of Portuguese and<br />
-        Spanish-lexified Creoles (ACBLPE) comes to South Asia for the first time.
+        <a href="https://www.acblpe.com/en" target="_blank" rel="noopener noreferrer" aria-label="ACBLPE (opens in a new tab)">ACBLPE</a> in its 25th edition arrives in South Asia for the first time. The Call for Papers is now open
       </p>
       <div class="hero-actions">
         <a class="button primary" href={abstractHref}>
@@ -80,6 +83,8 @@ const {
   h1 .accent { color: var(--hero-blue); }
   .hero-footer { display: flex; align-items: center; justify-content: space-between; gap: 40px; margin-top: 48px; }
   .description { margin: 0; color: #40577c; font-size: 18px; line-height: 26px; }
+  .description a { color: inherit; text-decoration: underline; text-underline-offset: .14em; }
+  .description a:focus-visible { outline: 2px solid var(--hero-blue); outline-offset: 3px; }
   .hero-actions { display: flex; flex-shrink: 0; align-items: center; gap: 12px; }
 
   .button {
@@ -108,7 +113,7 @@ const {
   .landing .hero-meta { gap: 12px; line-height: 17.4px; }
   .landing .status { padding-block: 5px; }
   .landing .location, .landing .description { color: #425475; }
-  .landing h1 { margin-top: 28px; font-family: var(--landing-serif); font-size: 102px; line-height: 1.12; letter-spacing: -5.1px; }
+  .landing h1 { margin-top: 28px; font-family: var(--landing-serif); font-size: clamp(42px, 5vw, 70px); line-height: 1.12; letter-spacing: -.04em; }
   .landing .second-line { margin-left: 1.4em; }
   .landing .hero-footer { margin-top: 34px; gap: 32px; }
   .landing .description { max-width: 640px; line-height: 1.45; }
@@ -120,7 +125,7 @@ const {
   @media (max-width: 1199px) {
     .landing { position: relative; min-height: 570px; padding: 56px 40px; }
     .landing .responsive-label { display: block; position: absolute; top: 20px; left: 40px; }
-    .landing h1 { font-size: 66px; letter-spacing: -3.3px; }
+    .landing h1 { font-size: clamp(40px, 5vw, 58px); }
     .landing .second-line { margin-left: 0; }
     .landing .hero-footer { flex-direction: column; align-items: flex-start; margin-top: 30px; gap: 28px; }
     .landing .description { max-width: none; font-size: 16px; }
@@ -134,7 +139,7 @@ const {
     .landing { min-height: 650px; padding: 40px 24px 56px; }
     .landing .responsive-label { left: 24px; }
     .landing .hero-meta { flex-direction: column; align-items: flex-start; gap: 10px; }
-    .landing h1 { margin-top: 27px; font-size: clamp(35px, 11.026vw, 43px); letter-spacing: -2.15px; }
+    .landing h1 { margin-top: 27px; font-size: clamp(30px, 7vw, 38px); }
     .landing .mobile-break { display: initial; }
     .landing .hero-footer { margin-top: 28px; gap: 29px; }
     .landing .description { font-size: 16px; }
