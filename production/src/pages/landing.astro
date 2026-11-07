@@ -8,6 +8,7 @@ import KeynoteIntro from '../components/KeynoteIntro.astro';
 import Timeline from '../components/Timeline.astro';
 import MinimalFooter from '../components/MinimalFooter.astro';
 import LandingFonts from '../components/LandingFonts.astro';
+import SectionTracker from '../components/SectionTracker.astro';
 
 const links = [
   { label: 'Home', href: '/' },
@@ -45,6 +46,7 @@ const milestones = [
   <body id="top" class="landing-page">
     <Navigation variant="landing" homeHref="/landing" links={links} />
     <main id="main-content">
+      <SectionTracker />
       <Hero variant="landing" />
       <AboutACBLPE variant="landing" />
       <Satellite variant="landing" />

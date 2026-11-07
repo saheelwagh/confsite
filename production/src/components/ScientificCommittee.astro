@@ -46,9 +46,6 @@ const members = [
 <style>
   .scientific-committee { box-sizing: border-box; min-height: 1324px; padding: 96px 80px; background: #faf7f0; color: #152d53; font-family: var(--landing-sans, Arial, sans-serif); scroll-margin-top: 24px; }
   .content { max-width: 1280px; margin-inline: auto; }
-  .section-label { display: flex; align-items: center; gap: 16px; margin: 0; color: #214cb5; font-size: 12px; font-weight: 600; line-height: 15px; letter-spacing: 1.5px; text-transform: uppercase; }
-  .section-label > span:first-child { letter-spacing: 0; font-weight: 400; }
-  .label-line { width: 40px; height: 1px; flex-shrink: 0; background: currentColor; }
   h2 { margin: 28px 0 0; font-family: var(--landing-serif, Georgia, serif); font-size: 52px; font-weight: 400; line-height: 1.22; letter-spacing: -1.7px; }
   .proposal-notice { display: flex; align-items: center; justify-content: space-between; gap: 32px; margin-top: 38px; }
   .proposal-notice p { margin: 0; color: #58677a; font-size: 18px; line-height: 1.6; }
@@ -60,8 +57,6 @@ const members = [
   .members p { margin: 8px 0 0; color: #58677a; font-size: 15px; line-height: 1.6; }
   @media (max-width: 1199px) {
     .scientific-committee { min-height: 0; padding: 72px 40px; }
-    .section-label { gap: 10px; }
-    .label-line { width: 24px; }
     h2 { font-size: 40px; letter-spacing: -1.2px; }
     .proposal-notice { align-items: flex-start; margin-top: 32px; }
     .proposal-notice p { font-size: 16px; }
@@ -71,7 +66,6 @@ const members = [
   }
   @media (max-width: 600px) {
     .scientific-committee { padding: 56px 24px; }
-    .section-label { gap: 10px; font-size: 10px; line-height: 1.5; letter-spacing: 1px; }
     h2 { font-size: 32px; letter-spacing: -1px; }
     .proposal-notice { flex-direction: column; gap: 20px; }
     .members { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; grid-auto-flow: row; margin-top: 32px; }

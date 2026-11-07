@@ -2,6 +2,7 @@
 import Navigation from '../components/Navigation.astro';
 import MinimalFooter from '../components/MinimalFooter.astro';
 import LandingFonts from '../components/LandingFonts.astro';
+import SectionTracker from '../components/SectionTracker.astro';
 import OrganisationCommittee from '../components/OrganisationCommittee.astro';
 import ScientificCommittee from '../components/ScientificCommittee.astro';
 const links = [
@@ -26,6 +27,7 @@ const links = [
   <body id="top" class="people-page">
     <Navigation variant="landing" homeHref="/landing" links={links} />
     <main id="main-content">
+      <SectionTracker />
       <OrganisationCommittee />
       <ScientificCommittee />
     </main>

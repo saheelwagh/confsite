@@ -1,4 +1,5 @@
 ---
+import SectionLabel from './SectionLabel.astro';
 const connections = [
   { title: 'Airports', options: [
     { name: 'Dabolim / Goa International Airport (GOI)', description: 'Located at a distance of 29 km.' },
@@ -16,6 +17,7 @@ const connections = [
 
 <section class="reaching-goa" aria-labelledby="travel-title">
   <div class="content">
+    <div class="travel-label"><SectionLabel label="Travel connections" light /></div>
     <h2 id="travel-title">Reaching Goa University</h2>
     <div class="connections">
       {connections.map(({ title, options }) => <div class="transport-group">
@@ -29,6 +31,7 @@ const connections = [
 <style>
   .reaching-goa { padding: 80px; background: #214cb5; color: #f7f6f0; }
   .content { max-width: 1104px; margin-inline: auto; }
+  .travel-label { margin-bottom: 16px; }
   h2 { margin: 0; font-family: var(--landing-serif); font-size: 44px; font-weight: 400; line-height: 1.25; letter-spacing: -1.4px; }
   .connections { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; margin-top: 48px; }
   h3 { margin: 0; color: #d4def3; font-size: 12px; font-weight: 600; line-height: 15px; letter-spacing: 1.8px; text-transform: uppercase; }

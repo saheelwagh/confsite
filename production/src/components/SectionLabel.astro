@@ -2,7 +2,7 @@
 interface Props { number?: string; label: string; light?: boolean; gold?: boolean; }
 const { number, label, light = false, gold = false } = Astro.props;
 ---
-<p class:list={['section-label', { light, gold }]}>
+<p class:list={['section-label', { light, gold }]} data-section-label>
   {number && <><span class="section-number">{number}</span><span class="rule" aria-hidden="true"></span></>}<span class="label">{label}</span>
 </p>
 <style>

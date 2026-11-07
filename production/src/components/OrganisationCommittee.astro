@@ -44,9 +44,6 @@ const committee = [
 <style>
   .organisation-section { box-sizing: border-box; min-height: 941px; padding: 96px 80px; background: #eaf0f7; color: #152d53; font-family: var(--landing-sans, Arial, sans-serif); scroll-margin-top: 24px; }
   .content { max-width: 1280px; margin-inline: auto; }
-  .section-label { display: flex; align-items: center; gap: 16px; margin: 0; color: #214cb5; font-size: 12px; font-weight: 600; line-height: 15px; letter-spacing: 1.5px; text-transform: uppercase; }
-  .section-label > span:first-child { letter-spacing: 0; font-weight: 400; }
-  .label-line { width: 40px; height: 1px; flex-shrink: 0; background: currentColor; }
   h1 { margin: 28px 0 0; font-family: var(--landing-serif, Georgia, serif); font-size: 52px; font-weight: 400; line-height: 1.22; letter-spacing: -1.7px; }
   .organisation-layout { display: grid; grid-template-columns: 500px minmax(0, 1fr); gap: 80px; margin-top: 48px; }
   h2 { margin: 0; color: #214cb5; font-size: 12px; font-weight: 600; line-height: 15px; letter-spacing: 1.5px; text-transform: uppercase; }
@@ -58,8 +55,6 @@ const committee = [
   .member-role { color: #58677a; font-size: 16px; line-height: 1.6; }
   @media (max-width: 1199px) {
     .organisation-section { min-height: 0; padding: 72px 40px; }
-    .section-label { gap: 10px; }
-    .label-line { width: 24px; }
     h1 { font-size: 40px; letter-spacing: -1.2px; }
     .organisation-layout { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 32px; margin-top: 40px; }
     .organisations li { font-size: 22px; }

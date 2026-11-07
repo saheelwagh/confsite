@@ -1,0 +1,111 @@
+<section-tracker role="region" aria-label="Current section" hidden>
+  <div class="tracker-content" data-current-section></div>
+</section-tracker>
+
+<script>
+  class SectionTracker extends HTMLElement {
+    private cleanup?: () => void;
+
+    connectedCallback() {
+      const main = this.closest('main');
+      const content = this.querySelector('[data-current-section]');
+      if (!main || !content) return;
+
+      // Each section's existing SectionLabel props remain the source of truth.
+      const sections = Array.from(main.querySelectorAll<HTMLElement>('[data-section-label]'))
+        .flatMap((label) => {
+          const section = label.closest('section');
+          return section ? [{ label, section }] : [];
+        });
+      if (!sections.length) return;
+
+      let activeLabel: HTMLElement | undefined;
+      let activeSurface = '';
+      let frame = 0;
+      const update = () => {
+        frame = 0;
+        const pinLine = parseFloat(window.getComputedStyle(content).paddingTop);
+        const pinned = sections[0].label.getBoundingClientRect().top <= pinLine;
+        this.toggleAttribute('data-pinned', pinned);
+        this.setAttribute('aria-hidden', String(!pinned));
+        main.toggleAttribute('data-section-tracker-pinned', pinned);
+        if (!pinned) return;
+
+        const readingLine = Math.min(content.getBoundingClientRect().height / 2, 32);
+        let active = sections[0];
+        for (const entry of sections) {
+          if (entry.section.getBoundingClientRect().top <= readingLine) active = entry;
+          else break;
+        }
+        const surface = window.getComputedStyle(active.section).backgroundColor;
+        if (surface !== activeSurface) {
+          activeSurface = surface;
+          this.style.setProperty('--tracker-surface', surface);
+        }
+        if (active.label === activeLabel) return;
+        activeLabel = active.label;
+        const label = active.label.cloneNode(true) as HTMLElement;
+        label.removeAttribute('data-section-label');
+        content.replaceChildren(label);
+      };
+      const scheduleUpdate = () => {
+        if (!frame) frame = window.requestAnimationFrame(update);
+      };
+
+      this.hidden = false;
+      update();
+
+      const controller = new AbortController();
+      window.addEventListener('scroll', scheduleUpdate, { passive: true, signal: controller.signal });
+      window.addEventListener('resize', scheduleUpdate, { signal: controller.signal });
+      const observer = new ResizeObserver(scheduleUpdate);
+      observer.observe(main);
+      this.cleanup = () => {
+        controller.abort();
+        observer.disconnect();
+        window.cancelAnimationFrame(frame);
+        main.removeAttribute('data-section-tracker-pinned');
+      };
+    }
+
+    disconnectedCallback() {
+      this.cleanup?.();
+    }
+  }
+
+  if (!customElements.get('section-tracker')) {
+    customElements.define('section-tracker', SectionTracker);
+  }
+</script>
+
+<style>
+  section-tracker { position: sticky; top: 0; z-index: 20; display: block; height: 0; pointer-events: none; }
+  section-tracker[hidden] { display: none; }
+  .tracker-content {
+    box-sizing: border-box;
+    min-height: 51px;
+    padding: 18px max(80px, calc((100% - 1280px) / 2));
+    background: rgb(250 247 240 / 4%);
+    background: color-mix(in srgb, var(--tracker-surface, #faf7f0) 12%, transparent);
+    backdrop-filter: blur(2px) saturate(1.05);
+    -webkit-backdrop-filter: blur(2px) saturate(1.05);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 180ms ease, visibility 180ms ease;
+  }
+  section-tracker[data-pinned] .tracker-content { opacity: 1; visibility: visible; }
+  @media (max-width: 1199px) {
+    .tracker-content { padding-inline: 40px; }
+  }
+  @media (max-width: 600px) {
+    .tracker-content { min-height: 47px; padding: 16px 24px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .tracker-content { transition: none; }
+  }
+</style>
+
+<style is:global>
+  main[data-section-tracker-pinned] [data-section-label] { visibility: hidden; }
+  main[data-section-tracker-pinned] > section { scroll-margin-top: 64px; }
+</style>

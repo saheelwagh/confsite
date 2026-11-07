@@ -19,7 +19,7 @@ const languages = ['Creole', 'English', 'French', 'Portuguese', 'Spanish'];
 
 <section id="review-and-presentation" class="review-guidance" aria-labelledby="review-title">
   <div class="guidance-content">
-    <SectionLabel number="05" label="Review · Languages · Presentations" />
+    <SectionLabel number="02" label="Review Guidelines" />
     <h2 id="review-title">Clarity in research. Dialogue in presentation.</h2>
     <p class="review-introduction">Reviewer instructions: abstracts will be assessed based on the following three criteria:</p>
 
@@ -57,9 +57,6 @@ const languages = ['Creole', 'English', 'French', 'Portuguese', 'Spanish'];
 <style>
   .review-guidance { box-sizing: border-box; padding: 96px 80px; background: #f8f6f0; color: #152d53; font-family: var(--landing-sans, Arial, sans-serif); scroll-margin-top: 24px; }
   .guidance-content { max-width: 1280px; margin-inline: auto; }
-  .section-label { display: flex; align-items: center; gap: 16px; margin: 0; color: #214cb5; font-size: 12px; font-weight: 600; line-height: 15px; letter-spacing: 1.5px; text-transform: uppercase; }
-  .section-label > span:first-child { letter-spacing: 0; font-weight: 400; }
-  .label-line { width: 40px; height: 1px; flex-shrink: 0; background: currentColor; }
   h2 { margin: 28px 0 0; font-family: var(--landing-serif, Georgia, serif); font-size: 52px; font-weight: 400; line-height: 1.22; letter-spacing: -1.7px; }
   .review-introduction { margin: 40px 0 0; color: #58677a; font-size: 18px; line-height: 1.6; }
   .criteria { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin: 30px 0 0; padding: 0; list-style: none; }
@@ -81,8 +78,6 @@ const languages = ['Creole', 'English', 'French', 'Portuguese', 'Spanish'];
   .plus { color: #214cb5; font-family: var(--landing-serif, Georgia, serif); font-size: 32px; line-height: 1.25; }
   @media (max-width: 1199px) {
     .review-guidance { padding: 72px 40px; }
-    .section-label { gap: 10px; }
-    .label-line { width: 24px; }
     h2 { font-size: 40px; letter-spacing: -1.2px; }
     .criteria { gap: 24px; }
     .criterion h3 { font-size: 22px; }
@@ -98,8 +93,6 @@ const languages = ['Creole', 'English', 'French', 'Portuguese', 'Spanish'];
   }
   @media (max-width: 600px) {
     .review-guidance { padding: 56px 24px; }
-    .section-label { align-items: baseline; gap: 10px; font-size: 10px; line-height: 1.5; letter-spacing: 1px; }
-    .label-line { align-self: center; }
     h2 { font-size: 32px; letter-spacing: -1px; }
     .review-introduction { margin-top: 32px; }
     .language-guidance h3 { font-size: 24px; }

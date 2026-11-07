@@ -16,7 +16,7 @@ const activities = [
 
 <section class="things-to-do" aria-labelledby="activities-title">
   <div class="content">
-    <SectionLabel label="Around the conference dates" />
+    <SectionLabel number="02" label="Explore Goa" />
     <h2 id="activities-title">Things to do</h2>
     <ol class="activities">
       {activities.map(({ title, description }, index) => <li>
@@ -30,7 +30,6 @@ const activities = [
 <style>
   .things-to-do { padding: 40px 80px 80px; background: #faf7f0; color: #152d53; }
   .content { max-width: 1104px; margin-inline: auto; }
-  .eyebrow { margin: 0; color: #214cb5; font-size: 12px; font-weight: 600; line-height: 15px; letter-spacing: 1.8px; text-transform: uppercase; }
   h2 { margin: 16px 0 0; font-family: var(--landing-serif); font-size: 44px; font-weight: 400; line-height: 1.25; letter-spacing: -1.4px; }
   .activities { margin: 40px 0 0; padding: 0; list-style: none; border-bottom: 1px solid #ccd1d4; }
   li { display: grid; grid-template-columns: 32px 370px minmax(0, 1fr); align-items: start; gap: 32px; box-sizing: border-box; min-height: 98px; padding-block: 24px; border-top: 1px solid #ccd1d4; }

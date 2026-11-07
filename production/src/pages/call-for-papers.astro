@@ -2,6 +2,7 @@
 import Navigation from '../components/Navigation.astro';
 import MinimalFooter from '../components/MinimalFooter.astro';
 import LandingFonts from '../components/LandingFonts.astro';
+import SectionTracker from '../components/SectionTracker.astro';
 import CallForPapersHero from '../components/CallForPapersHero.astro';
 import SubmissionInstructions from '../components/SubmissionInstructions.astro';
 import ReviewPresentationGuidance from '../components/ReviewPresentationGuidance.astro';
@@ -28,6 +29,7 @@ const links = [
   <body id="top" class="papers-page">
     <Navigation variant="landing" homeHref="/landing" links={links} />
     <main id="main-content">
+      <SectionTracker />
       <CallForPapersHero />
       <SubmissionInstructions />
       <ReviewPresentationGuidance />

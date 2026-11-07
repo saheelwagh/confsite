@@ -2,6 +2,7 @@
 import Navigation from '../components/Navigation.astro';
 import MinimalFooter from '../components/MinimalFooter.astro';
 import LandingFonts from '../components/LandingFonts.astro';
+import SectionTracker from '../components/SectionTracker.astro';
 import RegistrationFees from '../components/RegistrationFees.astro';
 import RegistrationForm from '../components/RegistrationForm.astro';
 
@@ -27,6 +28,7 @@ const links = [
   <body id="top" class="registration-page">
     <Navigation variant="landing" homeHref="/landing" links={links} />
     <main id="main-content">
+      <SectionTracker />
       <RegistrationFees />
       <RegistrationForm />
     </main>

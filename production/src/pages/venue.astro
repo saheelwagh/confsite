@@ -1,6 +1,7 @@
 ---
 import Navigation from '../components/Navigation.astro';
 import LandingFonts from '../components/LandingFonts.astro';
+import SectionTracker from '../components/SectionTracker.astro';
 import MinimalFooter from '../components/MinimalFooter.astro';
 import AboutGoa from '../components/AboutGoa.astro';
 import ThingsToDo from '../components/ThingsToDo.astro';
@@ -28,6 +29,7 @@ const links = [
   <body id="top" class="venue-page">
     <Navigation variant="landing" homeHref="/landing" links={links} />
     <main id="main-content">
+      <SectionTracker />
       <AboutGoa />
       <ThingsToDo />
       <ReachingGoaUniversity />
