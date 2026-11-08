@@ -11,8 +11,8 @@ export function submissionNotice(today: string) {
     message: `Abstract submissions open on ${submissions.startLabel}.`,
   };
   if (today <= submissions.end) return {
-    status: 'Call for abstracts open',
-    message: `Abstract submissions are open until ${submissions.endLabel}.`,
+    status: 'CFP Open',
+    message: 'Abstract Submission is now open.',
   };
   return {
     status: 'Call for abstracts closed',
