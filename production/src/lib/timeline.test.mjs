@@ -36,7 +36,7 @@ test('changes the conference day at midnight in India rather than midnight UTC',
 
 test('shows the correct submission notice before opening and through the closing day in India', () => {
   for (const [instant, status] of [
-    ['2026-11-09T18:29:59Z', 'Call for abstracts opens soon'],
+    ['2026-11-09T18:29:59Z', 'CFP Opening soon'],
     ['2026-11-09T18:30:00Z', 'Call for abstracts open'],
     ['2027-02-10T18:29:59Z', 'Call for abstracts open'],
     ['2027-02-10T18:30:00Z', 'Call for abstracts closed'],
