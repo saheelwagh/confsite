@@ -1,5 +1,6 @@
 ---
 import SectionLabel from './SectionLabel.astro';
+import { conferenceMilestones } from '../data/conference';
 interface Milestone {
   title: string;
   start: string;
@@ -13,13 +14,7 @@ interface Props {
   milestones?: Milestone[];
 }
 
-const { variant = 'default', milestones = [
-  { title: 'Submissions open', start: '2026-10-30', startLabel: '30 October 2026' },
-  { title: 'Submissions close', start: '2027-01-15', startLabel: '15 January 2027' },
-  { title: 'Review Completed', start: '2027-01-16', end: '2027-02-15', startLabel: '15 February 2027' },
-  { title: 'Satellite Conference', start: '2027-08-31', startLabel: '31 August 2027' },
-  { title: 'Main Conference', start: '2027-08-31', end: '2027-09-03', startLabel: '31 August', endLabel: '3 September 2027' },
-] } = Astro.props;
+const { variant = 'default', milestones = conferenceMilestones } = Astro.props;
 ---
 
 <!-- Animation restoration reference: ../../../docs/timeline-animation.md -->

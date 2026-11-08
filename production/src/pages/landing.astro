@@ -22,13 +22,6 @@ const speakers = [
   { name: 'Prof. J. Clancy Clements', affiliation: 'Indiana University' },
   { name: 'Eeva Sippola', affiliation: 'Universidade de Helsinki' },
 ];
-const milestones = [
-  { title: 'Submissions open', start: '2026-10-30', startLabel: '30 October 2026' },
-  { title: 'Submissions close', start: '2027-01-15', startLabel: '15 January 2027' },
-  { title: 'Review Completed', start: '2027-01-16', end: '2027-02-15', startLabel: '15 February 2027' },
-  { title: 'Satellite Conference', start: '2027-08-31', startLabel: '31 August 2027' },
-  { title: 'Main Conference', start: '2027-09-01', end: '2027-09-03', startLabel: '1', endLabel: '3 September 2027' },
-];
 ---
 
 <html lang="en">
@@ -51,7 +44,7 @@ const milestones = [
       <Satellite variant="landing" />
       <ConferenceVenue variant="landing" venueHref="/venue" directionsHref="https://maps.app.goo.gl/bjPpmSJ6iYi32MFV6" />
       <KeynoteIntro variant="directory" speakers={speakers} />
-      <Timeline variant="landing" milestones={milestones} />
+      <Timeline variant="landing" />
       <AzulejoArtwork />
     </main>
     <MinimalFooter />

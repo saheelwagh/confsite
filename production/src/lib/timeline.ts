@@ -1,6 +1,23 @@
+import { submissions } from '../data/conference.ts';
+
 interface Phase {
   start: string;
   end?: string;
+}
+
+export function submissionNotice(today: string) {
+  if (today < submissions.start) return {
+    status: 'Call for abstracts opens soon',
+    message: `Abstract submissions open on ${submissions.startLabel}.`,
+  };
+  if (today <= submissions.end) return {
+    status: 'Call for abstracts open',
+    message: `Abstract submissions are open until ${submissions.endLabel}.`,
+  };
+  return {
+    status: 'Call for abstracts closed',
+    message: `Abstract submissions closed on ${submissions.endLabel}.`,
+  };
 }
 
 /** Compare calendar days in the conference's timezone, independent of the visitor's timezone. */

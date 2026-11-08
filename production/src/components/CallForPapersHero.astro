@@ -1,5 +1,6 @@
 ---
 import SectionLabel from './SectionLabel.astro';
+import { submissions } from '../data/conference';
 ---
 
 <section class="papers-hero" aria-labelledby="papers-title">
@@ -8,8 +9,8 @@ import SectionLabel from './SectionLabel.astro';
     <h1 id="papers-title">Submit your abstract</h1>
     <p class="description">
       Abstracts are invited on any topic of language contact involving Portuguese or
-      Spanish. Submissions open <time datetime="2026-10-30">30 October 2026</time> and
-      close <time datetime="2027-01-15">15 January 2027</time>.
+      Spanish. Submissions open <time datetime={submissions.start}>{submissions.startLabel}</time> and
+      close <time datetime={submissions.end}>{submissions.endLabel}</time>.
     </p>
     <a class="submission-link" href="https://easyabs.linguistlist.org/" target="_blank" rel="noopener noreferrer">
       Submission Link

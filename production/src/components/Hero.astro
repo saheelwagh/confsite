@@ -1,5 +1,6 @@
 ---
 import SectionLabel from './SectionLabel.astro';
+import { submissions } from '../data/conference';
 interface Props {
   variant?: 'default' | 'landing';
   status?: string;
@@ -10,7 +11,7 @@ interface Props {
 
 const {
   variant = 'default',
-  status = 'Call for abstracts open',
+  status,
   location = 'Goa University · India',
   abstractHref = '/call-for-papers',
   registrationHref = '/registration',
@@ -22,7 +23,7 @@ const {
   {variant === 'landing' && <div class="responsive-label"><SectionLabel number="01" label="Introduction" /></div>}
   <div class="hero-content">
     <div class="hero-meta">
-      <span class="status">{status}</span>
+      <span class="status" data-submission-status={status === undefined ? '' : undefined}>{status ?? 'Call for abstracts'}</span>
       <span class="location">{location}</span>
     </div>
 
@@ -34,7 +35,7 @@ const {
 
     <div class="hero-footer">
       <p class="description">
-        <a href="https://www.acblpe.com/en" target="_blank" rel="noopener noreferrer" aria-label="ACBLPE (opens in a new tab)">ACBLPE</a> in its 25th edition arrives in South Asia for the first time. The Call for Papers is now open
+        <a href="https://www.acblpe.com/en" target="_blank" rel="noopener noreferrer" aria-label="ACBLPE (opens in a new tab)">ACBLPE</a> in its 25th edition arrives in South Asia for the first time. <span data-submission-message>Abstract submissions: {submissions.startLabel}–{submissions.endLabel}.</span>
       </p>
       <div class="hero-actions">
         <a class="button primary" href={abstractHref}>
@@ -50,6 +51,31 @@ const {
     </div>
   </div>
 </section>
+
+<script>
+  import { conferenceDay, submissionNotice } from '../lib/timeline';
+
+  let midnightTimer: ReturnType<typeof setTimeout>;
+  const updateSubmissionNotice = () => {
+    const now = new Date();
+    const today = conferenceDay(now);
+    const notice = submissionNotice(today);
+    document.querySelectorAll<HTMLElement>('[data-submission-status]').forEach((element) => {
+      element.textContent = notice.status;
+    });
+    document.querySelectorAll<HTMLElement>('[data-submission-message]').forEach((element) => {
+      element.textContent = notice.message;
+    });
+    clearTimeout(midnightTimer);
+    const nextMidnight = Date.parse(`${today}T00:00:00+05:30`) + 86_400_000;
+    midnightTimer = setTimeout(updateSubmissionNotice, Math.max(1, nextMidnight - now.getTime()));
+  };
+
+  updateSubmissionNotice();
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) updateSubmissionNotice();
+  });
+</script>
 
 <style>
   .responsive-label, .responsive-arrow, .mobile-break { display: none; }
