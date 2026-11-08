@@ -6,7 +6,8 @@ import { conferenceMilestones as phases } from '../data/conference.ts';
 test('switches submission and review phases on the requested calendar days', () => {
   for (const [day, expected] of [
     ['2026-11-09', []], ['2026-11-10', [0]], ['2026-11-11', [0]],
-    ['2027-02-09', [0]], ['2027-02-10', [1]], ['2027-02-11', [2]],
+    ['2027-01-28', [0]], ['2027-01-29', [1]], ['2027-01-30', []],
+    ['2027-02-09', []], ['2027-02-10', []], ['2027-02-11', [2]],
     ['2027-03-09', [2]], ['2027-03-10', [3]], ['2027-03-11', []],
     ['2027-08-30', []],
   ]) assert.deepEqual(activePhaseIndexes(phases, day), expected, day);
@@ -38,10 +39,12 @@ test('shows the correct submission notice before opening and through the closing
   for (const [instant, status] of [
     ['2026-11-09T18:29:59Z', 'CFP Opening soon'],
     ['2026-11-09T18:30:00Z', 'CFP Open'],
-    ['2027-02-10T18:29:59Z', 'CFP Open'],
-    ['2027-02-10T18:30:00Z', 'Call for abstracts closed'],
+    ['2027-01-29T18:29:59Z', 'CFP Open'],
+    ['2027-01-29T18:30:00Z', 'Call for abstracts closed'],
   ]) assert.equal(submissionNotice(conferenceDay(new Date(instant))).status, status, instant);
   assert.match(submissionNotice('2026-11-08').message, /10 November 2026/);
   assert.equal(submissionNotice('2026-11-10').message, 'Abstract Submission is now open.');
-  assert.equal(submissionNotice('2027-02-10').message, 'Abstract Submission is now open.');
+  assert.equal(submissionNotice('2027-01-29').message, 'Abstract Submission is now open.');
+  assert.equal(submissionNotice('2027-01-30').message, 'Abstract submissions closed on 29 January 2027.');
+  assert.equal(submissionNotice('2027-02-10').status, 'Call for abstracts closed');
 });

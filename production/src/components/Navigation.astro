@@ -21,7 +21,7 @@ const {
   callForPapersHref = '/call-for-papers',
 } = Astro.props;
 const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
-const isActive = (href: string) => href === '/' ? currentPath === '/' || currentPath === '/landing' : currentPath === href;
+const isActive = (href: string) => currentPath === href;
 ---
 
 <header class:list={['site-header', { landing: variant === 'landing' }]}>
