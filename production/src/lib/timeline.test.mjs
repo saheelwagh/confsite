@@ -3,20 +3,20 @@ import { test } from 'node:test';
 import { activePhaseIndexes, conferenceDay, submissionNotice } from './timeline.ts';
 import { conferenceMilestones as phases } from '../data/conference.ts';
 
-test('switches submission and review phases on the requested calendar days', () => {
+test('switches submission and review completion phases on the requested calendar days', () => {
   for (const [day, expected] of [
     ['2026-11-09', []], ['2026-11-10', [0]], ['2026-11-11', [0]],
     ['2027-01-28', [0]], ['2027-01-29', [1]], ['2027-01-30', []],
-    ['2027-02-09', []], ['2027-02-10', []], ['2027-02-11', [2]],
-    ['2027-03-09', [2]], ['2027-03-10', [3]], ['2027-03-11', []],
+    ['2027-02-09', []], ['2027-02-10', []], ['2027-02-11', []],
+    ['2027-03-09', []], ['2027-03-10', [2]], ['2027-03-11', []],
     ['2027-08-30', []],
   ]) assert.deepEqual(activePhaseIndexes(phases, day), expected, day);
 });
 
 test('keeps the satellite and main conference dates and ends the schedule', () => {
-  assert.deepEqual(activePhaseIndexes(phases, '2027-08-31'), [4]);
-  assert.deepEqual(activePhaseIndexes(phases, '2027-09-01'), [5]);
-  assert.deepEqual(activePhaseIndexes(phases, '2027-09-03'), [5]);
+  assert.deepEqual(activePhaseIndexes(phases, '2027-08-31'), [3]);
+  assert.deepEqual(activePhaseIndexes(phases, '2027-09-01'), [4]);
+  assert.deepEqual(activePhaseIndexes(phases, '2027-09-03'), [4]);
   assert.deepEqual(activePhaseIndexes(phases, '2027-09-04'), []);
   assert.deepEqual(activePhaseIndexes([], '2027-02-10'), []);
 });
