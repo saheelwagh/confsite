@@ -7,12 +7,12 @@ interface Phase {
 
 export function submissionNotice(today: string) {
   if (today < submissions.start) return {
-    status: 'CFP Opening soon',
+    status: 'CFP opening soon',
     message: `Abstract submissions open on ${submissions.startLabel}.`,
   };
   if (today <= submissions.end) return {
-    status: 'CFP Open',
-    message: 'Abstract Submission is now open.',
+    status: 'CFP open',
+    message: 'Abstract submission is now open.',
   };
   return {
     status: 'Call for abstracts closed',

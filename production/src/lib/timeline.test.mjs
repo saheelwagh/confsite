@@ -37,14 +37,14 @@ test('changes the conference day at midnight in India rather than midnight UTC',
 
 test('shows the correct submission notice before opening and through the closing day in India', () => {
   for (const [instant, status] of [
-    ['2026-11-09T18:29:59Z', 'CFP Opening soon'],
-    ['2026-11-09T18:30:00Z', 'CFP Open'],
-    ['2027-01-29T18:29:59Z', 'CFP Open'],
+    ['2026-11-09T18:29:59Z', 'CFP opening soon'],
+    ['2026-11-09T18:30:00Z', 'CFP open'],
+    ['2027-01-29T18:29:59Z', 'CFP open'],
     ['2027-01-29T18:30:00Z', 'Call for abstracts closed'],
   ]) assert.equal(submissionNotice(conferenceDay(new Date(instant))).status, status, instant);
   assert.match(submissionNotice('2026-11-08').message, /10 November 2026/);
-  assert.equal(submissionNotice('2026-11-10').message, 'Abstract Submission is now open.');
-  assert.equal(submissionNotice('2027-01-29').message, 'Abstract Submission is now open.');
+  assert.equal(submissionNotice('2026-11-10').message, 'Abstract submission is now open.');
+  assert.equal(submissionNotice('2027-01-29').message, 'Abstract submission is now open.');
   assert.equal(submissionNotice('2027-01-30').message, 'Abstract submissions closed on 29 January 2027.');
   assert.equal(submissionNotice('2027-02-10').status, 'Call for abstracts closed');
 });
