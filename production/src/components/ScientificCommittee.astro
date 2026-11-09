@@ -31,9 +31,6 @@ const members = [
   <div class="content">
     <SectionLabel number="02" label="Scientific committee" />
     <h2 id="scientific-title">Conference scientific committee</h2>
-    <div class="proposal-notice">
-      <p>The following composition is a proposal and is not yet confirmed.</p>
-    </div>
     <ul class="members">
       {members.map(({ name, affiliation }) => (
         <li><h3>{name}</h3><p>{affiliation}</p></li>
@@ -46,8 +43,6 @@ const members = [
   .scientific-committee { box-sizing: border-box; min-height: 1324px; padding: 96px 80px; background: #faf7f0; color: #152d53; font-family: var(--landing-sans, Arial, sans-serif); scroll-margin-top: 24px; }
   .content { max-width: 1280px; margin-inline: auto; }
   h2 { margin: 28px 0 0; font-family: var(--landing-serif, Georgia, serif); font-size: 52px; font-weight: 400; line-height: 1.22; letter-spacing: -1.7px; }
-  .proposal-notice { margin-top: 38px; }
-  .proposal-notice p { margin: 0; color: #58677a; font-size: 18px; line-height: 1.6; }
   .members { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(8, minmax(113px, auto)); grid-auto-flow: column; column-gap: 40px; margin: 50px 0 0; padding: 0; list-style: none; }
   .members li { box-sizing: border-box; padding: 22px 0; border-top: 1px solid #ccd1d4; }
   .members li:nth-child(8), .members li:nth-child(16), .members li:last-child { border-bottom: 1px solid #ccd1d4; }
@@ -56,8 +51,6 @@ const members = [
   @media (max-width: 1199px) {
     .scientific-committee { min-height: 0; padding: 72px 40px; }
     h2 { font-size: 40px; letter-spacing: -1.2px; }
-    .proposal-notice { margin-top: 32px; }
-    .proposal-notice p { font-size: 16px; }
     .members { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(12, minmax(113px, auto)); column-gap: 32px; margin-top: 40px; }
     .members li:nth-child(8), .members li:nth-child(16) { border-bottom: 0; }
     .members li:nth-child(12) { border-bottom: 1px solid #ccd1d4; }
