@@ -6,12 +6,14 @@ const { variant = 'default' } = Astro.props;
 <section id="about" class:list={['about-acblpe', { landing: variant === 'landing' }]} aria-labelledby="about-title">
   {variant === 'landing' && <div class="landing-label"><SectionLabel number="02" label="About ACBLPE" light /></div>}
   <div class="about-layout">
-    <div class="about-heading">
-      {variant !== 'landing' && <p class="eyebrow">About ACBLPE</p>}
-      <h2 id="about-title">Two decades of Iberian-<br />lexified creole<br /> scholarship</h2>
+    <div class="about-brand">
+      <a class="acblpe-logo" href="https://www.acblpe.com/" target="_blank" rel="noopener noreferrer" aria-label="ACBLPE (opens in a new tab)">
+        <img src={variant === 'landing' ? '/acblpe-logo-light.svg' : '/acblpe-logo.svg'} width="400" height="125" alt="" loading="lazy" decoding="async" />
+      </a>
     </div>
 
     <div class="about-copy">
+      <h2 id="about-title">About ACBLPE</h2>
       <p>
         <a href="https://www.acblpe.com/en" target="_blank" rel="noopener noreferrer" aria-label="ACBLPE (opens in a new tab)">ACBLPE</a> is a scientific association dedicated to the study of Iberian-lexified
         creole languages and their communities, and more generally linguistic
@@ -50,23 +52,19 @@ const { variant = 'default' } = Astro.props;
     margin-inline: auto;
   }
 
-  .eyebrow {
-    margin: 0 0 16px;
-    color: #0f33c2;
-    font-size: 11px;
-    font-weight: 600;
-    line-height: 16px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-  }
+  .about-brand { align-self: center; }
+  .acblpe-logo { display: block; width: min(100%, 460px); border-radius: 2px; }
+  .acblpe-logo img { display: block; width: 100%; height: auto; }
+  .acblpe-logo:focus-visible { outline: 2px solid currentColor; outline-offset: 8px; }
 
   h2 {
-    margin: 0;
+    margin: 0 0 24px;
+    color: #061238;
     font-family: Georgia, 'Times New Roman', serif;
-    font-size: 48px;
+    font-size: 36px;
     font-weight: 400;
-    line-height: 1;
-    letter-spacing: -1.2px;
+    line-height: 1.2;
+    letter-spacing: -0.8px;
   }
 
   .about-copy { color: #566984; font-size: 16px; line-height: 24px; }
@@ -77,21 +75,24 @@ const { variant = 'default' } = Astro.props;
   .landing { min-height: 515px; padding: 96px 80px; background: #214cb5; color: #faf7f0; font-family: var(--landing-sans); }
   .landing-label { max-width: 1280px; margin: 0 auto 28px; }
   .landing .about-layout { max-width: 1280px; gap: 64px; }
-  .landing h2 { font-family: var(--landing-serif); font-size: 44px; line-height: 1.2; letter-spacing: -1px; }
+  .landing .acblpe-logo { box-sizing: border-box; width: min(100%, 520px); padding: 32px 30px; border-radius: 0; background: #102c73; }
+  .landing h2 { color: #faf7f0; font-family: var(--landing-serif); }
   .landing .about-copy { color: #faf7f0; font-size: 18px; line-height: 1.45; }
   @media (max-width: 1199px) {
-    .landing { position: relative; min-height: 520px; padding: 64px 40px 72px; background: #193bb5; }
-    .landing-label { position: absolute; top: 64px; left: 40px; margin: 0; }
+    .landing { min-height: 0; padding: 64px 40px 72px; background: #193bb5; }
     .landing .about-layout { gap: 32px; }
-    .landing .about-heading { padding-top: 30px; }
     .landing h2 { font-size: 32px; }
-    .landing h2 br { display: none; }
     .landing .about-copy { font-size: 16px; line-height: 24px; }
   }
+  @media (max-width: 767px) {
+    .about-layout { grid-template-columns: minmax(0, 1fr); }
+    .about-brand { align-self: start; }
+    .acblpe-logo { max-width: 420px; }
+    .landing .about-layout { gap: 40px; }
+  }
   @media (max-width: 600px) {
-    .landing { min-height: 666px; padding: 56px 24px; }
-    .landing-label { top: 56px; left: 24px; }
-    .landing .about-layout { grid-template-columns: minmax(0, 1fr); }
+    .landing { padding: 56px 24px; }
+    .landing .acblpe-logo { padding: 24px 20px; }
     .landing h2 { font-size: 30px; }
   }
 </style>
