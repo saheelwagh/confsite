@@ -17,7 +17,7 @@ const { variant = 'default' } = Astro.props;
         <p class="description">The Satellite Conference will showcase research in contact linguistics involving the languages of South Asia and provide a platform for discussing diverse linguistic contact situations in the region. It aims to bring together renowned scholars and researchers in linguistics and to encourage dialogue on the processes, outcomes, and dynamics of language contact in South Asia.</p>
       </div>
       <div class="satellite-tile"><SatelliteDatePanel /></div>
-      <p class="description satellite-cfp">CFP for the satellite conference is invited through Linguist List's EasyAbs platform. Please Apply using <a href="https://easyabs.linguistlist.org/conference/25ACBLPEGOASAT/" target="_blank" rel="noopener noreferrer" aria-label="this link (opens in a new tab)">this link<img src="/call-for-papers/external-link.svg" width="16" height="16" alt="" /></a>.</p>
+      <p class="description satellite-cfp">CFP for the satellite conference is invited through Linguist List's EasyAbs platform.<span class="satellite-apply">Please Apply using <a href="https://easyabs.linguistlist.org/conference/25ACBLPEGOASAT/" target="_blank" rel="noopener noreferrer" aria-label="this link (opens in a new tab)">this link<img src="/call-for-papers/external-link.svg" width="16" height="16" alt="" /></a>.</span></p>
     </> : <>
     <div>
       <p class="eyebrow">Satellite conference · <time datetime="2027-08-31">31 August 2027</time></p>
@@ -75,6 +75,7 @@ const { variant = 'default' } = Astro.props;
   .description a { display: inline-flex; align-items: center; gap: 8px; color: inherit; font-weight: 600; text-decoration: underline; text-underline-offset: .14em; }
   .description a img { flex-shrink: 0; }
   .description a:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+  .satellite-apply { display: block; margin-top: 8px; }
   .landing { min-height: 569px; padding: 88px 80px; background: #152d53; color: #f7f6f0; font-family: var(--landing-sans); }
   .landing-label { max-width: 1280px; margin: 0 auto 48px; }
   .landing .satellite-layout { max-width: 1280px; grid-template-columns: minmax(0, 1.5fr) minmax(300px, 1fr); gap: 24px 64px; align-items: start; }
