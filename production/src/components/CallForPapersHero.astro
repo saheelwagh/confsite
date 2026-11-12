@@ -17,6 +17,13 @@ import { submissions } from '../data/conference';
       <img src="/call-for-papers/external-link.svg" width="16" height="16" alt="" />
       <span class="visually-hidden">(opens in a new tab)</span>
     </a>
+    <p class="description satellite-submission">
+      Submitting to the Satellite Conference?{' '}
+      <a class="submission-link" href="https://easyabs.linguistlist.org/conference/25ACBLPEGOASAT/" target="_blank" rel="noopener noreferrer" aria-label="Satellite conference submission link (opens in a new tab)">
+        Submission Link
+        <img src="/call-for-papers/external-link.svg" width="16" height="16" alt="" />
+      </a>
+    </p>
   </div>
 </section>
 
@@ -39,6 +46,7 @@ import { submissions } from '../data/conference';
   .description { max-width: 600px; margin: 20px 0 0; color: #f0ede5; font-size: 18px; line-height: 28px; }
   .submission-link { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-top: 10px; color: #faf7f0; font-size: 16px; font-weight: 600; line-height: 24px; text-underline-offset: 3px; }
   .submission-link img { flex-shrink: 0; }
+  .satellite-submission .submission-link { margin-top: 0; }
   .submission-link:hover { color: #f5b23b; }
   .submission-link:focus-visible { outline: 2px solid #f5b23b; outline-offset: 5px; }
   .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }

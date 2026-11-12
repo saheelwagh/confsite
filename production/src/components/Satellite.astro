@@ -16,7 +16,8 @@ const { variant = 'default' } = Astro.props;
         </div>
         <p class="description">The Satellite Conference will showcase research in contact linguistics involving the languages of South Asia and provide a platform for discussing diverse linguistic contact situations in the region. It aims to bring together renowned scholars and researchers in linguistics and to encourage dialogue on the processes, outcomes, and dynamics of language contact in South Asia.</p>
       </div>
-      <SatelliteDatePanel />
+      <div class="satellite-tile"><SatelliteDatePanel /></div>
+      <p class="description satellite-cfp">CFP for the satellite conference is invited through Linguist List's EasyAbs platform. Please Apply using <a href="https://easyabs.linguistlist.org/conference/25ACBLPEGOASAT/" target="_blank" rel="noopener noreferrer" aria-label="this link (opens in a new tab)">this link<img src="/call-for-papers/external-link.svg" width="16" height="16" alt="" /></a>.</p>
     </> : <>
     <div>
       <p class="eyebrow">Satellite conference · <time datetime="2027-08-31">31 August 2027</time></p>
@@ -71,13 +72,18 @@ const { variant = 'default' } = Astro.props;
   }
 
   .description { margin: 0; color: #d8e0ff; font-size: 18px; line-height: 28px; }
+  .description a { display: inline-flex; align-items: center; gap: 8px; color: inherit; font-weight: 600; text-decoration: underline; text-underline-offset: .14em; }
+  .description a img { flex-shrink: 0; }
+  .description a:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
   .landing { min-height: 569px; padding: 88px 80px; background: #152d53; color: #f7f6f0; font-family: var(--landing-sans); }
   .landing-label { max-width: 1280px; margin: 0 auto 48px; }
-  .landing .satellite-layout { max-width: 1280px; grid-template-columns: minmax(0, 1.5fr) minmax(300px, 1fr); gap: 64px; align-items: start; }
+  .landing .satellite-layout { max-width: 1280px; grid-template-columns: minmax(0, 1.5fr) minmax(300px, 1fr); gap: 24px 64px; align-items: start; }
+  .landing .satellite-tile { grid-column: 2; grid-row: 1 / span 2; }
   .landing h2 { font-family: var(--landing-serif); font-size: 58px; line-height: 1.24; letter-spacing: -1.8px; }
   .landing .satellite-keynote { margin: 22px 0 0; color: #f5b23b; font-family: var(--landing-serif); font-size: 22px; font-weight: 400; line-height: 1.35; letter-spacing: -0.5px; }
   .landing .satellite-affiliation { margin: 6px 0 0; color: #fff; font-size: 17px; line-height: 1.5; }
   .landing .description { max-width: 670px; margin-top: 24px; color: #d4def3; line-height: 1.75; }
+  .landing .satellite-cfp { grid-column: 1; grid-row: 2; margin: 0; }
   @media (max-width: 1199px) {
     .landing { min-height: 532px; padding: 72px 40px; }
     .landing-label { margin-bottom: 32px; }
@@ -88,9 +94,13 @@ const { variant = 'default' } = Astro.props;
     .landing .satellite-speaker { grid-column: 1 / -1; }
     .landing .satellite-keynote { margin: 0; font-size: 21px; }
     .landing .description { margin: 0; font-size: 16px; line-height: 1.7; }
+    .landing .satellite-tile { grid-row: 3 / span 2; }
+    .landing .satellite-cfp { grid-row: 4; }
   }
   @media (max-width: 767px) {
     .landing .satellite-layout { grid-template-columns: minmax(0, 1fr); }
+    .landing .satellite-tile { grid-column: 1; grid-row: 4; }
+    .landing .satellite-cfp { grid-row: 5; }
   }
   @media (max-width: 600px) {
     .landing { min-height: 763px; padding: 56px 24px; }
