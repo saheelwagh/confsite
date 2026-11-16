@@ -32,9 +32,11 @@
         if (!pinned) return;
 
         const readingLine = Math.min(content.getBoundingClientRect().height / 2, 32);
+        // A short final section can reach the page bottom before it reaches the reading line.
+        const atPageEnd = Math.ceil(window.scrollY + window.innerHeight) >= document.documentElement.scrollHeight;
         let active = sections[0];
         for (const entry of sections) {
-          if (entry.section.getBoundingClientRect().top <= readingLine) active = entry;
+          if (atPageEnd || entry.section.getBoundingClientRect().top <= readingLine) active = entry;
           else break;
         }
         const surface = window.getComputedStyle(active.section).backgroundColor;
