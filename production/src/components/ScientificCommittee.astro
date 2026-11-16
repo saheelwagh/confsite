@@ -39,7 +39,7 @@ const satelliteMembers = [
 const sectionId = satellite ? 'satellite-scientific-committee' : 'scientific-committee';
 const titleId = satellite ? 'satellite-scientific-title' : 'scientific-title';
 const members = satellite
-  ? satelliteMembers.map(({ name, discipline }) => ({ name: `Prof. ${name}`, detail: `Discipline of ${discipline}` }))
+  ? satelliteMembers.map(({ name, discipline }) => ({ name, detail: `Discipline of ${discipline}` }))
   : conferenceMembers.map(({ name, affiliation }) => ({ name, detail: affiliation }));
 ---
 
